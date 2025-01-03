@@ -2,6 +2,9 @@
 #include <sdl2/SDL.h>
 #include <sdl2/SDL_image.h>
 #include <sdl2/SDL_ttf.h>
+#include "src/sdlcore/SDLCore.h"
+#include "src/sdlcore/SDLWindow.h"
+#include "src/sdlcore/SDLRenderer.h"
 
 void renderTexture(SDL_Texture *tex, SDL_Renderer *ren, SDL_Rect dst,
 	SDL_Rect *clip)
@@ -32,59 +35,27 @@ void renderTexture(SDL_Texture *tex, SDL_Renderer *ren, int x, int y,
 
 int main()
 {
-    if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
-    {
-        std::cout << "SDL_Init Error: " << SDL_GetError() << std::endl;
-        return 1;
-    }
+	SDLCore::SDLCore core;
 
-    SDL_Window *window = SDL_CreateWindow("SDL_PG", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1280, 832, SDL_WINDOW_SHOWN | SDL_WINDOW_FULLSCREEN);
+	auto window = core.createWindow("Test", std::make_pair(640, 480), std::make_pair(SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED),
+		true, true);
 
-    if (window == nullptr)
-    {
-        std::cout << "SDL_CreateWindow Error: " << SDL_GetError() << std::endl;
-        SDL_Quit();
-        return 1;
-    }
-
-    // Setup renderer
-    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-
-    if (renderer == nullptr)
-    {
-        std::cout << "SDL_CreateRenderer Error: " << SDL_GetError() << std::endl;
-        SDL_DestroyWindow(window);
-        SDL_Quit();
-        return 1;
-    }
-
-    //Set renderer Size (i.e frame size without upscaling)
-    SDL_RenderSetLogicalSize(renderer, 640, 480);
+	auto renderer = core.createRenderer(window);
 
     // init sdl_image to use png
     if (IMG_Init(IMG_INIT_PNG) != IMG_INIT_PNG)
     {
         std::cout << "IMG_Init Error: " << IMG_GetError() << std::endl;
-
-        SDL_DestroyRenderer(renderer);
-        SDL_DestroyWindow(window);
-        SDL_Quit();
-
         return 1;
     }
 
     if (TTF_Init() != 0)
     {
         std::cout << "TTF_Init Error: " << TTF_GetError() << std::endl;
-
-        SDL_DestroyRenderer(renderer);
-        SDL_DestroyWindow(window);
-        SDL_Quit();
-
         return 1;
     }
 
-    SDL_Texture* texture = IMG_LoadTexture(renderer, "texture.png");
+    SDL_Texture* texture = IMG_LoadTexture(renderer->getRenderer(), "texture.png");
 
     if (texture == nullptr)
     {
@@ -103,15 +74,12 @@ int main()
 			}
 		}
 
-		SDL_RenderClear(renderer);
-		renderTexture(texture, renderer, 0, 0, nullptr);
-		SDL_RenderPresent(renderer);
+		SDL_RenderClear(renderer->getRenderer());
+		renderTexture(texture, renderer->getRenderer(), 0, 0, nullptr);
+		SDL_RenderPresent(renderer->getRenderer());
 	}
 
 	SDL_DestroyTexture(texture);
-	SDL_DestroyRenderer(renderer);
-	SDL_DestroyWindow(window);
-	SDL_Quit();
 
 	// Texture is stored in VRAM, processed via GPU, no direct access
 	// Surfaces can be directly accessed (pixel-based)
