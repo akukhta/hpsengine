@@ -1,6 +1,7 @@
 #pragma once
 #include "SDLWindow.h"
 #include "SDLRenderer.h"
+#include "SDLTimeController.h"
 
 namespace SDLCore
 {
@@ -22,5 +23,7 @@ namespace SDLCore
 
         std::unique_ptr<SDLRenderer> createRenderer(std::unique_ptr<SDLWindow> &window);
         std::unique_ptr<SDLRenderer> createRenderer(SDLWindow* window);
+
+        SDLTimeController& getTimeController();
     };
 }
