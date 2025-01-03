@@ -29,6 +29,13 @@ std::pair<int, int> SDLCore::SDLRenderer::getResolution()
     return resolution;
 }
 
+void SDLCore::SDLRenderer::render()
+{
+    SDL_RenderClear(renderer.get());
+
+    SDL_RenderPresent(renderer.get());
+}
+
 void SDLCore::SDLRenderer::changeResolution()
 {
     if (renderer)

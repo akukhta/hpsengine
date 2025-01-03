@@ -43,3 +43,8 @@ SDLCore::SDLTimeController & SDLCore::SDLCore::getTimeController()
 {
     return SDLTimeController::getInstance();
 }
+
+bool SDLCore::SDLCore::isInitialized(Subsystem subsystem) const
+{
+    return SDL_WasInit(static_cast<Uint32>(subsystem)) != 0;
+}

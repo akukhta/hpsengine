@@ -5,10 +5,11 @@
 
 namespace SDLCore
 {
+    /// Class performs drawing to the associated window
     class SDLRenderer
     {
     public:
-        explicit SDLRenderer(class SDLWindow* window);
+        SDLRenderer(class SDLWindow* window);
 
         void setResolution(int width, int height);
         void setResolution(std::pair<int, int> resolution);
@@ -20,11 +21,15 @@ namespace SDLCore
             return renderer.get();
         }
 #endif
+
+        void render();
+
     private:
         std::pair<int, int> resolution;
         using RendererPtr = std::unique_ptr<SDL_Renderer, decltype(&SDL_DestroyRenderer)>;
         RendererPtr renderer{nullptr, &SDL_DestroyRenderer};
 
         void changeResolution();
+        void render
     };
 }

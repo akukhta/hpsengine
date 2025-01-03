@@ -38,7 +38,7 @@ int main()
 	SDLCore::SDLCore core;
 
 	auto window = core.createWindow("Test", std::make_pair(640, 480), std::make_pair(SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED),
-		true, true);
+		true, false);
 
 	auto renderer = core.createRenderer(window);
 
@@ -77,6 +77,8 @@ int main()
 		SDL_RenderClear(renderer->getRenderer());
 		renderTexture(texture, renderer->getRenderer(), 0, 0, nullptr);
 		SDL_RenderPresent(renderer->getRenderer());
+		SDLCore::SDLTimeController::update();
+		std::cout << SDLCore::SDLTimeController::getDeltaTime() << std::endl;
 	}
 
 	SDL_DestroyTexture(texture);

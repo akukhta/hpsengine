@@ -5,6 +5,7 @@
 
 namespace SDLCore
 {
+    /// Class represents window created by SDL
     class SDLWindow
     {
     public:
