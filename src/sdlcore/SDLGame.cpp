@@ -20,6 +20,7 @@ void SDLCore::SDLGame::run()
 
     auto texture = SDLTexture::loadPNG("/Users/khk/Downloads/5b92b51b196573108b203ad1.png", renderer.get());
     Primitives::Rectangle rect{100, 100, Primitives::Colors::Red, true};
+    Primitives::Circle c{300, 300, 120, Primitives::Colors::Gray};
 
     while (isRunning_)
     {
@@ -28,6 +29,8 @@ void SDLCore::SDLGame::run()
         renderer->startRendering();
         texture.render(renderer.get(), 0, 0);
         rect.render(renderer.get(), 300, 0, 200, 200);
+        c.render(renderer.get(), 300, 300, 120);
+
         renderer->finishRendering();
     }
 }

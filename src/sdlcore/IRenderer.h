@@ -1,4 +1,5 @@
 #pragma once
+#include "../primitives/Circle.h"
 
 namespace Primitives
 {
@@ -24,5 +25,7 @@ namespace SDLCore
 
         virtual void render(Primitives::Rectangle*, int x, int y, int w, int h) = 0;
         virtual void render(Primitives::Rectangle*, int x, int y) = 0;
+
+        virtual void render(Primitives::Circle*, int x, int y, int r) = 0;
     };
 }

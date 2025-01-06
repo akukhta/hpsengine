@@ -16,6 +16,7 @@ namespace SDLCore
         virtual ~IRenderable() = default;
 
         virtual void render(class IRenderer* renderer, int x, int y)  = 0;
-        virtual void render(class IRenderer* renderer, int x, int y, int w, int h)  = 0;
+        virtual void render(IRenderer* renderer, int x, int y, int w, int h)  = 0;
+        virtual void render(IRenderer* renderer, int x, int y, int r) {};
     };
 }

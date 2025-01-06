@@ -30,6 +30,8 @@ add_executable(sdlplgrd main.cpp
         src/primitives/Rectangle.cpp
         src/primitives/Rectangle.h
         src/primitives/Colors.h
+        src/primitives/Circle.cpp
+        src/primitives/Circle.h
 )
 
 target_link_libraries(${PROJECT_NAME} SDL2::SDL2main)

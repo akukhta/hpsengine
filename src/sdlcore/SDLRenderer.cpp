@@ -107,6 +107,22 @@ void SDLCore::SDLRenderer::render(Primitives::Rectangle *rectangle, int x, int y
     setDrawColor(prevColor);
 }
 
+void SDLCore::SDLRenderer::render(Primitives::Circle *circle, int x, int y, int r)
+{
+    if (!circle)
+    {
+        return;
+    }
+    auto prevColor = exchangeColor(circle->color);
+
+    for (auto const& point : circle->points)
+    {
+        SDL_RenderDrawPoint(renderer.get(), point.x, point.y);
+    }
+
+    setDrawColor(prevColor);
+}
+
 void SDLCore::SDLRenderer::changeResolution()
 {
     if (renderer)
