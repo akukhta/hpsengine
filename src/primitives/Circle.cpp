@@ -2,10 +2,13 @@
 #include <utility>
 #include "../sdlcore/IRenderer.h"
 
-Primitives::Circle::Circle(int x, int y, int radius, SDL_Color color)
-    : color(std::move(color))
+Primitives::Circle::Circle(int x, int y, int radius, SDL_Color color, bool filled)
+    : color(std::move(color)), filled(filled)
 {
-    calculatePoints(x, y, radius);
+    if (!this->filled)
+    {
+        calculatePoints(x, y, radius);
+    }
 }
 
 void Primitives::Circle::render(SDLCore::IRenderer *renderer, int x, int y)
@@ -20,12 +23,12 @@ void Primitives::Circle::render(SDLCore::IRenderer *renderer, int x, int y, int 
 
 void Primitives::Circle::render(SDLCore::IRenderer *renderer, int x, int y, int r)
 {
-    if (x != prevX || y != prevY || r != prevRadius)
+    if (!filled || x != prevX || y != prevY || r != prevRadius)
     {
         calculatePoints(x, y, r);
     }
 
-    renderer->render(this, x, y, r);
+    renderer->renderCircle(this, x, y, r);
 }
 
 void Primitives::Circle::calculatePoints(int centerX, int centerY, int radius)

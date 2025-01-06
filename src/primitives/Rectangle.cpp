@@ -9,10 +9,10 @@ Primitives::Rectangle::Rectangle(int width, int height, SDL_Color color, bool fi
 
 void Primitives::Rectangle::render(SDLCore::IRenderer *renderer, int x, int y)
 {
-    renderer->render(this, x, y);
+    renderer->renderRectangle(this, x, y);
 }
 
 void Primitives::Rectangle::render(SDLCore::IRenderer *renderer, int x, int y, int w, int h)
 {
-    renderer->render(this, x, y, w, h);
+    renderer->renderRectangle(this, x, y, w, h);
 }

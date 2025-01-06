@@ -33,7 +33,7 @@ std::pair<int, int> SDLCore::SDLRenderer::getResolution()
     return resolution;
 }
 
-void SDLCore::SDLRenderer::render()
+void SDLCore::SDLRenderer::renderTexture()
 {
     SDL_RenderClear(renderer.get());
 
@@ -50,7 +50,7 @@ void SDLCore::SDLRenderer::finishRendering()
     SDL_RenderPresent(renderer.get());
 }
 
-void SDLCore::SDLRenderer::render(SDLTexture *texture, int x, int y, int w, int h)
+void SDLCore::SDLRenderer::renderTexture(SDLTexture *texture, int x, int y, int w, int h)
 {
     if (!texture)
     {
@@ -61,7 +61,7 @@ void SDLCore::SDLRenderer::render(SDLTexture *texture, int x, int y, int w, int 
     SDL_RenderCopy(renderer.get(), texture->texture.get(), &texture->srcRect, &dst);
 }
 
-void SDLCore::SDLRenderer::render(Primitives::Rectangle *rectangle, int x, int y, int w, int h)
+void SDLCore::SDLRenderer::renderRectangle(Primitives::Rectangle *rectangle, int x, int y, int w, int h)
 {
     if (!rectangle)
     {
@@ -84,7 +84,7 @@ void SDLCore::SDLRenderer::render(Primitives::Rectangle *rectangle, int x, int y
     setDrawColor(prevColor);
 }
 
-void SDLCore::SDLRenderer::render(Primitives::Rectangle *rectangle, int x, int y)
+void SDLCore::SDLRenderer::renderRectangle(Primitives::Rectangle *rectangle, int x, int y)
 {
     if (!rectangle)
     {
@@ -107,7 +107,7 @@ void SDLCore::SDLRenderer::render(Primitives::Rectangle *rectangle, int x, int y
     setDrawColor(prevColor);
 }
 
-void SDLCore::SDLRenderer::render(Primitives::Circle *circle, int x, int y, int r)
+void SDLCore::SDLRenderer::renderCircle(Primitives::Circle *circle, int centerX, int centerY, int r)
 {
     if (!circle)
     {
@@ -115,9 +115,20 @@ void SDLCore::SDLRenderer::render(Primitives::Circle *circle, int x, int y, int 
     }
     auto prevColor = exchangeColor(circle->color);
 
-    for (auto const& point : circle->points)
+    if (!circle->filled)
     {
-        SDL_RenderDrawPoint(renderer.get(), point.x, point.y);
+        for (auto const& point : circle->points)
+        {
+            SDL_RenderDrawPoint(renderer.get(), point.x, point.y);
+        }
+    }
+    else
+    {
+        for (int y = -r; y <= r; ++y)
+        {
+            int x = static_cast<int>(sqrt(r * r - y * y));
+            SDL_RenderDrawLine(renderer.get(), centerX - x, centerY + y, centerX + x, centerY + y);
+        }
     }
 
     setDrawColor(prevColor);

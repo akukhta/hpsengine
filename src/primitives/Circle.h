@@ -14,7 +14,7 @@ namespace Primitives
     public:
         /// If the position of a circle is static,
         /// the circle will be more efficient cause there is no need to recalculate the points
-        Circle(int x, int y, int radius, SDL_Color color);
+        Circle(int x, int y, int radius, SDL_Color color, bool filled = false);
 
         void render(SDLCore::IRenderer *renderer, int x, int y) override;
         void render(SDLCore::IRenderer *renderer, int x, int y, int w, int h) override;
@@ -28,6 +28,7 @@ namespace Primitives
         int prevX;
         int prevY;
         int prevRadius;
+        bool filled;
 
         void calculatePoints(int centerX, int centerY, int radius);
     };

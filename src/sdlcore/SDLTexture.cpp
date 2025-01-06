@@ -32,12 +32,12 @@ SDLCore::SDLTexture SDLCore::SDLTexture::loadPNG(std::string const &fileName, SD
 
 void SDLCore::SDLTexture::render(IRenderer *renderer, int x, int y)
 {
-    renderer->render(this, x, y, srcRect.w, srcRect.h);
+    renderer->renderTexture(this, x, y, srcRect.w, srcRect.h);
 }
 
 void SDLCore::SDLTexture::render(IRenderer *renderer, int x, int y, int w, int h)
 {
-    renderer->render(this, x, y, w, h);
+    renderer->renderTexture(this, x, y, w, h);
 }
 
 void SDLCore::SDLTexture::setTextureSize(std::pair<int, int> const &size)

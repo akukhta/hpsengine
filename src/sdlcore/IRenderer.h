@@ -21,11 +21,11 @@ namespace SDLCore
         virtual void startRendering() = 0;
         virtual void finishRendering() = 0;
 
-        virtual void render(class SDLTexture*, int x = 0, int y = 0, int w = 0, int h = 0) = 0;
+        virtual void renderTexture(class SDLTexture*, int x = 0, int y = 0, int w = 0, int h = 0) = 0;
 
-        virtual void render(Primitives::Rectangle*, int x, int y, int w, int h) = 0;
-        virtual void render(Primitives::Rectangle*, int x, int y) = 0;
+        virtual void renderRectangle(Primitives::Rectangle*, int x, int y, int w, int h) = 0;
+        virtual void renderRectangle(Primitives::Rectangle*, int x, int y) = 0;
 
-        virtual void render(Primitives::Circle*, int x, int y, int r) = 0;
+        virtual void renderCircle(Primitives::Circle*, int centerX, int centerY, int r) = 0;
     };
 }

@@ -23,16 +23,16 @@ namespace SDLCore
         }
 #endif
 
-        void render();
+        void renderTexture();
         void startRendering() override;
         void finishRendering() override;
 
-        void render(SDLTexture* texture, int x, int y, int w, int h) override;
+        void renderTexture(SDLTexture* texture, int x, int y, int w, int h) override;
 
-        void render(Primitives::Rectangle* rectangle, int x, int y, int w, int h) override;
-        void render(Primitives::Rectangle* rectangle, int x, int y) override;
+        void renderRectangle(Primitives::Rectangle* rectangle, int x, int y, int w, int h) override;
+        void renderRectangle(Primitives::Rectangle* rectangle, int x, int y) override;
 
-        void render(Primitives::Circle* circle, int x, int y, int r) override;
+        void renderCircle(Primitives::Circle* circle, int centerX, int centerY, int r) override;
     private:
         std::pair<int, int> resolution;
         using RendererPtr = std::unique_ptr<SDL_Renderer, decltype(&SDL_DestroyRenderer)>;
