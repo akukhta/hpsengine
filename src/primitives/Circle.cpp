@@ -23,7 +23,7 @@ void Primitives::Circle::render(SDLCore::IRenderer *renderer, int x, int y, int 
 
 void Primitives::Circle::render(SDLCore::IRenderer *renderer, int x, int y, int r)
 {
-    if (!filled || x != prevX || y != prevY || r != prevRadius)
+    if (!filled &&  (x != prevX || y != prevY || r != prevRadius))
     {
         calculatePoints(x, y, r);
     }
@@ -39,7 +39,8 @@ void Primitives::Circle::calculatePoints(int centerX, int centerY, int radius)
     int y = 0;
     int radiusError = 1 - x;
 
-    while (x >= y) {
+    while (x >= y)
+    {
         points.push_back({ centerX + x, centerY - y });
         points.push_back({ centerX + y, centerY - x });
         points.push_back({ centerX - x, centerY - y });
@@ -51,9 +52,12 @@ void Primitives::Circle::calculatePoints(int centerX, int centerY, int radius)
 
         y++;
 
-        if (radiusError <= 0) {
+        if (radiusError <= 0)
+        {
             radiusError += 2 * y + 1;
-        } else {
+        }
+        else
+        {
             x--;
             radiusError += 2 * (y - x + 1);
         }
