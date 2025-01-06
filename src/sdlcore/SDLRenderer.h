@@ -30,6 +30,5 @@ namespace SDLCore
         RendererPtr renderer{nullptr, &SDL_DestroyRenderer};
 
         void changeResolution();
-        void render
     };
 }

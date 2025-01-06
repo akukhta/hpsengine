@@ -39,6 +39,11 @@ std::unique_ptr<SDLCore::SDLRenderer> SDLCore::SDLCore::createRenderer(SDLWindow
     return std::make_unique<SDLRenderer>(window);
 }
 
+std::unique_ptr<SDLCore::SDLEventHandler> SDLCore::SDLCore::createEventHandler()
+{
+    return std::make_unique<SDLEventHandler>();
+}
+
 SDLCore::SDLTimeController & SDLCore::SDLCore::getTimeController()
 {
     return SDLTimeController::getInstance();

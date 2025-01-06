@@ -16,7 +16,11 @@ add_executable(sdlplgrd main.cpp
         src/sdlcore/SDLRenderer.h
         src/sdlcore/SDLTimeController.cpp
         src/sdlcore/SDLTimeController.h
-        src/sdlcore/SDLEngine.h)
+        src/sdlcore/SDLEngine.h
+        src/sdlcore/SDLGame.cpp
+        src/sdlcore/SDLGame.h
+        src/sdlcore/SDLEventHandler.cpp
+        src/sdlcore/SDLEventHandler.h)
 
 target_link_libraries(${PROJECT_NAME} SDL2::SDL2main)
 target_link_libraries(${PROJECT_NAME} SDL2::SDL2)

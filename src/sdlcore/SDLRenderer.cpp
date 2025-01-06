@@ -1,6 +1,7 @@
 #include "SDLRenderer.h"
 #include "SDLWindow.h"
 #include <SDL2/SDL_render.h>
+#include <stdexcept>
 
 SDLCore::SDLRenderer::SDLRenderer(class SDLWindow *window)
 {

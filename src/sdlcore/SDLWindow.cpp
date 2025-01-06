@@ -1,4 +1,5 @@
 #include "SDLWindow.h"
+#include <stdexcept>
 
 SDLCore::SDLWindow::SDLWindow(std::string_view title, std::pair<int, int> size, std::pair<int, int> pos, bool isShown,
     bool isFullscreen) : windowName(title), size(size), position(pos), isShown(isShown), isFullscreen(isFullscreen)
