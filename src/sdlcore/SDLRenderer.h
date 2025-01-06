@@ -2,11 +2,12 @@
 #include <memory>
 #include <SDL2/SDL.h>
 #include <utility>
+#include "IRenderer.h"
 
 namespace SDLCore
 {
     /// Class performs drawing to the associated window
-    class SDLRenderer
+    class SDLRenderer : public IRenderer
     {
     public:
         SDLRenderer(class SDLWindow* window);
@@ -23,6 +24,10 @@ namespace SDLCore
 #endif
 
         void render();
+        void startRendering() override;
+        void finishRendering() override;
+
+        virtual void render(SDLTexture* texture, int x, int y, int w, int h) override;
 
     private:
         std::pair<int, int> resolution;
