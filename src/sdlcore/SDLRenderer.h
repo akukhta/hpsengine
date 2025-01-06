@@ -27,7 +27,9 @@ namespace SDLCore
         void startRendering() override;
         void finishRendering() override;
 
-        virtual void render(SDLTexture* texture, int x, int y, int w, int h) override;
+        void render(SDLTexture* texture, int x, int y, int w, int h) override;
+        void render(Primitives::Rectangle* rectangle, int x, int y, int w, int h) override;
+        void render(Primitives::Rectangle* rectangle, int x, int y) override;
 
     private:
         std::pair<int, int> resolution;
@@ -35,5 +37,10 @@ namespace SDLCore
         RendererPtr renderer{nullptr, &SDL_DestroyRenderer};
 
         void changeResolution();
+
+        SDL_Color getDrawColor();
+        void setDrawColor(SDL_Color color);
+        SDL_Color exchangeColor(SDL_Color color);
+
     };
 }

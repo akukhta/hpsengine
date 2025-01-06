@@ -27,6 +27,9 @@ add_executable(sdlplgrd main.cpp
         src/sdlcore/IRenderer.h
         src/sdlcore/RenderingQueue.cpp
         src/sdlcore/RenderingQueue.h
+        src/primitives/Rectangle.cpp
+        src/primitives/Rectangle.h
+        src/primitives/Colors.h
 )
 
 target_link_libraries(${PROJECT_NAME} SDL2::SDL2main)

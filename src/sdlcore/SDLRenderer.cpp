@@ -4,6 +4,7 @@
 #include <stdexcept>
 #include "SDLTexture.h"
 #include <SDL2/SDL_render.h>
+#include "../primitives/Rectangle.h"
 
 SDLCore::SDLRenderer::SDLRenderer(class SDLWindow *window)
 {
@@ -51,8 +52,59 @@ void SDLCore::SDLRenderer::finishRendering()
 
 void SDLCore::SDLRenderer::render(SDLTexture *texture, int x, int y, int w, int h)
 {
+    if (!texture)
+    {
+        return;
+    }
+
     SDL_Rect dst = {x, y, w, h};
     SDL_RenderCopy(renderer.get(), texture->texture.get(), &texture->srcRect, &dst);
+}
+
+void SDLCore::SDLRenderer::render(Primitives::Rectangle *rectangle, int x, int y, int w, int h)
+{
+    if (!rectangle)
+    {
+        return;
+    }
+
+    auto prevColor = exchangeColor(rectangle->color);
+
+    SDL_Rect dst = {x, y, w, h};
+
+    if (rectangle->fill)
+    {
+        SDL_RenderFillRect(renderer.get(), &dst);
+    }
+    else
+    {
+        SDL_RenderDrawRect(renderer.get(), &dst);
+    }
+
+    setDrawColor(prevColor);
+}
+
+void SDLCore::SDLRenderer::render(Primitives::Rectangle *rectangle, int x, int y)
+{
+    if (!rectangle)
+    {
+        return;
+    }
+
+    auto prevColor = exchangeColor(rectangle->color);
+
+    SDL_Rect dst = {x, y, rectangle->srcRect.w, rectangle->srcRect.h};
+
+    if (rectangle->fill)
+    {
+        SDL_RenderFillRect(renderer.get(), &dst);
+    }
+    else
+    {
+        SDL_RenderDrawRect(renderer.get(), &dst);
+    }
+
+    setDrawColor(prevColor);
 }
 
 void SDLCore::SDLRenderer::changeResolution()
@@ -61,5 +113,26 @@ void SDLCore::SDLRenderer::changeResolution()
     {
         SDL_RenderSetLogicalSize(renderer.get(), resolution.first, resolution.second);
     }
+}
+
+SDL_Color SDLCore::SDLRenderer::getDrawColor()
+{
+    SDL_Color color;
+    SDL_GetRenderDrawColor(renderer.get(), &color.r, &color.g, &color.b, &color.a);
+
+    return color;
+}
+
+void SDLCore::SDLRenderer::setDrawColor(SDL_Color color)
+{
+    SDL_SetRenderDrawColor(renderer.get(), color.r, color.g, color.b, color.a);
+}
+
+SDL_Color SDLCore::SDLRenderer::exchangeColor(SDL_Color color)
+{
+    auto prevColor = getDrawColor();
+    setDrawColor(color);
+
+    return prevColor;
 }
 

@@ -40,9 +40,64 @@ void SDLCore::SDLTexture::render(IRenderer *renderer, int x, int y, int w, int h
     renderer->render(this, x, y, w, h);
 }
 
-SDLCore::SDLTexture::SDLTexture(TexturePtr texture)
-    : texture(std::move(texture))
+void SDLCore::SDLTexture::setTextureSize(std::pair<int, int> const &size)
+{
+    srcRect.w = size.first;
+    srcRect.h = size.second;
+}
+
+void SDLCore::SDLTexture::setTextureSize(int width, int height)
+{
+    srcRect.w = width;
+    srcRect.h = height;
+}
+
+void SDLCore::SDLTexture::setTextureSize(int *width, int *height)
+{
+    if (width)
+    {
+        srcRect.w = *width;
+    }
+
+    if (height)
+    {
+        srcRect.h = *height;
+    }
+}
+
+void SDLCore::SDLTexture::setTextureOffset(std::pair<int, int> const &offset)
+{
+    srcRect.x = offset.first;
+    srcRect.y = offset.second;
+}
+
+void SDLCore::SDLTexture::setTextureOffset(int x, int y)
+{
+    srcRect.x = x;
+    srcRect.y = y;
+}
+
+void SDLCore::SDLTexture::setTextureOffset(int *x, int *y)
+{
+    if (x)
+    {
+        srcRect.x = *x;
+    }
+
+    if (y)
+    {
+        srcRect.y = *y;
+    }
+}
+
+void SDLCore::SDLTexture::resetSizeAndOffset()
 {
     SDL_QueryTexture(this->texture.get(), nullptr, nullptr, &textureSize.first, &textureSize.second);
     srcRect = SDL_Rect{0, 0, textureSize.first, textureSize.second};
+}
+
+SDLCore::SDLTexture::SDLTexture(TexturePtr texture)
+    : texture(std::move(texture))
+{
+    resetSizeAndOffset();
 }

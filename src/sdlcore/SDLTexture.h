@@ -15,6 +15,16 @@ namespace SDLCore
         void render(IRenderer *renderer, int x, int y) override;
         void render(IRenderer *renderer, int x, int y, int w, int h) override;
 
+        void setTextureSize(std::pair<int, int> const& size);
+        void setTextureSize(int width, int height);
+        void setTextureSize(int *width, int *height);
+
+        void setTextureOffset(std::pair<int, int> const& offset);
+        void setTextureOffset(int x, int y);
+        void setTextureOffset(int *x, int *y);
+
+        void resetSizeAndOffset();
+
     private:
         friend class SDLRenderer;
 
