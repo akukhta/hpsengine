@@ -2,6 +2,7 @@
 #include "SDLTexture.h"
 #include "../primitives/Colors.h"
 #include "../primitives/Rectangle.h"
+#include "SDLTimeController.h"
 
 SDLCore::SDLGame::SDLGame(RendererPtr renderer, EventHandlerPtr eventHandler)
     : renderer(std::move(renderer)), eventHandler(std::move(eventHandler))
@@ -25,6 +26,10 @@ void SDLCore::SDLGame::run()
     while (isRunning_)
     {
         // update
+        {
+            SDLTimeController::update();
+        }
+
         eventHandler->handleEvents();
         renderer->startRendering();
         texture.render(renderer.get(), 0, 0);
