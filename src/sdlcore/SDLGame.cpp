@@ -1,4 +1,6 @@
 #include "SDLGame.h"
+
+#include "SDLAnimatedSpriteSheet.h"
 #include "SDLTexture.h"
 #include "../primitives/Colors.h"
 #include "../primitives/Rectangle.h"
@@ -20,6 +22,9 @@ void SDLCore::SDLGame::run()
     isRunning_ = true;
 
     auto texture = SDLTexture::loadPNG("/Users/khk/Downloads/5b92b51b196573108b203ad1.png", renderer.get());
+    auto animation = SDLAnimatedSpriteSheet::loadPNG(renderer.get(), "/Users/khk/Downloads/FREE_Samurai 2D Pixel Art v1.2/Sprites/attack.png",
+        std::make_pair(96, 96), 0.1, 3);
+
     Primitives::Rectangle rect{100, 100, Primitives::Colors::Red, true};
     Primitives::Circle c{300, 300, 120, Primitives::Colors::Gray, true};
 
@@ -32,9 +37,11 @@ void SDLCore::SDLGame::run()
 
         eventHandler->handleEvents();
         renderer->startRendering();
-        texture.render(renderer.get(), 0, 0);
-        rect.render(renderer.get(), 300, 0, 200, 200);
-        c.render(renderer.get(), 300, 300, 120);
+        //texture.render(renderer.get(), 0, 0);
+        //rect.render(renderer.get(), 300, 0, 200, 200);
+        //c.render(renderer.get(), 300, 300, 120);
+
+        animation.render(renderer.get(), Rectangle{0, 0, 32, 32}, {0, 0, 200, 200});
 
         renderer->finishRendering();
     }

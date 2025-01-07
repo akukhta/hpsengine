@@ -1,4 +1,5 @@
 #pragma once
+#include "Rectangle.h"
 
 namespace SDLCore
 {
@@ -17,6 +18,8 @@ namespace SDLCore
 
         virtual void render(class IRenderer* renderer, int x, int y)  = 0;
         virtual void render(IRenderer* renderer, int x, int y, int w, int h)  = 0;
+
+        virtual void render(IRenderer* renderer, Rectangle const& src, Rectangle const& dst) {};
         virtual void render(IRenderer* renderer, int x, int y, int r) {};
     };
 }

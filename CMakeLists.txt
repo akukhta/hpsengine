@@ -32,6 +32,9 @@ add_executable(sdlplgrd main.cpp
         src/primitives/Colors.h
         src/primitives/Circle.cpp
         src/primitives/Circle.h
+        src/sdlcore/SDLAnimatedSpriteSheet.cpp
+        src/sdlcore/SDLAnimatedSpriteSheet.h
+        src/sdlcore/Rectangle.h
 )
 
 target_link_libraries(${PROJECT_NAME} SDL2::SDL2main)

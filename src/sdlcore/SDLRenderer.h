@@ -28,6 +28,7 @@ namespace SDLCore
         void finishRendering() override;
 
         void renderTexture(SDLTexture* texture, int x, int y, int w, int h) override;
+        void renderTexture(SDLTexture* texture, Rectangle const &src, Rectangle const &dst) override;
 
         void renderRectangle(Primitives::Rectangle* rectangle, int x, int y, int w, int h) override;
         void renderRectangle(Primitives::Rectangle* rectangle, int x, int y) override;

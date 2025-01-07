@@ -14,6 +14,7 @@ namespace SDLCore
 
         void render(IRenderer *renderer, int x, int y) override;
         void render(IRenderer *renderer, int x, int y, int w, int h) override;
+        void render(IRenderer *renderer, const Rectangle &src, const Rectangle &dst) override;
 
         void setTextureSize(std::pair<int, int> const& size);
         void setTextureSize(int width, int height);
@@ -25,13 +26,15 @@ namespace SDLCore
 
         void resetSizeAndOffset();
 
-    private:
+    protected:
         friend class SDLRenderer;
 
         using TexturePtr = std::unique_ptr<SDL_Texture, decltype(&SDL_DestroyTexture)>;
         using SurfacePtr = std::unique_ptr<SDL_Surface, decltype(&SDL_FreeSurface)>;
 
         explicit SDLTexture(TexturePtr texture);
+
+        static TexturePtr loadPNGRaw(std::string const& fileName, SDLRenderer* renderer);
 
         TexturePtr texture;
         std::pair<int, int> textureSize;

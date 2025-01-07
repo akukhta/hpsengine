@@ -3,6 +3,7 @@
 #include <string>
 #include <stdexcept>
 #include <SDL2/SDL_image.h>
+#include <SDL2/SDL_rect.h>
 
 SDLCore::SDLTexture SDLCore::SDLTexture::loadFromBMP(std::string const &fileName, SDLRenderer* renderer)
 {
@@ -30,6 +31,19 @@ SDLCore::SDLTexture SDLCore::SDLTexture::loadPNG(std::string const &fileName, SD
     return SDLTexture{std::move(texture)};
 }
 
+
+SDLCore::SDLTexture::TexturePtr SDLCore::SDLTexture::loadPNGRaw(std::string const &fileName, SDLRenderer *renderer)
+{
+    TexturePtr texture{IMG_LoadTexture(renderer->getRenderer(), fileName.c_str()), &SDL_DestroyTexture};
+
+    if (!texture)
+    {
+        throw std::runtime_error("Unable to load image: " + std::string{IMG_GetError()});
+    }
+
+    return texture;
+}
+
 void SDLCore::SDLTexture::render(IRenderer *renderer, int x, int y)
 {
     renderer->renderTexture(this, x, y, srcRect.w, srcRect.h);
@@ -38,6 +52,11 @@ void SDLCore::SDLTexture::render(IRenderer *renderer, int x, int y)
 void SDLCore::SDLTexture::render(IRenderer *renderer, int x, int y, int w, int h)
 {
     renderer->renderTexture(this, x, y, w, h);
+}
+
+void SDLCore::SDLTexture::render(IRenderer *renderer, const Rectangle &src, const Rectangle &dst)
+{
+    renderer->renderTexture(this, src, dst);
 }
 
 void SDLCore::SDLTexture::setTextureSize(std::pair<int, int> const &size)
