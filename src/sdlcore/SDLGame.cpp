@@ -29,7 +29,7 @@ void SDLCore::SDLGame::run()
     Primitives::Circle c{300, 300, 120, Primitives::Colors::Gray, true};
 
     animation.setDuration(1);
-    animation.setIsRepeating(false);
+    animation.setIsRepeating(true);
 
     std::cout << "Animation duration: " << animation.getDuration() << std::endl;
 
