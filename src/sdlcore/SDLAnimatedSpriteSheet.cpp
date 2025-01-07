@@ -1,7 +1,6 @@
 #include "SDLAnimatedSpriteSheet.h"
 #include "SDLTimeController.h"
 #include <algorithm>
-#include <iostream>
 
 SDLCore::SDLAnimatedSpriteSheet SDLCore::SDLAnimatedSpriteSheet::loadPNG(class SDLRenderer *renderer,
     std::string const& fileName, std::pair<int, int> frameSize, double secondsPerFrame, unsigned int framesCount)
@@ -35,15 +34,50 @@ void SDLCore::SDLAnimatedSpriteSheet::render(IRenderer *renderer, const Rectangl
 
     if (currentFrameTime >= secondsPerFrame)
     {
-        currentFrameIndex = (currentFrameIndex + 1) % framesCount;
+        currentFrameIndex = (currentFrameIndex + 1);
+
+        if (currentFrameIndex + 1 < framesCount) [[likely]]
+        {
+            ++currentFrameIndex;
+        }
+        else [[unlikely]]
+        {
+            if (isRepeating_) [[likely]]
+            {
+                currentFrameIndex = 0;
+            }
+            else [[unlikely]]
+            {
+                currentFrameIndex = framesCount - 1;
+            }
+        }
+
         currentFrameTime = 0;
     }
 
     Rectangle srcRect{static_cast<int>(frameSize.first * currentFrameIndex),32, frameSize.first, frameSize.second};
 
-    std::cout << srcRect.x << " " << srcRect.y << " " << srcRect.width << " " << srcRect.height << std::endl;
-
     SDLTexture::render(renderer, srcRect, dst);
+}
+
+void SDLCore::SDLAnimatedSpriteSheet::setDuration(double durationInSeconds)
+{
+    secondsPerFrame = durationInSeconds / framesCount;
+}
+
+double SDLCore::SDLAnimatedSpriteSheet::getDuration() const
+{
+    return secondsPerFrame * framesCount;
+}
+
+void SDLCore::SDLAnimatedSpriteSheet::setIsRepeating(bool isRepeating)
+{
+    isRepeating_ = isRepeating;
+}
+
+bool SDLCore::SDLAnimatedSpriteSheet::isRepeating() const
+{
+    return isRepeating_;
 }
 
 SDLCore::SDLAnimatedSpriteSheet::SDLAnimatedSpriteSheet(TexturePtr texture, std::pair<int, int> frameSize, double secondsPerFrame,  unsigned int framesCount)

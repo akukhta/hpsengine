@@ -1,10 +1,10 @@
 #include "SDLGame.h"
-
 #include "SDLAnimatedSpriteSheet.h"
 #include "SDLTexture.h"
 #include "../primitives/Colors.h"
 #include "../primitives/Rectangle.h"
 #include "SDLTimeController.h"
+#include <iostream>
 
 SDLCore::SDLGame::SDLGame(RendererPtr renderer, EventHandlerPtr eventHandler)
     : renderer(std::move(renderer)), eventHandler(std::move(eventHandler))
@@ -23,10 +23,15 @@ void SDLCore::SDLGame::run()
 
     auto texture = SDLTexture::loadPNG("/Users/khk/Downloads/5b92b51b196573108b203ad1.png", renderer.get());
     auto animation = SDLAnimatedSpriteSheet::loadPNG(renderer.get(), "/Users/khk/Downloads/FREE_Samurai 2D Pixel Art v1.2/Sprites/attack.png",
-        std::make_pair(96, 96), 0.1, 3);
+        std::make_pair(96, 96), 0.2, 7);
 
     Primitives::Rectangle rect{100, 100, Primitives::Colors::Red, true};
     Primitives::Circle c{300, 300, 120, Primitives::Colors::Gray, true};
+
+    animation.setDuration(1);
+    animation.setIsRepeating(false);
+
+    std::cout << "Animation duration: " << animation.getDuration() << std::endl;
 
     while (isRunning_)
     {
@@ -41,7 +46,7 @@ void SDLCore::SDLGame::run()
         //rect.render(renderer.get(), 300, 0, 200, 200);
         //c.render(renderer.get(), 300, 300, 120);
 
-        animation.render(renderer.get(), Rectangle{0, 0, 32, 32}, {0, 0, 200, 200});
+        animation.render(renderer.get(), Rectangle{0, 0, 32, 32}, {0, 0, 400, 400});
 
         renderer->finishRendering();
     }

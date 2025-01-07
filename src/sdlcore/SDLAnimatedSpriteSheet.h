@@ -13,6 +13,12 @@ namespace SDLCore
         void render(IRenderer *renderer, int x, int y) override;
         void render(IRenderer *renderer, const Rectangle &src, const Rectangle &dst) override;
 
+        void setDuration(double durationInSeconds);
+        double getDuration() const;
+
+        void setIsRepeating(bool isRepeating);
+        bool isRepeating() const;
+
     private:
         explicit SDLAnimatedSpriteSheet(TexturePtr texture, std::pair<int, int> frameSize, double secondsPerFrame, unsigned int framesCount);
 
@@ -23,5 +29,6 @@ namespace SDLCore
         double secondsPerFrame;
 
         std::pair<int, int> frameSize;
+        bool isRepeating_ = true;
     };
 }
