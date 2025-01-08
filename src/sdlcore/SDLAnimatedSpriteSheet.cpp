@@ -1,17 +1,22 @@
 #include "SDLAnimatedSpriteSheet.h"
 #include "SDLTimeController.h"
+#include "Texture/ITextureManager.h"
 #include <algorithm>
 
-SDLCore::SDLAnimatedSpriteSheet SDLCore::SDLAnimatedSpriteSheet::loadPNG(class SDLRenderer *renderer,
-    std::string const& fileName, std::pair<int, int> frameSize, double secondsPerFrame, unsigned int framesCount)
+SDLCore::SDLAnimatedSpriteSheet::SDLAnimatedSpriteSheet(ITextureManager *textureManager, std::uint32_t textureId,
+    std::pair<int, int> frameSize, double secondsPerFrame, unsigned int framesCount)
+    : textureId(textureId), frameSize(std::move(frameSize)), secondsPerFrame(secondsPerFrame),
+        framesCount(framesCount), textureManager(textureManager)
 {
-    auto texture  = SDLTexture::loadPNGRaw(fileName, renderer);
-
-    return SDLAnimatedSpriteSheet{std::move(texture), std::move(frameSize), secondsPerFrame, framesCount};
 }
 
 void SDLCore::SDLAnimatedSpriteSheet::render(IRenderer *renderer, int x, int y)
 {
+    if (!textureManager) [[unlikely]]
+    {
+        return;
+    }
+
     currentFrameTime += SDLTimeController::getDeltaTime();
 
     if (currentFrameTime >= secondsPerFrame)
@@ -25,11 +30,16 @@ void SDLCore::SDLAnimatedSpriteSheet::render(IRenderer *renderer, int x, int y)
 
     Math::Rectangle dstRect{x, y, frameSize.first, frameSize.second};
 
-    SDLTexture::render(renderer, srcRect, dstRect);
+    textureManager->getTexture(textureId)->render(renderer, srcRect, dstRect);
 }
 
 void SDLCore::SDLAnimatedSpriteSheet::render(IRenderer *renderer, const Math::Rectangle &src, const Math::Rectangle &dst)
 {
+    if (!textureManager) [[unlikely]]
+    {
+        return;
+    }
+
     currentFrameTime += SDLTimeController::getDeltaTime();
 
     if (currentFrameTime >= secondsPerFrame)
@@ -42,7 +52,7 @@ void SDLCore::SDLAnimatedSpriteSheet::render(IRenderer *renderer, const Math::Re
         }
         else [[unlikely]]
         {
-            if (isRepeating_) [[likely]]
+            if (isLoop_) [[likely]]
             {
                 currentFrameIndex = 0;
             }
@@ -57,7 +67,7 @@ void SDLCore::SDLAnimatedSpriteSheet::render(IRenderer *renderer, const Math::Re
 
     Math::Rectangle srcRect{static_cast<int>(frameSize.first * currentFrameIndex),32, frameSize.first, frameSize.second};
 
-    SDLTexture::render(renderer, srcRect, dst);
+    textureManager->getTexture(textureId)->render(renderer, srcRect, dst);
 }
 
 void SDLCore::SDLAnimatedSpriteSheet::setDuration(double durationInSeconds)
@@ -70,18 +80,12 @@ double SDLCore::SDLAnimatedSpriteSheet::getDuration() const
     return secondsPerFrame * framesCount;
 }
 
-void SDLCore::SDLAnimatedSpriteSheet::setIsRepeating(bool isRepeating)
+void SDLCore::SDLAnimatedSpriteSheet::isLoop(bool loop)
 {
-    isRepeating_ = isRepeating;
+    isLoop_ = loop;
 }
 
-bool SDLCore::SDLAnimatedSpriteSheet::isRepeating() const
+bool SDLCore::SDLAnimatedSpriteSheet::isLoop() const
 {
-    return isRepeating_;
-}
-
-SDLCore::SDLAnimatedSpriteSheet::SDLAnimatedSpriteSheet(TexturePtr texture, std::pair<int, int> frameSize, double secondsPerFrame,  unsigned int framesCount)
-    : SDLTexture(std::move(texture)), frameSize(std::move(frameSize)), secondsPerFrame(secondsPerFrame), framesCount(framesCount)
-{
-
+    return isLoop_;
 }

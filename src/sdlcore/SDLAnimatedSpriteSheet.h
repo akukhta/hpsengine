@@ -4,24 +4,32 @@
 
 namespace SDLCore
 {
-    class SDLAnimatedSpriteSheet : public SDLTexture
+    // Animation class description:
+    // Should behave as a proxy under SDLTexture
+    // It does not own the texture, it holds a name/descriptor of the corresponding texture
+    // This class responsible for:
+    // 1. Current frame switching
+    // 2. Time managing
+    // 3. Querying functionality (duration, frames count)
+
+    class SDLAnimatedSpriteSheet : public IRenderable
     {
     public:
-        static SDLAnimatedSpriteSheet loadPNG(class SDLRenderer *renderer, std::string const& fileName, std::pair<int, int> frameSize,
-            double secondsPerFrame, unsigned int framesCount);
+        SDLAnimatedSpriteSheet(class ITextureManager* textureManager, std::uint32_t textureId, std::pair<int, int> frameSize, double secondsPerFrame,
+            unsigned int framesCount);
 
         void render(IRenderer *renderer, int x, int y) override;
         void render(IRenderer *renderer, const Math::Rectangle &src, const Math::Rectangle &dst) override;
 
+        void render(IRenderer *renderer, int x, int y, int w, int h) override {};
+
         void setDuration(double durationInSeconds);
         double getDuration() const;
 
-        void setIsRepeating(bool isRepeating);
-        bool isRepeating() const;
+        void isLoop(bool loop);
+        bool isLoop() const;
 
     private:
-        explicit SDLAnimatedSpriteSheet(TexturePtr texture, std::pair<int, int> frameSize, double secondsPerFrame, unsigned int framesCount);
-
         unsigned int currentFrameIndex = 0;
         unsigned int framesCount;
 
@@ -29,6 +37,10 @@ namespace SDLCore
         double secondsPerFrame;
 
         std::pair<int, int> frameSize;
-        bool isRepeating_ = true;
+        bool isLoop_ = true;
+
+        std::uint32_t textureId = 0;
+
+        ITextureManager* textureManager = nullptr;
     };
 }
