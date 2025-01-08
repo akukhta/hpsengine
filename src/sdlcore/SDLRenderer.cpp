@@ -61,7 +61,7 @@ void SDLCore::SDLRenderer::renderTexture(SDLTexture *texture, int x, int y, int 
     SDL_RenderCopy(renderer.get(), texture->texture.get(), &texture->srcRect, &dst);
 }
 
-void SDLCore::SDLRenderer::renderTexture(SDLTexture *texture, Rectangle const &src, Rectangle const &dst)
+void SDLCore::SDLRenderer::renderTexture(SDLTexture *texture, Math::Rectangle const &src, Math::Rectangle const &dst)
 {
     if (!texture)
     {

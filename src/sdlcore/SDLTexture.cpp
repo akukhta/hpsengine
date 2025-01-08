@@ -54,7 +54,7 @@ void SDLCore::SDLTexture::render(IRenderer *renderer, int x, int y, int w, int h
     renderer->renderTexture(this, x, y, w, h);
 }
 
-void SDLCore::SDLTexture::render(IRenderer *renderer, const Rectangle &src, const Rectangle &dst)
+void SDLCore::SDLTexture::render(IRenderer *renderer, const Math::Rectangle &src, const Math::Rectangle &dst)
 {
     renderer->renderTexture(this, src, dst);
 }

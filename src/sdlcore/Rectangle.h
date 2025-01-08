@@ -2,11 +2,14 @@
 
 namespace SDLCore
 {
-    struct Rectangle
+    namespace Math
     {
-       int x;
-       int y;
-       int width;
-       int height;
-    };
+        struct Rectangle
+        {
+            int x;
+            int y;
+            int width;
+            int height;
+        };
+    }
 }

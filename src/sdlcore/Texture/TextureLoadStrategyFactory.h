@@ -14,7 +14,8 @@ namespace SDLCore
         {
             if (auto it = strategies.find(std::type_index(typeid(StrategyType))); it == strategies.end())
             {
-                strategies[std::type_index(typeid(StrategyType))] = std::make_unique<StrategyType>();
+                return strategies.insert({std::type_index(typeid(StrategyType)),
+                    std::make_unique<StrategyType>()}).first->second.get();
             }
             else
             {

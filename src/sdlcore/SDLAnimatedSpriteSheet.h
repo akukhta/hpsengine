@@ -11,7 +11,7 @@ namespace SDLCore
             double secondsPerFrame, unsigned int framesCount);
 
         void render(IRenderer *renderer, int x, int y) override;
-        void render(IRenderer *renderer, const Rectangle &src, const Rectangle &dst) override;
+        void render(IRenderer *renderer, const Math::Rectangle &src, const Math::Rectangle &dst) override;
 
         void setDuration(double durationInSeconds);
         double getDuration() const;

@@ -35,9 +35,15 @@ add_executable(sdlplgrd main.cpp
         src/sdlcore/SDLAnimatedSpriteSheet.cpp
         src/sdlcore/SDLAnimatedSpriteSheet.h
         src/sdlcore/Rectangle.h
-        src/sdlcore/ITextureManager.h
+        src/sdlcore/Texture/ITextureManager.h
         src/sdlcore/Texture/ITextureLoadStrategy.h
         src/sdlcore/Texture/TextureLoadStrategyFactory.h
+        src/sdlcore/Texture/LoadBMP.cpp
+        src/sdlcore/Texture/LoadBMP.h
+        src/sdlcore/Texture/LoadPNG.cpp
+        src/sdlcore/Texture/LoadPNG.h
+        src/sdlcore/Texture/TextureManager.cpp
+        src/sdlcore/Texture/TextureManager.h
 )
 
 target_link_libraries(${PROJECT_NAME} SDL2::SDL2main)

@@ -20,15 +20,15 @@ void SDLCore::SDLAnimatedSpriteSheet::render(IRenderer *renderer, int x, int y)
         currentFrameTime = 0;
     }
 
-    Rectangle srcRect{static_cast<int>(frameSize.first * currentFrameIndex),
+    Math::Rectangle srcRect{static_cast<int>(frameSize.first * currentFrameIndex),
         static_cast<int>(frameSize.second * currentFrameIndex), frameSize.first, frameSize.second};
 
-    Rectangle dstRect{x, y, frameSize.first, frameSize.second};
+    Math::Rectangle dstRect{x, y, frameSize.first, frameSize.second};
 
     SDLTexture::render(renderer, srcRect, dstRect);
 }
 
-void SDLCore::SDLAnimatedSpriteSheet::render(IRenderer *renderer, const Rectangle &src, const Rectangle &dst)
+void SDLCore::SDLAnimatedSpriteSheet::render(IRenderer *renderer, const Math::Rectangle &src, const Math::Rectangle &dst)
 {
     currentFrameTime += SDLTimeController::getDeltaTime();
 
@@ -55,7 +55,7 @@ void SDLCore::SDLAnimatedSpriteSheet::render(IRenderer *renderer, const Rectangl
         currentFrameTime = 0;
     }
 
-    Rectangle srcRect{static_cast<int>(frameSize.first * currentFrameIndex),32, frameSize.first, frameSize.second};
+    Math::Rectangle srcRect{static_cast<int>(frameSize.first * currentFrameIndex),32, frameSize.first, frameSize.second};
 
     SDLTexture::render(renderer, srcRect, dst);
 }
