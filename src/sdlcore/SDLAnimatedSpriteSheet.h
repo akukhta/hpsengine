@@ -1,6 +1,7 @@
 #pragma once
 #include "SDLTexture.h"
 #include <string_view>
+#include "IUpdatable.h"
 
 namespace SDLCore
 {
@@ -12,16 +13,17 @@ namespace SDLCore
     // 2. Time managing
     // 3. Querying functionality (duration, frames count)
 
-    class SDLAnimatedSpriteSheet : public IRenderable
+    class SDLAnimatedSpriteSheet : public IRenderable, public IUpdatable
     {
     public:
-        SDLAnimatedSpriteSheet(class ITextureManager* textureManager, std::uint32_t textureId, std::pair<int, int> frameSize, double secondsPerFrame,
+        SDLAnimatedSpriteSheet(class ITextureManager* textureManager, std::uint32_t textureId, std::pair<int, int> frameSize, double duration,
             unsigned int framesCount);
 
         void render(IRenderer *renderer, int x, int y) override;
         void render(IRenderer *renderer, const Math::Rectangle &src, const Math::Rectangle &dst) override;
-
         void render(IRenderer *renderer, int x, int y, int w, int h) override {};
+
+        void update(double deltaTime) override;
 
         void setDuration(double durationInSeconds);
         double getDuration() const;

@@ -4,10 +4,11 @@
 #include <algorithm>
 
 SDLCore::SDLAnimatedSpriteSheet::SDLAnimatedSpriteSheet(ITextureManager *textureManager, std::uint32_t textureId,
-    std::pair<int, int> frameSize, double secondsPerFrame, unsigned int framesCount)
-    : textureId(textureId), frameSize(std::move(frameSize)), secondsPerFrame(secondsPerFrame),
+    std::pair<int, int> frameSize, double duration, unsigned int framesCount)
+    : textureId(textureId), frameSize(std::move(frameSize)),
         framesCount(framesCount), textureManager(textureManager)
 {
+    setDuration(duration);
 }
 
 void SDLCore::SDLAnimatedSpriteSheet::render(IRenderer *renderer, int x, int y)
@@ -15,14 +16,6 @@ void SDLCore::SDLAnimatedSpriteSheet::render(IRenderer *renderer, int x, int y)
     if (!textureManager) [[unlikely]]
     {
         return;
-    }
-
-    currentFrameTime += SDLTimeController::getDeltaTime();
-
-    if (currentFrameTime >= secondsPerFrame)
-    {
-        currentFrameIndex = (currentFrameIndex + 1) % framesCount;
-        currentFrameTime = 0;
     }
 
     Math::Rectangle srcRect{static_cast<int>(frameSize.first * currentFrameIndex),
@@ -40,7 +33,14 @@ void SDLCore::SDLAnimatedSpriteSheet::render(IRenderer *renderer, const Math::Re
         return;
     }
 
-    currentFrameTime += SDLTimeController::getDeltaTime();
+    Math::Rectangle srcRect{static_cast<int>(frameSize.first * currentFrameIndex),32, frameSize.first, frameSize.second};
+
+    textureManager->getTexture(textureId)->render(renderer, srcRect, dst);
+}
+
+void SDLCore::SDLAnimatedSpriteSheet::update(double deltaTime)
+{
+    currentFrameTime += deltaTime;
 
     if (currentFrameTime >= secondsPerFrame)
     {
@@ -64,10 +64,6 @@ void SDLCore::SDLAnimatedSpriteSheet::render(IRenderer *renderer, const Math::Re
 
         currentFrameTime = 0;
     }
-
-    Math::Rectangle srcRect{static_cast<int>(frameSize.first * currentFrameIndex),32, frameSize.first, frameSize.second};
-
-    textureManager->getTexture(textureId)->render(renderer, srcRect, dst);
 }
 
 void SDLCore::SDLAnimatedSpriteSheet::setDuration(double durationInSeconds)

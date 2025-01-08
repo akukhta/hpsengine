@@ -29,34 +29,39 @@ void SDLCore::SDLGame::run()
     TextureManager tManager(std::make_unique<TextureLoadStrategyFactory>());
     auto textureTM = tManager.loadTexture<LoadPNG>("/Users/khk/Downloads/5b92b51b196573108b203ad1.png", renderer.get());
 
-    auto animation = SDLAnimatedSpriteSheet::loadPNG(renderer.get(), "/Users/khk/Downloads/FREE_Samurai 2D Pixel Art v1.2/Sprites/attack.png",
-        std::make_pair(96, 96), 0.2, 7);
+    auto animatedTextureID = tManager.loadTexture<LoadPNG>("/Users/khk/Downloads/FREE_Samurai 2D Pixel Art v1.2/Sprites/attack.png", renderer.get());
+    SDLAnimatedSpriteSheet animation{&tManager, animatedTextureID, {96, 96}, 1, 7};
+    //animation.setDuration(1);
+    // auto animation = SDLAnimatedSpriteSheet::loadPNG(renderer.get(), "/Users/khk/Downloads/FREE_Samurai 2D Pixel Art v1.2/Sprites/attack.png",
+    //     std::make_pair(96, 96), 0.2, 7);
 
     Primitives::Rectangle rect{100, 100, Primitives::Colors::Red, true};
     Primitives::Circle c{300, 300, 120, Primitives::Colors::Gray, true};
 
-    animation.setDuration(1);
-    animation.setIsRepeating(true);
-
-    std::cout << "Animation duration: " << animation.getDuration() << std::endl;
+    // animation.setDuration(1);
+    // animation.setIsRepeating(true);
+    //
+    // std::cout << "Animation duration: " << animation.getDuration() << std::endl;
 
     while (isRunning_)
     {
         // update
         {
             SDLTimeController::update();
+            auto deltaTime = SDLTimeController::getDeltaTime();
+            animation.update(deltaTime);
         }
 
         eventHandler->handleEvents();
         renderer->startRendering();
 
-        tManager.getTexture(textureTM)->render(renderer.get(), 0, 0);
+        //tManager.getTexture(textureTM)->render(renderer.get(), 0, 0);
 
         //texture.render(renderer.get(), 0, 0);
         //rect.render(renderer.get(), 300, 0, 200, 200);
         //c.render(renderer.get(), 300, 300, 120);
 
-        //animation.render(renderer.get(), Rectangle{0, 0, 32, 32}, {0, 0, 400, 400});
+        animation.render(renderer.get(), Math::Rectangle{0, 0, 32, 32}, {0, 0, 640, 480});
 
         renderer->finishRendering();
     }

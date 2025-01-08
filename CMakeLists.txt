@@ -44,6 +44,7 @@ add_executable(sdlplgrd main.cpp
         src/sdlcore/Texture/LoadPNG.h
         src/sdlcore/Texture/TextureManager.cpp
         src/sdlcore/Texture/TextureManager.h
+        src/sdlcore/IUpdatable.h
 )
 
 target_link_libraries(${PROJECT_NAME} SDL2::SDL2main)
