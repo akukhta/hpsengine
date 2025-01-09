@@ -1,6 +1,8 @@
 #pragma once
 #include "SDLRenderer.h"
 #include "SDLEventHandler.h"
+#include "Scene/Scene.h"
+#include <memory>
 
 namespace SDLCore
 {
@@ -19,9 +21,16 @@ namespace SDLCore
 
         void onGameQuit();
     private:
+
+        void update();
+        void handleEvents();
+        void render();
+
         RendererPtr renderer;
         EventHandlerPtr eventHandler;
 
         bool isRunning_ = false;
+
+        std::unique_ptr<Scene> scene;
     };
 }

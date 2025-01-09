@@ -45,6 +45,10 @@ add_executable(sdlplgrd main.cpp
         src/sdlcore/Texture/TextureManager.cpp
         src/sdlcore/Texture/TextureManager.h
         src/sdlcore/IUpdatable.h
+        src/sdlcore/GameObject/GameObject.cpp
+        src/sdlcore/GameObject/GameObject.h
+        src/sdlcore/Scene/Scene.cpp
+        src/sdlcore/Scene/Scene.h
 )
 
 target_link_libraries(${PROJECT_NAME} SDL2::SDL2main)

@@ -46,11 +46,6 @@ void SDLCore::SDLGame::run()
     while (isRunning_)
     {
         // update
-        {
-            SDLTimeController::update();
-            auto deltaTime = SDLTimeController::getDeltaTime();
-            animation.update(deltaTime);
-        }
 
         eventHandler->handleEvents();
         renderer->startRendering();
@@ -75,4 +70,28 @@ bool SDLCore::SDLGame::isRunning() const
 void SDLCore::SDLGame::onGameQuit()
 {
     isRunning_ = false;
+}
+
+void SDLCore::SDLGame::update()
+{
+    SDLTimeController::update();
+    auto deltaTime = SDLTimeController::getDeltaTime();
+
+    for (auto const &updatableObject : scene->updatableObjects)
+    {
+        updatableObject->update(deltaTime);
+    }
+}
+
+void SDLCore::SDLGame::handleEvents()
+{
+    // ...
+}
+
+void SDLCore::SDLGame::render()
+{
+    for (auto const& renderableObject : scene->renderableObjects)
+    {
+        renderableObject->render(renderer.get(), Math::Rectangle{0, 0, 0, 0},{0, 0, 640, 480});
+    }
 }
