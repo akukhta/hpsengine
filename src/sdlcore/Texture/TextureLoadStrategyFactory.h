@@ -12,7 +12,7 @@ namespace SDLCore
             requires std::is_base_of_v<ITextureLoadStrategy, StrategyType>
         ITextureLoadStrategy* getStrategy()
         {
-            if (auto it = strategies.find(std::type_index(typeid(StrategyType))); it == strategies.end())
+            if (auto const it = strategies.find(std::type_index(typeid(StrategyType))); it == strategies.end())
             {
                 return strategies.insert({std::type_index(typeid(StrategyType)),
                     std::make_unique<StrategyType>()}).first->second.get();

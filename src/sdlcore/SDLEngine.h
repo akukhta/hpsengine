@@ -24,7 +24,11 @@ namespace SDLCore
                 renderer_.render();
             }
         }
-        bool isRunning() const;
+        bool isRunning() const
+        {
+            return isRunning_;
+        }
+
     private:
         bool isRunning_ = true;
 

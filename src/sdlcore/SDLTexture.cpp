@@ -7,7 +7,7 @@
 
 SDLCore::SDLTexture SDLCore::SDLTexture::loadFromBMP(std::string const &fileName, SDLRenderer* renderer)
 {
-    SurfacePtr tmpSurface = SurfacePtr{SDL_LoadBMP(fileName.c_str()), &SDL_FreeSurface};
+    SurfacePtr const tmpSurface = SurfacePtr{SDL_LoadBMP(fileName.c_str()), &SDL_FreeSurface};
 
     if (!tmpSurface)
     {

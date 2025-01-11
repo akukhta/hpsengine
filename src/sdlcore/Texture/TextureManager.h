@@ -8,7 +8,7 @@ namespace SDLCore
     class TextureManager : public ITextureManager
     {
     public:
-        TextureManager(std::unique_ptr<TextureLoadStrategyFactory> loadFactory);
+        explicit TextureManager(std::unique_ptr<TextureLoadStrategyFactory> loadFactory);
 
         SDLTexture* getTexture(std::uint32_t textureDescriptor) noexcept override;
         SDLTexture& getTexture(std::uint32_t textureDescriptor, const AsRef &tag) override;

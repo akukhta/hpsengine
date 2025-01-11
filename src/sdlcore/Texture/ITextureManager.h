@@ -16,7 +16,7 @@ namespace SDLCore
         virtual ~ITextureManager() = default;
 
         struct AsRef{};
-        static const inline AsRef GetReference{};
+        static constexpr AsRef GetReference{};
 
         virtual SDLTexture* getTexture(std::uint32_t textureDescriptor) noexcept = 0;
         virtual SDLTexture& getTexture(std::uint32_t textureDescriptor, AsRef const& tag) = 0;

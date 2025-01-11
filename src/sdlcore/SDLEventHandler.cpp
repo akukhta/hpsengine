@@ -27,9 +27,9 @@ void SDLCore::SDLEventHandler::handleEvents()
 
 void SDLCore::SDLEventHandler::callHandler(EventType type)
 {
-    auto range = eventHandlers.equal_range(type);
+    auto const &[begin, end] = eventHandlers.equal_range(type);
 
-    for (auto it = range.first; it != range.second; ++it)
+    for (auto it = begin; it != end; ++it)
     {
         it->second();
     }

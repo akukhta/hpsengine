@@ -5,7 +5,7 @@
 
 std::unique_ptr<SDLCore::SDLTexture> SDLCore::LoadPNG::load(const std::string &fileName, IRenderer *renderer)
 {
-    auto sdlRenderer = dynamic_cast<SDLRenderer*>(renderer);
+    auto const sdlRenderer = dynamic_cast<SDLRenderer*>(renderer);
 
     if (sdlRenderer == nullptr)
     {

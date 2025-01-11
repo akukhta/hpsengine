@@ -10,14 +10,14 @@ namespace SDLCore
     class SDLRenderer : public IRenderer
     {
     public:
-        SDLRenderer(class SDLWindow* window);
+        explicit SDLRenderer(class SDLWindow* window);
 
         void setResolution(int width, int height);
         void setResolution(std::pair<int, int> resolution);
-        std::pair<int, int> getResolution();
+        std::pair<int, int> getResolution() const;
 
 #ifndef _DEBUG
-        SDL_Renderer* getRenderer()
+        SDL_Renderer* getRenderer() const
         {
             return renderer.get();
         }
@@ -41,7 +41,7 @@ namespace SDLCore
 
         void changeResolution();
 
-        SDL_Color getDrawColor();
+        SDL_Color getDrawColor() const;
         void setDrawColor(SDL_Color color);
         SDL_Color exchangeColor(SDL_Color color);
 

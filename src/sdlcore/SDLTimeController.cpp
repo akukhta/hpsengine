@@ -1,4 +1,5 @@
 #include "SDLTimeController.h"
+#include <SDL2/SDL.h>
 
 double SDLCore::SDLTimeController::getDeltaTime()
 {
@@ -31,7 +32,7 @@ SDLCore::SDLTimeController & SDLCore::SDLTimeController::getInstance()
     return instance;
 }
 
-double SDLCore::SDLTimeController::getDeltaTimeImpl()
+double SDLCore::SDLTimeController::getDeltaTimeImpl() const
 {
     return deltaTime;
 }

@@ -3,10 +3,9 @@
 #include <SDL2/SDL_render.h>
 #include <stdexcept>
 #include "SDLTexture.h"
-#include <SDL2/SDL_render.h>
 #include "../primitives/Rectangle.h"
 
-SDLCore::SDLRenderer::SDLRenderer(class SDLWindow *window)
+SDLCore::SDLRenderer::SDLRenderer(SDLWindow *window)
 {
     if (!window->window)
     {
@@ -28,7 +27,7 @@ void SDLCore::SDLRenderer::setResolution(std::pair<int, int> resolution)
     changeResolution();
 }
 
-std::pair<int, int> SDLCore::SDLRenderer::getResolution()
+std::pair<int, int> SDLCore::SDLRenderer::getResolution() const
 {
     return resolution;
 }
@@ -57,7 +56,7 @@ void SDLCore::SDLRenderer::renderTexture(SDLTexture *texture, int x, int y, int 
         return;
     }
 
-    SDL_Rect dst = {x, y, w, h};
+    SDL_Rect const dst = {x, y, w, h};
     SDL_RenderCopy(renderer.get(), texture->texture.get(), &texture->srcRect, &dst);
 }
 
@@ -68,8 +67,8 @@ void SDLCore::SDLRenderer::renderTexture(SDLTexture *texture, Math::Rectangle co
         return;
     }
 
-    SDL_Rect sdlSrc{src.x, src.y, src.width, src.height};
-    SDL_Rect sdlDst{dst.x, dst.y, dst.width, dst.height};
+    SDL_Rect const sdlSrc{src.x, src.y, src.width, src.height};
+    SDL_Rect const sdlDst{dst.x, dst.y, dst.width, dst.height};
 
     SDL_RenderCopy(renderer.get(), texture->texture.get(), &sdlSrc, &sdlDst);
 }
@@ -81,9 +80,9 @@ void SDLCore::SDLRenderer::renderRectangle(Primitives::Rectangle *rectangle, int
         return;
     }
 
-    auto prevColor = exchangeColor(rectangle->color);
+    auto const prevColor = exchangeColor(rectangle->color);
 
-    SDL_Rect dst = {x, y, w, h};
+    SDL_Rect const dst = {x, y, w, h};
 
     if (rectangle->fill)
     {
@@ -104,9 +103,9 @@ void SDLCore::SDLRenderer::renderRectangle(Primitives::Rectangle *rectangle, int
         return;
     }
 
-    auto prevColor = exchangeColor(rectangle->color);
+    auto const prevColor = exchangeColor(rectangle->color);
 
-    SDL_Rect dst = {x, y, rectangle->srcRect.w, rectangle->srcRect.h};
+    SDL_Rect const dst = {x, y, rectangle->srcRect.w, rectangle->srcRect.h};
 
     if (rectangle->fill)
     {
@@ -126,7 +125,7 @@ void SDLCore::SDLRenderer::renderCircle(Primitives::Circle *circle, int centerX,
     {
         return;
     }
-    auto prevColor = exchangeColor(circle->color);
+    auto const prevColor = exchangeColor(circle->color);
 
     if (!circle->filled)
     {
@@ -139,7 +138,7 @@ void SDLCore::SDLRenderer::renderCircle(Primitives::Circle *circle, int centerX,
     {
         for (int y = -r; y <= r; ++y)
         {
-            int x = static_cast<int>(sqrt(r * r - y * y));
+            int const x = static_cast<int>(sqrt(r * r - y * y));
             SDL_RenderDrawLine(renderer.get(), centerX - x, centerY + y, centerX + x, centerY + y);
         }
     }
@@ -155,7 +154,7 @@ void SDLCore::SDLRenderer::changeResolution()
     }
 }
 
-SDL_Color SDLCore::SDLRenderer::getDrawColor()
+SDL_Color SDLCore::SDLRenderer::getDrawColor() const
 {
     SDL_Color color;
     SDL_GetRenderDrawColor(renderer.get(), &color.r, &color.g, &color.b, &color.a);
@@ -170,7 +169,7 @@ void SDLCore::SDLRenderer::setDrawColor(SDL_Color color)
 
 SDL_Color SDLCore::SDLRenderer::exchangeColor(SDL_Color color)
 {
-    auto prevColor = getDrawColor();
+    auto const prevColor = getDrawColor();
     setDrawColor(color);
 
     return prevColor;

@@ -1,5 +1,4 @@
 #pragma once
-#include <SDL2/SDL.h>
 #include <cstdint>
 
 namespace SDLCore
@@ -29,7 +28,7 @@ namespace SDLCore
         std::uint32_t currentTicks = 0; // Last checked ticks
         double deltaTime = 0; // In Seconds (1 = 1 second)
 
-        double getDeltaTimeImpl();
+        double getDeltaTimeImpl() const;
         void updateImpl();
         void pauseImpl();
         void resumeImpl();

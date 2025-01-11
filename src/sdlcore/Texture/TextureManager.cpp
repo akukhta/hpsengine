@@ -6,7 +6,7 @@ SDLCore::TextureManager::TextureManager(std::unique_ptr<TextureLoadStrategyFacto
 
 SDLCore::SDLTexture* SDLCore::TextureManager::getTexture(std::uint32_t textureDescriptor) noexcept
 {
-    if (auto it = textures.find(textureDescriptor); it != textures.end()) [[likely]]
+    if (auto const it = textures.find(textureDescriptor); it != textures.end()) [[likely]]
     {
         return it->second.get();
     }
@@ -16,13 +16,13 @@ SDLCore::SDLTexture* SDLCore::TextureManager::getTexture(std::uint32_t textureDe
 
 SDLCore::SDLTexture& SDLCore::TextureManager::getTexture(std::uint32_t textureDescriptor, const AsRef &tag)
 {
-    if (auto it = textures.find(textureDescriptor); it != textures.end()) [[likely]]
-    {
-        return *it->second;
-    }
-    else
+    if (auto const it = textures.find(textureDescriptor); it == textures.end()) [[unlikely]]
     {
         throw std::runtime_error("Texture does not exist");
+    }
+    else [[likely]]
+    {
+        return *it->second;
     }
 }
 
@@ -30,7 +30,7 @@ SDLCore::SDLTexture* SDLCore::TextureManager::getTexture(const std::string &name
 {
     std::uint32_t textureDescriptor = 0;
 
-    if (auto it = nameDescriptorMap.find(name); it != nameDescriptorMap.end()) [[likely]]
+    if (auto const it = nameDescriptorMap.find(name); it != nameDescriptorMap.end()) [[likely]]
     {
         textureDescriptor = it->second;
     }
@@ -44,9 +44,9 @@ SDLCore::SDLTexture* SDLCore::TextureManager::getTexture(const std::string &name
 
 SDLCore::SDLTexture& SDLCore::TextureManager::getTexture(const std::string &name, const AsRef &tag)
 {
-    if (auto it = nameDescriptorMap.find(name); it != nameDescriptorMap.end()) [[likely]]
+    if (auto const it = nameDescriptorMap.find(name); it != nameDescriptorMap.end()) [[likely]]
     {
-        if (auto texture = textures.find(it->second); texture != textures.end()) [[likely]]
+        if (auto const texture = textures.find(it->second); texture != textures.end()) [[likely]]
         {
             return *texture->second;
         }

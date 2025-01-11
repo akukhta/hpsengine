@@ -1,6 +1,5 @@
 #pragma once
 #include "SDLTexture.h"
-#include <string_view>
 #include "IUpdatable.h"
 
 namespace SDLCore

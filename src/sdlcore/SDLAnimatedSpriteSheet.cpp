@@ -18,10 +18,10 @@ void SDLCore::SDLAnimatedSpriteSheet::render(IRenderer *renderer, int x, int y)
         return;
     }
 
-    Math::Rectangle srcRect{static_cast<int>(frameSize.first * currentFrameIndex),
+    Math::Rectangle const srcRect{static_cast<int>(frameSize.first * currentFrameIndex),
         static_cast<int>(frameSize.second * currentFrameIndex), frameSize.first, frameSize.second};
 
-    Math::Rectangle dstRect{x, y, frameSize.first, frameSize.second};
+    Math::Rectangle const dstRect{x, y, frameSize.first, frameSize.second};
 
     textureManager->getTexture(textureId)->render(renderer, srcRect, dstRect);
 }
@@ -33,7 +33,7 @@ void SDLCore::SDLAnimatedSpriteSheet::render(IRenderer *renderer, const Math::Re
         return;
     }
 
-    Math::Rectangle srcRect{static_cast<int>(frameSize.first * currentFrameIndex),32, frameSize.first, frameSize.second};
+    Math::Rectangle const srcRect{static_cast<int>(frameSize.first * currentFrameIndex),32, frameSize.first, frameSize.second};
 
     textureManager->getTexture(textureId)->render(renderer, srcRect, dst);
 }
@@ -44,7 +44,7 @@ void SDLCore::SDLAnimatedSpriteSheet::update(double deltaTime)
 
     if (currentFrameTime >= secondsPerFrame)
     {
-        currentFrameIndex = (currentFrameIndex + 1);
+        ++currentFrameIndex;
 
         if (currentFrameIndex + 1 < framesCount) [[likely]]
         {

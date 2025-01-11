@@ -6,7 +6,6 @@ namespace SDLCore
 {
     class SDLGame
     {
-    private:
         using RendererPtr = std::unique_ptr<SDLRenderer>;
         using EventHandlerPtr = std::unique_ptr<SDLEventHandler>;
 
