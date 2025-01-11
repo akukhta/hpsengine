@@ -5,14 +5,13 @@
 #include "../primitives/Rectangle.h"
 #include "SDLTimeController.h"
 #include <iostream>
-
 #include "Texture/LoadPNG.h"
 #include "Texture/TextureManager.h"
 
 SDLCore::SDLGame::SDLGame(RendererPtr renderer, EventHandlerPtr eventHandler)
     : renderer(std::move(renderer)), eventHandler(std::move(eventHandler))
 {
-    this->eventHandler->addEventHandler(SDLCore::SDLEventHandler::EventType::QUIT, [this](){onGameQuit();});
+    this->eventHandler->addEventHandler(SDLEventHandler::EventType::QUIT, [this](){onGameQuit();});
 }
 
 void SDLCore::SDLGame::init()
