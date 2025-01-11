@@ -1,4 +1,5 @@
 #include "TextureManager.h"
+#include <stdexcept>
 
 SDLCore::TextureManager::TextureManager(std::unique_ptr<TextureLoadStrategyFactory> loadFactory)
     : loadFactory(std::move(loadFactory)) {}

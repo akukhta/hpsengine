@@ -2,6 +2,7 @@
 #include <SDL2/SDL.h>
 #include <memory>
 #include <utility>
+#include <string>
 #include "IRenderable.h"
 
 namespace SDLCore
