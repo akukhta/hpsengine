@@ -6,6 +6,10 @@ namespace SDLCore
     class SDLTimeController
     {
     public:
+        SDLTimeController(const SDLTimeController&) = delete;
+        SDLTimeController& operator=(const SDLTimeController&) = delete;
+        SDLTimeController(SDLTimeController&&) = delete;
+        SDLTimeController& operator=(SDLTimeController&&) = delete;
 
         // Static proxy functions to avoid calls to "getInstance()" every time
         static double getDeltaTime();
@@ -17,11 +21,6 @@ namespace SDLCore
     private:
         SDLTimeController() = default;
         ~SDLTimeController() = default;
-
-        SDLTimeController(const SDLTimeController&) = delete;
-        SDLTimeController& operator=(const SDLTimeController&) = delete;
-        SDLTimeController(SDLTimeController&&) = delete;
-        SDLTimeController& operator=(SDLTimeController&&) = delete;
 
         static SDLTimeController& getInstance();
 

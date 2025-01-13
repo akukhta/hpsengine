@@ -1,15 +1,12 @@
 #pragma once
 
-namespace SDLCore
+namespace SDLCore::Math
 {
-    namespace Math
+    struct Rectangle
     {
-        struct Rectangle
-        {
-            int x;
-            int y;
-            int width;
-            int height;
-        };
-    }
+        int x;
+        int y;
+        int width;
+        int height;
+    };
 }

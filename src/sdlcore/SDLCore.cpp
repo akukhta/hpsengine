@@ -26,7 +26,7 @@ bool SDLCore::SDLCore::initFont()
 std::unique_ptr<SDLCore::SDLWindow> SDLCore::SDLCore::createWindow(std::string_view title, std::pair<int, int> size,
     std::pair<int, int> pos, bool isShown, bool isFullscreen)
 {
-    return std::make_unique<SDLWindow>(title, std::move(size), std::move(pos), isShown, isFullscreen);
+    return std::make_unique<SDLWindow>(title, size, pos, isShown, isFullscreen);
 }
 
 std::unique_ptr<SDLCore::SDLRenderer> SDLCore::SDLCore::createRenderer(std::unique_ptr<SDLWindow> &window)

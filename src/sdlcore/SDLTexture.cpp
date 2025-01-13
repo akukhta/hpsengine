@@ -5,21 +5,21 @@
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_rect.h>
 
-SDLCore::SDLTexture SDLCore::SDLTexture::loadFromBMP(std::string const &fileName, SDLRenderer* renderer)
+SDLCore::SDLTexture SDLCore::SDLTexture::loadFromBMP(std::string const &fileName, SDLRenderer const *renderer)
 {
-    SurfacePtr const tmpSurface = SurfacePtr{SDL_LoadBMP(fileName.c_str()), &SDL_FreeSurface};
+    auto const tmpSurface = SurfacePtr{SDL_LoadBMP(fileName.c_str()), &SDL_FreeSurface};
 
     if (!tmpSurface)
     {
         throw std::runtime_error("Unable to load image");
     }
 
-    TexturePtr texture = TexturePtr{SDL_CreateTextureFromSurface(renderer->getRenderer(), tmpSurface.get()), &SDL_DestroyTexture};
+    auto texture = TexturePtr{SDL_CreateTextureFromSurface(renderer->getRenderer(), tmpSurface.get()), &SDL_DestroyTexture};
 
     return SDLTexture{std::move(texture)};
 }
 
-SDLCore::SDLTexture SDLCore::SDLTexture::loadPNG(std::string const &fileName, SDLRenderer *renderer)
+SDLCore::SDLTexture SDLCore::SDLTexture::loadPNG(std::string const &fileName, SDLRenderer const *renderer)
 {
     TexturePtr texture{IMG_LoadTexture(renderer->getRenderer(), fileName.c_str()), &SDL_DestroyTexture};
 
@@ -32,7 +32,7 @@ SDLCore::SDLTexture SDLCore::SDLTexture::loadPNG(std::string const &fileName, SD
 }
 
 
-SDLCore::SDLTexture::TexturePtr SDLCore::SDLTexture::loadPNGRaw(std::string const &fileName, SDLRenderer *renderer)
+SDLCore::SDLTexture::TexturePtr SDLCore::SDLTexture::loadPNGRaw(std::string const &fileName, SDLRenderer const* renderer)
 {
     TexturePtr texture{IMG_LoadTexture(renderer->getRenderer(), fileName.c_str()), &SDL_DestroyTexture};
 
@@ -71,7 +71,7 @@ void SDLCore::SDLTexture::setTextureSize(int width, int height)
     srcRect.h = height;
 }
 
-void SDLCore::SDLTexture::setTextureSize(int *width, int *height)
+void SDLCore::SDLTexture::setTextureSize(int const *width, int const *height)
 {
     if (width)
     {
@@ -96,7 +96,7 @@ void SDLCore::SDLTexture::setTextureOffset(int x, int y)
     srcRect.y = y;
 }
 
-void SDLCore::SDLTexture::setTextureOffset(int *x, int *y)
+void SDLCore::SDLTexture::setTextureOffset(int const *x, int const *y)
 {
     if (x)
     {

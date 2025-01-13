@@ -12,14 +12,14 @@ std::unique_ptr<SDLCore::SDLTexture> SDLCore::LoadBMP::load(const std::string &f
         return nullptr;
     }
 
-    SDLTexture::SurfacePtr const tmpSurface = SDLTexture::SurfacePtr{SDL_LoadBMP(fileName.c_str()), &SDL_FreeSurface};
+    auto const tmpSurface = SDLTexture::SurfacePtr{SDL_LoadBMP(fileName.c_str()), &SDL_FreeSurface};
 
     if (!tmpSurface)
     {
         throw std::runtime_error("Unable to load image");
     }
 
-    SDLTexture::TexturePtr texture = SDLTexture::TexturePtr{SDL_CreateTextureFromSurface(sdlRenderer->getRenderer(), tmpSurface.get()), &SDL_DestroyTexture};
+    auto texture = SDLTexture::TexturePtr{SDL_CreateTextureFromSurface(sdlRenderer->getRenderer(), tmpSurface.get()), &SDL_DestroyTexture};
 
     return std::make_unique<SDLTexture>(std::move(texture));
 
