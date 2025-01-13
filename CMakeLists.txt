@@ -34,7 +34,7 @@ add_executable(sdlplgrd main.cpp
         src/primitives/Circle.h
         src/sdlcore/SDLAnimatedSpriteSheet.cpp
         src/sdlcore/SDLAnimatedSpriteSheet.h
-        src/sdlcore/Rectangle.h
+        src/sdlcore/Math/Rectangle.h
         src/sdlcore/Texture/ITextureManager.h
         src/sdlcore/Texture/ITextureLoadStrategy.h
         src/sdlcore/Texture/TextureLoadStrategyFactory.h
@@ -49,6 +49,7 @@ add_executable(sdlplgrd main.cpp
         src/sdlcore/GameObject/GameObject.h
         src/sdlcore/Scene/Scene.cpp
         src/sdlcore/Scene/Scene.h
+        src/sdlcore/Math/Vector2D.h
 )
 
 target_link_libraries(${PROJECT_NAME} SDL2::SDL2main)

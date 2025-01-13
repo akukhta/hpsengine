@@ -1,6 +1,6 @@
 #pragma once
 #include "../primitives/Circle.h"
-#include "Rectangle.h"
+#include "Math/Rectangle.h"
 
 namespace Primitives
 {
