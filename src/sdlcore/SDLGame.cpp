@@ -8,16 +8,19 @@
 
 #include "Texture/LoadPNG.h"
 #include "Texture/TextureManager.h"
+#include "Actors/TestActor.h"
 
 SDLCore::SDLGame::SDLGame(RendererPtr renderer, EventHandlerPtr eventHandler)
-    : renderer(std::move(renderer)), eventHandler(std::move(eventHandler))
+    : renderer(std::move(renderer)), eventHandler(std::move(eventHandler)), scene(std::make_unique<Scene>()), textureManager(std::make_unique<TextureManager>(std::make_unique<TextureLoadStrategyFactory>()))
 {
     this->eventHandler->addEventHandler(SDLCore::SDLEventHandler::EventType::QUIT, [this](){onGameQuit();});
 }
 
 void SDLCore::SDLGame::init()
 {
-    ;
+    auto textureTM = textureManager->loadTexture<LoadPNG>("/Users/khk/Downloads/5b92b51b196573108b203ad1.png", renderer.get());
+
+    scene->addObject(new TestActor(textureManager.get(), textureTM));
 }
 
 void SDLCore::SDLGame::run()
@@ -50,13 +53,14 @@ void SDLCore::SDLGame::run()
         eventHandler->handleEvents();
         renderer->startRendering();
 
+        render();
         //tManager.getTexture(textureTM)->render(renderer.get(), 0, 0);
 
         //texture.render(renderer.get(), 0, 0);
         //rect.render(renderer.get(), 300, 0, 200, 200);
         //c.render(renderer.get(), 300, 300, 120);
 
-        animation.render(renderer.get(), Math::Rectangle{0, 0, 32, 32}, {0, 0, 640, 480});
+        //animation.render(renderer.get(), Math::Rectangle{0, 0, 32, 32}, {0, 0, 640, 480});
 
         renderer->finishRendering();
     }
@@ -77,9 +81,9 @@ void SDLCore::SDLGame::update()
     SDLTimeController::update();
     auto deltaTime = SDLTimeController::getDeltaTime();
 
-    for (auto const &updatableObject : scene->updatableObjects)
+    for (auto const &updatableObject : scene->sceneObjects)
     {
-        updatableObject->update(deltaTime);
+        updatableObject.second->update(deltaTime);
     }
 }
 
@@ -90,8 +94,8 @@ void SDLCore::SDLGame::handleEvents()
 
 void SDLCore::SDLGame::render()
 {
-    for (auto const& renderableObject : scene->renderableObjects)
+    for (auto const& renderableObject : scene->sceneObjects)
     {
-        renderableObject->render(renderer.get(), Math::Rectangle{0, 0, 0, 0},{0, 0, 640, 480});
+        renderableObject.second->render(renderer.get());
     }
 }

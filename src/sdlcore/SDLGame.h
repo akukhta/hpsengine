@@ -2,7 +2,7 @@
 #include "SDLRenderer.h"
 #include "SDLEventHandler.h"
 #include "Scene/Scene.h"
-#include <memory>
+#include "Texture/TextureManager.h"
 
 namespace SDLCore
 {
@@ -28,6 +28,7 @@ namespace SDLCore
 
         RendererPtr renderer;
         EventHandlerPtr eventHandler;
+        std::unique_ptr<TextureManager> textureManager;
 
         bool isRunning_ = false;
 

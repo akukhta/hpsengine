@@ -31,6 +31,8 @@ namespace SDLCore
 
         void resetSizeAndOffset();
 
+        std::pair<int, int> getTextureSize() const;
+
     protected:
         friend class SDLRenderer;
 

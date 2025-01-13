@@ -74,6 +74,19 @@ void SDLCore::SDLRenderer::renderTexture(SDLTexture *texture, Math::Rectangle co
     SDL_RenderCopy(renderer.get(), texture->texture.get(), &sdlSrc, &sdlDst);
 }
 
+void SDLCore::SDLRenderer::renderTexture(SDLTexture *texture, Math::IVector2D pos, std::pair<int, int> size)
+{
+    if (!texture)
+    {
+        return;
+    }
+
+    Math::Rectangle src{0, 0, texture->getTextureSize().first, texture->getTextureSize().second};
+    Math::Rectangle dst{pos.x, pos.y, size.first, size.second};
+
+    renderTexture(texture, src, dst);
+}
+
 void SDLCore::SDLRenderer::renderRectangle(Primitives::Rectangle *rectangle, int x, int y, int w, int h)
 {
     if (!rectangle)

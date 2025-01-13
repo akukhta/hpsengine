@@ -26,8 +26,6 @@ std::uint32_t SDLCore::Scene::addObject(GameObject *object, std::string const &o
 
 std::uint32_t SDLCore::Scene::addObject(std::shared_ptr<GameObject> object)
 {
-    handleObject(object);
-
     auto it = sceneObjects.insert({currentObjectId++, std::move(object)});
 
     if (!it.second)
@@ -40,8 +38,6 @@ std::uint32_t SDLCore::Scene::addObject(std::shared_ptr<GameObject> object)
 
 std::uint32_t SDLCore::Scene::addObject(std::shared_ptr<GameObject> object, std::string const &objectName)
 {
-    handleObject(object);
-
     auto it = sceneObjects.insert({currentObjectId++, std::move(object)});
 
     if (!it.second)
@@ -74,22 +70,4 @@ std::shared_ptr<SDLCore::GameObject> SDLCore::Scene::getObject(std::string const
     }
 
     return nullptr;
-}
-
-void SDLCore::Scene::handleObject(std::shared_ptr<GameObject> &object)
-{
-    if (object == nullptr)
-    {
-        return;
-    }
-
-    if (auto updatable = dynamic_cast<IUpdatable*>(object.get()); updatable != nullptr)
-    {
-        updatableObjects.push_back(object);
-    }
-
-    if (auto renderable = dynamic_cast<IRenderable*>(object.get()); renderable != nullptr)
-    {
-        renderableObjects.push_back(object);
-    }
 }

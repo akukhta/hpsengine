@@ -1,6 +1,7 @@
 #pragma once
 #include "../primitives/Circle.h"
 #include "Math/Rectangle.h"
+#include "Math/Vector2D.h"
 
 namespace Primitives
 {
@@ -24,6 +25,7 @@ namespace SDLCore
 
         virtual void renderTexture(class SDLTexture*, int x = 0, int y = 0, int w = 0, int h = 0) = 0;
         virtual void renderTexture(SDLTexture*, Math::Rectangle const &src, Math::Rectangle const &dst) = 0;
+        virtual void renderTexture(SDLTexture*, Math::IVector2D pos, std::pair<int, int> size) = 0;
 
         virtual void renderRectangle(Primitives::Rectangle*, int x, int y, int w, int h) = 0;
         virtual void renderRectangle(Primitives::Rectangle*, int x, int y) = 0;

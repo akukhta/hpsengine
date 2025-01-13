@@ -50,6 +50,10 @@ add_executable(sdlplgrd main.cpp
         src/sdlcore/Scene/Scene.cpp
         src/sdlcore/Scene/Scene.h
         src/sdlcore/Math/Vector2D.h
+        src/sdlcore/Components/SpriteComponent.cpp
+        src/sdlcore/Components/SpriteComponent.h
+        src/sdlcore/Actors/TestActor.cpp
+        src/sdlcore/Actors/TestActor.h
 )
 
 target_link_libraries(${PROJECT_NAME} SDL2::SDL2main)

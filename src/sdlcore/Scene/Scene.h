@@ -32,13 +32,9 @@ namespace SDLCore
     private:
         friend class SDLGame;
 
-        void handleObject(std::shared_ptr<GameObject>& object);
-
         static std::uint32_t constexpr inline INVALID_OBJECT = 0;
         std::uint32_t currentObjectId = INVALID_OBJECT + 1;
 
-        std::vector<std::shared_ptr<IUpdatable>> updatableObjects;
-        std::vector<std::shared_ptr<IRenderable>> renderableObjects;
         std::unordered_map<std::uint32_t, std::shared_ptr<GameObject>> sceneObjects;
 
         std::unordered_map<std::string, std::uint32_t> nameToId;

@@ -29,6 +29,7 @@ namespace SDLCore
 
         void renderTexture(SDLTexture* texture, int x, int y, int w, int h) override;
         void renderTexture(SDLTexture* texture, Math::Rectangle const &src, Math::Rectangle const &dst) override;
+        void renderTexture(SDLTexture* texture, Math::IVector2D pos, std::pair<int, int> size) override;
 
         void renderRectangle(Primitives::Rectangle* rectangle, int x, int y, int w, int h) override;
         void renderRectangle(Primitives::Rectangle* rectangle, int x, int y) override;

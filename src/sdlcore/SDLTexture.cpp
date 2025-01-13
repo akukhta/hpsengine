@@ -115,6 +115,11 @@ void SDLCore::SDLTexture::resetSizeAndOffset()
     srcRect = SDL_Rect{0, 0, textureSize.first, textureSize.second};
 }
 
+std::pair<int, int> SDLCore::SDLTexture::getTextureSize() const
+{
+    return textureSize;
+}
+
 SDLCore::SDLTexture::SDLTexture(TexturePtr texture)
     : texture(std::move(texture))
 {

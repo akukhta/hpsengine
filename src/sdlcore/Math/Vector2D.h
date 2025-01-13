@@ -1,5 +1,6 @@
 #pragma once
 #include <stdexcept>
+#include <cmath>
 
 namespace SDLCore::Math
 {
@@ -7,7 +8,6 @@ namespace SDLCore::Math
     class Vector2D
     {
     public:
-
         T x;
         T y;
 
@@ -57,4 +57,7 @@ namespace SDLCore::Math
             return Vector2D{a.x - b.x, a.y - b.y};
         }
     };
+
+    using IVector2D = Vector2D<int>;
+    using FVector2D = Vector2D<float>;
 }
