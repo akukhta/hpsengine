@@ -33,7 +33,7 @@ namespace SDLCore
 
         void renderRectangle(Primitives::RectangleComponent* rectangle, int x, int y, int w, int h) override;
 
-        void renderCircle(::Primitives::Circle* circle, int centerX, int centerY, int r) override;
+        void renderCircle(Primitives::CircleComponent* circle, int centerX, int centerY, int r) override;
     private:
         std::pair<int, int> resolution;
         using RendererPtr = std::unique_ptr<SDL_Renderer, decltype(&SDL_DestroyRenderer)>;

@@ -1,11 +1,12 @@
 #pragma once
-#include "../primitives/Circle.h"
+#include <utility>
 #include "Math/Rectangle.h"
 #include "Math/Vector2D.h"
 
 namespace SDLCore::Primitives
 {
     class RectangleComponent;
+    class CircleComponent;
 }
 
 namespace SDLCore
@@ -29,6 +30,6 @@ namespace SDLCore
 
         virtual void renderRectangle(Primitives::RectangleComponent*, int x, int y, int w, int h) = 0;
 
-        virtual void renderCircle(::Primitives::Circle*, int centerX, int centerY, int r) = 0;
+        virtual void renderCircle(Primitives::CircleComponent*, int centerX, int centerY, int r) = 0;
     };
 }

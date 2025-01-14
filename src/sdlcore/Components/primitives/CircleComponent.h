@@ -1,20 +1,20 @@
 #pragma once
 #include <vector>
 #include <SDL2/SDL_rect.h>
-#include "../sdlcore/IRenderable.h"
+#include "../RenderableComponent.h"
 
 namespace SDLCore {
     class SDLRenderer;
 }
 
-namespace Primitives
+namespace SDLCore::Primitives
 {
-    class Circle : public SDLCore::IRenderable
+    class CircleComponent : public RenderableComponent
     {
     public:
         /// If the position of a circle is static,
         /// the circle will be more efficient cause there is no need to recalculate the points
-        Circle(int x, int y, int radius, SDL_Color color, bool filled = false);
+        CircleComponent(Math::IVector2D relativePosition, int radius, SDL_Color color, bool filled = false);
 
         void render(SDLCore::IRenderer *renderer) override;
 
@@ -22,8 +22,7 @@ namespace Primitives
         friend class SDLCore::SDLRenderer;
         std::vector<SDL_Point> points;
         SDL_Color color;
-        int x;
-        int y;
+
         int r;
         int prevX;
         int prevY;

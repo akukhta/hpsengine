@@ -37,7 +37,7 @@ void SDLCore::SDLGame::run()
     //     std::make_pair(96, 96), 0.2, 7);
 
     //Primitives::RectangleComponent rect{{0, 0100, 100}, Primitives::Colors::Red, true};
-    ::Primitives::Circle c{300, 300, 120, ::Primitives::Colors::Gray, true};
+    //::Primitives::Circle c{300, 300, 120, ::Primitives::Colors::Gray, true};
 
     // animation.setDuration(1);
     // animation.setIsRepeating(true);

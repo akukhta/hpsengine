@@ -2,6 +2,7 @@
 #include "../GameObject/GameObject.h"
 #include "../Components/SpriteComponent.h"
 #include "../Components/primitives/RectangleComponent.h"
+#include "../Components/primitives/CircleComponent.h"
 
 class TestActor : public SDLCore::GameObject
 {
@@ -13,4 +14,5 @@ public:
 private:
     SDLCore::SpriteComponent* spriteComponent{nullptr};
     SDLCore::Primitives::RectangleComponent*  rectangleComponent{nullptr};
+    SDLCore::Primitives::CircleComponent* circle_component{nullptr};
 };

@@ -2,16 +2,13 @@
 #include <vector>
 #include "../IRenderable.h"
 #include "../IUpdatable.h"
+#include "../Components/IComponent.h"
 #include "../Math/Vector2D.h"
 
 namespace SDLCore
 {
     template<typename ComponentType>
-    concept IsComponentType = requires(ComponentType component)
-    {
-        requires std::is_base_of_v<IRenderable, ComponentType> || std::is_base_of_v<IUpdatable, ComponentType>;
-        component.setParent(nullptr);
-    };
+    concept IsComponentType = std::is_base_of_v<IComponent, ComponentType>;
 
     class GameObject : public IRenderable, public IUpdatable
     {

@@ -30,8 +30,8 @@ add_executable(sdlplgrd main.cpp
         src/sdlcore/Components/primitives/RectangleComponent.cpp
         src/sdlcore/Components/primitives/RectangleComponent.h
         src/primitives/Colors.h
-        src/primitives/Circle.cpp
-        src/primitives/Circle.h
+        src/sdlcore/Components/primitives/CircleComponent.cpp
+        src/sdlcore/Components/primitives/CircleComponent.h
         src/sdlcore/SDLAnimatedSpriteSheet.cpp
         src/sdlcore/SDLAnimatedSpriteSheet.h
         src/sdlcore/Math/Rectangle.h

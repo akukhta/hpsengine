@@ -5,6 +5,7 @@
 #include "SDLTexture.h"
 #include <SDL2/SDL_render.h>
 #include "Components/primitives/RectangleComponent.h"
+#include "Components/primitives/CircleComponent.h"
 
 SDLCore::SDLRenderer::SDLRenderer(class SDLWindow *window)
 {
@@ -110,7 +111,7 @@ void SDLCore::SDLRenderer::renderRectangle(Primitives::RectangleComponent *recta
     setDrawColor(prevColor);
 }
 
-void SDLCore::SDLRenderer::renderCircle(::Primitives::Circle *circle, int centerX, int centerY, int r)
+void SDLCore::SDLRenderer::renderCircle(Primitives::CircleComponent *circle, int centerX, int centerY, int r)
 {
     if (!circle)
     {

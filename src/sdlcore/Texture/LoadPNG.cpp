@@ -1,6 +1,7 @@
 #include "LoadPNG.h"
 #include "../SDLRenderer.h"
 #include <SDL_image.h>
+#include <string>
 
 std::unique_ptr<SDLCore::SDLTexture> SDLCore::LoadPNG::load(const std::string &fileName, IRenderer *renderer)
 {
