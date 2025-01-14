@@ -5,7 +5,7 @@
 
 SDLCore::SpriteComponent::SpriteComponent(class TextureManager *textureManager,
                                           std::uint32_t textureID, Math::IVector2D const &relativePosition)
-    : textureManager(textureManager), textureID(textureID), relativePosition(relativePosition)
+    : RenderableComponent(relativePosition), textureManager(textureManager), textureID(textureID)
 {
     if (textureManager)
     {
@@ -15,8 +15,8 @@ SDLCore::SpriteComponent::SpriteComponent(class TextureManager *textureManager,
 
 SDLCore::SpriteComponent::SpriteComponent(TextureManager *textureManager, std::uint32_t textureID,
     Math::IVector2D const &relativePosition, std::pair<int, int> spriteSize)
-        : textureManager(textureManager), textureID(textureID),
-    relativePosition(relativePosition), spriteSize(spriteSize)
+        : RenderableComponent(relativePosition), textureManager(textureManager),
+    textureID(textureID), spriteSize(spriteSize)
 {
     ;
 }
@@ -26,19 +26,4 @@ void SDLCore::SpriteComponent::render(IRenderer* renderer)
     auto pos = parent->getPosition();
     auto texture = textureManager->getTexture(textureID);
     renderer->renderTexture(texture, pos + relativePosition, spriteSize);
-}
-
-void SDLCore::SpriteComponent::setParent(GameObject *parent)
-{
-    this->parent = parent;
-}
-
-SDLCore::GameObject * SDLCore::SpriteComponent::getParent() const
-{
-    return parent;
-}
-
-SDLCore::Math::IVector2D const & SDLCore::SpriteComponent::getRelativePosition() const
-{
-    return relativePosition;
 }

@@ -1,7 +1,6 @@
 #pragma once
 #include "SDLTexture.h"
 #include <string_view>
-#include "IUpdatable.h"
 #include "Math/Vector2D.h"
 
 namespace SDLCore
@@ -18,7 +17,7 @@ namespace SDLCore
     {
     public:
         SDLAnimatedSpriteSheet(class ITextureManager* textureManager, std::uint32_t textureId, std::pair<int, int> frameSize, double duration,
-            unsigned int framesCount, Math::IVector2D position = {0, 0});
+            unsigned int framesCount);
 
         void setDuration(double durationInSeconds);
         double getDuration() const;
@@ -27,6 +26,8 @@ namespace SDLCore
         bool isLoop() const;
 
     private:
+        friend class SpritesheetComponent;
+
         unsigned int currentFrameIndex = 0;
         unsigned int framesCount;
 
@@ -34,7 +35,6 @@ namespace SDLCore
         double secondsPerFrame;
 
         std::pair<int, int> frameSize;
-        Math::IVector2D position;
 
         bool isLoop_ = true;
 

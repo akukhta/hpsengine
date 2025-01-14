@@ -4,10 +4,9 @@
 #include <algorithm>
 
 SDLCore::SDLAnimatedSpriteSheet::SDLAnimatedSpriteSheet(ITextureManager *textureManager, std::uint32_t textureId,
-                                                        std::pair<int, int> frameSize, double duration, unsigned int framesCount, Math::IVector2D position)
+                                                        std::pair<int, int> frameSize, double duration, unsigned int framesCount)
     : textureId(textureId), frameSize(std::move(frameSize)),
-        framesCount(framesCount), textureManager(textureManager),
-        position(position)
+        framesCount(framesCount), textureManager(textureManager)
 {
     setDuration(duration);
 }

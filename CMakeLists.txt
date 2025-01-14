@@ -54,6 +54,9 @@ add_executable(sdlplgrd main.cpp
         src/sdlcore/Components/SpriteComponent.h
         src/sdlcore/Actors/TestActor.cpp
         src/sdlcore/Actors/TestActor.h
+        src/sdlcore/Components/IComponent.h
+        src/sdlcore/Components/RenderableComponent.h
+        src/sdlcore/Components/RenderableComponent.cpp
 )
 
 target_link_libraries(${PROJECT_NAME} SDL2::SDL2main)
