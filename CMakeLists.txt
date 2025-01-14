@@ -57,6 +57,8 @@ add_executable(sdlplgrd main.cpp
         src/sdlcore/Components/IComponent.h
         src/sdlcore/Components/RenderableComponent.h
         src/sdlcore/Components/RenderableComponent.cpp
+        src/sdlcore/Components/SpritesheetComponent.cpp
+        src/sdlcore/Components/SpritesheetComponent.h
 )
 
 target_link_libraries(${PROJECT_NAME} SDL2::SDL2main)

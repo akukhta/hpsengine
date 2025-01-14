@@ -18,7 +18,7 @@ void SDLCore::SDLGame::init()
 {
     auto textureTM = textureManager->loadTexture<LoadPNG>("/Users/khk/Downloads/5b92b51b196573108b203ad1.png", renderer.get());
 
-    scene->addObject(new TestActor(textureManager.get(), textureTM));
+    scene->addObject(new TestActor(renderer.get(), textureManager.get(), textureTM));
 }
 
 void SDLCore::SDLGame::run()
@@ -49,17 +49,10 @@ void SDLCore::SDLGame::run()
         // update
 
         eventHandler->handleEvents();
+        update();
+
         renderer->startRendering();
-
         render();
-        //tManager.getTexture(textureTM)->render(renderer.get(), 0, 0);
-
-        //texture.render(renderer.get(), 0, 0);
-        //rect.render(renderer.get(), 300, 0, 200, 200);
-        //c.render(renderer.get(), 300, 300, 120);
-
-        //animation.render(renderer.get(), Math::Rectangle{0, 0, 32, 32}, {0, 0, 640, 480});
-
         renderer->finishRendering();
     }
 }
