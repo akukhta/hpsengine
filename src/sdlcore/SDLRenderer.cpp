@@ -29,7 +29,7 @@ void SDLCore::SDLRenderer::setResolution(std::pair<int, int> resolution)
     changeResolution();
 }
 
-std::pair<int, int> SDLCore::SDLRenderer::getResolution()
+std::pair<int, int> SDLCore::SDLRenderer::getResolution() const
 {
     return resolution;
 }
@@ -146,7 +146,7 @@ void SDLCore::SDLRenderer::changeResolution()
     }
 }
 
-SDL_Color SDLCore::SDLRenderer::getDrawColor()
+SDL_Color SDLCore::SDLRenderer::getDrawColor() const
 {
     SDL_Color color;
     SDL_GetRenderDrawColor(renderer.get(), &color.r, &color.g, &color.b, &color.a);
