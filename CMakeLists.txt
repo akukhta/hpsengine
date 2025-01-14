@@ -27,14 +27,14 @@ add_executable(sdlplgrd main.cpp
         src/sdlcore/IRenderer.h
         src/sdlcore/RenderingQueue.cpp
         src/sdlcore/RenderingQueue.h
-        src/primitives/Rectangle.cpp
-        src/primitives/Rectangle.h
+        src/sdlcore/Components/primitives/RectangleComponent.cpp
+        src/sdlcore/Components/primitives/RectangleComponent.h
         src/primitives/Colors.h
-        src/primitives/Circle.cpp
-        src/primitives/Circle.h
+        src/sdlcore/Components/primitives/CircleComponent.cpp
+        src/sdlcore/Components/primitives/CircleComponent.h
         src/sdlcore/SDLAnimatedSpriteSheet.cpp
         src/sdlcore/SDLAnimatedSpriteSheet.h
-        src/sdlcore/Rectangle.h
+        src/sdlcore/Math/Rectangle.h
         src/sdlcore/Texture/ITextureManager.h
         src/sdlcore/Texture/ITextureLoadStrategy.h
         src/sdlcore/Texture/TextureLoadStrategyFactory.h
@@ -45,6 +45,20 @@ add_executable(sdlplgrd main.cpp
         src/sdlcore/Texture/TextureManager.cpp
         src/sdlcore/Texture/TextureManager.h
         src/sdlcore/IUpdatable.h
+        src/sdlcore/GameObject/GameObject.cpp
+        src/sdlcore/GameObject/GameObject.h
+        src/sdlcore/Scene/Scene.cpp
+        src/sdlcore/Scene/Scene.h
+        src/sdlcore/Math/Vector2D.h
+        src/sdlcore/Components/SpriteComponent.cpp
+        src/sdlcore/Components/SpriteComponent.h
+        src/sdlcore/Actors/TestActor.cpp
+        src/sdlcore/Actors/TestActor.h
+        src/sdlcore/Components/IComponent.h
+        src/sdlcore/Components/RenderableComponent.h
+        src/sdlcore/Components/RenderableComponent.cpp
+        src/sdlcore/Components/SpritesheetComponent.cpp
+        src/sdlcore/Components/SpritesheetComponent.h
 )
 
 target_link_libraries(${PROJECT_NAME} SDL2::SDL2main)

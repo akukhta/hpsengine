@@ -7,7 +7,7 @@
 
 namespace SDLCore
 {
-    class SDLTexture : public IRenderable
+    class SDLTexture
     {
     public:
         using TexturePtr = std::unique_ptr<SDL_Texture, decltype(&SDL_DestroyTexture)>;
@@ -18,10 +18,6 @@ namespace SDLCore
 
         explicit SDLTexture(TexturePtr texture);
 
-        void render(IRenderer *renderer, int x, int y) override;
-        void render(IRenderer *renderer, int x, int y, int w, int h) override;
-        void render(IRenderer *renderer, const Math::Rectangle &src, const Math::Rectangle &dst) override;
-
         void setTextureSize(std::pair<int, int> const& size);
         void setTextureSize(int width, int height);
         void setTextureSize(int const *width, int const *height);
@@ -31,6 +27,8 @@ namespace SDLCore
         void setTextureOffset(int const *x, int const *y);
 
         void resetSizeAndOffset();
+
+        std::pair<int, int> getTextureSize() const;
 
     protected:
         friend class SDLRenderer;

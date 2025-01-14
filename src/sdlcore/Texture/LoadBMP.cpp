@@ -1,6 +1,7 @@
 #include "LoadBMP.h"
 #include <SDL2/SDL.h>
 #include <stdexcept>
+#include <string>
 #include "../SDLRenderer.h"
 
 std::unique_ptr<SDLCore::SDLTexture> SDLCore::LoadBMP::load(const std::string &fileName, IRenderer *renderer)

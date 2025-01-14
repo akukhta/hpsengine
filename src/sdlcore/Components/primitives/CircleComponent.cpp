@@ -1,37 +1,33 @@
-#include "Circle.h"
+#include "CircleComponent.h"
 #include <utility>
-#include "../sdlcore/IRenderer.h"
+#include "../../IRenderer.h"
+#include "../../GameObject/GameObject.h"
 
-Primitives::Circle::Circle(int x, int y, int radius, SDL_Color color, bool filled)
-    : color(std::move(color)), filled(filled)
+SDLCore::Primitives::CircleComponent::CircleComponent(Math::IVector2D relativePosition, int radius, SDL_Color color, bool filled)
+    : RenderableComponent(relativePosition), r(radius), color(std::move(color)), filled(filled)
 {
     if (!this->filled)
     {
-        calculatePoints(x, y, radius);
+        calculatePoints(relativePosition.x, relativePosition.y, radius);
     }
 }
 
-void Primitives::Circle::render(SDLCore::IRenderer *renderer, int x, int y)
+void SDLCore::Primitives::CircleComponent::render(SDLCore::IRenderer *renderer)
 {
-    std::unreachable();
-}
+    auto parentPos = parent->getPosition();
 
-void Primitives::Circle::render(SDLCore::IRenderer *renderer, int x, int y, int w, int h)
-{
-    std::unreachable();
-}
+    auto currX = parentPos.x + relativeLocation.x;
+    auto currY = parentPos.y + relativeLocation.y;
 
-void Primitives::Circle::render(SDLCore::IRenderer *renderer, int x, int y, int r)
-{
-    if (!filled &&  (x != prevX || y != prevY || r != prevRadius))
+    if (!filled &&  (currX != prevX || currY != prevY))
     {
-        calculatePoints(x, y, r);
+        calculatePoints(currX, currY, r);
     }
 
-    renderer->renderCircle(this, x, y, r);
+    renderer->renderCircle(this, currX, currY, r);
 }
 
-void Primitives::Circle::calculatePoints(int centerX, int centerY, int radius)
+void SDLCore::Primitives::CircleComponent::calculatePoints(int centerX, int centerY, int radius)
 {
     points.clear();
 
