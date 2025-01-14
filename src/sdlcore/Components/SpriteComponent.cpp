@@ -23,12 +23,9 @@ SDLCore::SpriteComponent::SpriteComponent(TextureManager *textureManager, std::u
 
 void SDLCore::SpriteComponent::render(IRenderer* renderer)
 {
-    if (auto sdlRenderer = dynamic_cast<SDLRenderer*>(renderer); sdlRenderer)
-    {
-        auto pos = parent->getPosition();
-        auto texture = textureManager->getTexture(textureID);
-        sdlRenderer->renderTexture(texture, pos + relativePosition, spriteSize);
-    }
+    auto pos = parent->getPosition();
+    auto texture = textureManager->getTexture(textureID);
+    renderer->renderTexture(texture, pos + relativePosition, spriteSize);
 }
 
 void SDLCore::SpriteComponent::setParent(GameObject *parent)

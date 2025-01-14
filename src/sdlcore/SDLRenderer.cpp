@@ -4,7 +4,7 @@
 #include <stdexcept>
 #include "SDLTexture.h"
 #include <SDL2/SDL_render.h>
-#include "../primitives/Rectangle.h"
+#include "Components/primitives/RectangleComponent.h"
 
 SDLCore::SDLRenderer::SDLRenderer(class SDLWindow *window)
 {
@@ -87,7 +87,7 @@ void SDLCore::SDLRenderer::renderTexture(SDLTexture *texture, Math::IVector2D po
     renderTexture(texture, src, dst);
 }
 
-void SDLCore::SDLRenderer::renderRectangle(Primitives::Rectangle *rectangle, int x, int y, int w, int h)
+void SDLCore::SDLRenderer::renderRectangle(Primitives::RectangleComponent *rectangle, int x, int y, int w, int h)
 {
     if (!rectangle)
     {
@@ -110,30 +110,7 @@ void SDLCore::SDLRenderer::renderRectangle(Primitives::Rectangle *rectangle, int
     setDrawColor(prevColor);
 }
 
-void SDLCore::SDLRenderer::renderRectangle(Primitives::Rectangle *rectangle, int x, int y)
-{
-    if (!rectangle)
-    {
-        return;
-    }
-
-    auto prevColor = exchangeColor(rectangle->color);
-
-    SDL_Rect dst = {x, y, rectangle->srcRect.w, rectangle->srcRect.h};
-
-    if (rectangle->fill)
-    {
-        SDL_RenderFillRect(renderer.get(), &dst);
-    }
-    else
-    {
-        SDL_RenderDrawRect(renderer.get(), &dst);
-    }
-
-    setDrawColor(prevColor);
-}
-
-void SDLCore::SDLRenderer::renderCircle(Primitives::Circle *circle, int centerX, int centerY, int r)
+void SDLCore::SDLRenderer::renderCircle(::Primitives::Circle *circle, int centerX, int centerY, int r)
 {
     if (!circle)
     {

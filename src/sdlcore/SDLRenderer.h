@@ -31,10 +31,9 @@ namespace SDLCore
         void renderTexture(SDLTexture* texture, Math::Rectangle const &src, Math::Rectangle const &dst) override;
         void renderTexture(SDLTexture* texture, Math::IVector2D pos, std::pair<int, int> size) override;
 
-        void renderRectangle(Primitives::Rectangle* rectangle, int x, int y, int w, int h) override;
-        void renderRectangle(Primitives::Rectangle* rectangle, int x, int y) override;
+        void renderRectangle(Primitives::RectangleComponent* rectangle, int x, int y, int w, int h) override;
 
-        void renderCircle(Primitives::Circle* circle, int centerX, int centerY, int r) override;
+        void renderCircle(::Primitives::Circle* circle, int centerX, int centerY, int r) override;
     private:
         std::pair<int, int> resolution;
         using RendererPtr = std::unique_ptr<SDL_Renderer, decltype(&SDL_DestroyRenderer)>;

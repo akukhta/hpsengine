@@ -16,15 +16,15 @@ namespace Primitives
         /// the circle will be more efficient cause there is no need to recalculate the points
         Circle(int x, int y, int radius, SDL_Color color, bool filled = false);
 
-        void render(SDLCore::IRenderer *renderer, int x, int y) override;
-        void render(SDLCore::IRenderer *renderer, int x, int y, int w, int h) override;
-        void render(SDLCore::IRenderer *renderer, int x, int y, int r) override;
+        void render(SDLCore::IRenderer *renderer) override;
 
     private:
         friend class SDLCore::SDLRenderer;
-
         std::vector<SDL_Point> points;
         SDL_Color color;
+        int x;
+        int y;
+        int r;
         int prevX;
         int prevY;
         int prevRadius;

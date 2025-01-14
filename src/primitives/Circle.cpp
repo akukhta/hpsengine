@@ -3,7 +3,7 @@
 #include "../sdlcore/IRenderer.h"
 
 Primitives::Circle::Circle(int x, int y, int radius, SDL_Color color, bool filled)
-    : color(std::move(color)), filled(filled)
+    : x(x), y(y), r(radius), color(std::move(color)), filled(filled)
 {
     if (!this->filled)
     {
@@ -11,17 +11,7 @@ Primitives::Circle::Circle(int x, int y, int radius, SDL_Color color, bool fille
     }
 }
 
-void Primitives::Circle::render(SDLCore::IRenderer *renderer, int x, int y)
-{
-    std::unreachable();
-}
-
-void Primitives::Circle::render(SDLCore::IRenderer *renderer, int x, int y, int w, int h)
-{
-    std::unreachable();
-}
-
-void Primitives::Circle::render(SDLCore::IRenderer *renderer, int x, int y, int r)
+void Primitives::Circle::render(SDLCore::IRenderer *renderer)
 {
     if (!filled &&  (x != prevX || y != prevY || r != prevRadius))
     {

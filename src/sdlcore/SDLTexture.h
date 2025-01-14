@@ -6,7 +6,7 @@
 
 namespace SDLCore
 {
-    class SDLTexture : public IRenderable
+    class SDLTexture
     {
     public:
         using TexturePtr = std::unique_ptr<SDL_Texture, decltype(&SDL_DestroyTexture)>;
@@ -16,10 +16,6 @@ namespace SDLCore
         static SDLTexture loadPNG(std::string const& fileName, SDLRenderer* renderer);
 
         explicit SDLTexture(TexturePtr texture);
-
-        void render(IRenderer *renderer, int x, int y) override;
-        void render(IRenderer *renderer, int x, int y, int w, int h) override;
-        void render(IRenderer *renderer, const Math::Rectangle &src, const Math::Rectangle &dst) override;
 
         void setTextureSize(std::pair<int, int> const& size);
         void setTextureSize(int width, int height);

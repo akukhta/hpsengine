@@ -44,21 +44,6 @@ SDLCore::SDLTexture::TexturePtr SDLCore::SDLTexture::loadPNGRaw(std::string cons
     return texture;
 }
 
-void SDLCore::SDLTexture::render(IRenderer *renderer, int x, int y)
-{
-    renderer->renderTexture(this, x, y, srcRect.w, srcRect.h);
-}
-
-void SDLCore::SDLTexture::render(IRenderer *renderer, int x, int y, int w, int h)
-{
-    renderer->renderTexture(this, x, y, w, h);
-}
-
-void SDLCore::SDLTexture::render(IRenderer *renderer, const Math::Rectangle &src, const Math::Rectangle &dst)
-{
-    renderer->renderTexture(this, src, dst);
-}
-
 void SDLCore::SDLTexture::setTextureSize(std::pair<int, int> const &size)
 {
     srcRect.w = size.first;

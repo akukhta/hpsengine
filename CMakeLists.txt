@@ -27,8 +27,8 @@ add_executable(sdlplgrd main.cpp
         src/sdlcore/IRenderer.h
         src/sdlcore/RenderingQueue.cpp
         src/sdlcore/RenderingQueue.h
-        src/primitives/Rectangle.cpp
-        src/primitives/Rectangle.h
+        src/sdlcore/Components/primitives/RectangleComponent.cpp
+        src/sdlcore/Components/primitives/RectangleComponent.h
         src/primitives/Colors.h
         src/primitives/Circle.cpp
         src/primitives/Circle.h

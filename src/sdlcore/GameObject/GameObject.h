@@ -24,10 +24,6 @@ namespace SDLCore
 
         virtual ~GameObject() = default;
 
-        void render(IRenderer *renderer, int x, int y) override;
-        void render(IRenderer *renderer, int x, int y, int w, int h) override;
-        void render(IRenderer *renderer, const Math::Rectangle &src, const Math::Rectangle &dst) override;
-        void render(IRenderer *renderer, int x, int y, int r) override;
         void render(IRenderer *renderer) override;
 
         void update(double deltaTime) override;

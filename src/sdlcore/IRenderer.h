@@ -3,9 +3,9 @@
 #include "Math/Rectangle.h"
 #include "Math/Vector2D.h"
 
-namespace Primitives
+namespace SDLCore::Primitives
 {
-    class Rectangle;
+    class RectangleComponent;
 }
 
 namespace SDLCore
@@ -27,9 +27,8 @@ namespace SDLCore
         virtual void renderTexture(SDLTexture*, Math::Rectangle const &src, Math::Rectangle const &dst) = 0;
         virtual void renderTexture(SDLTexture*, Math::IVector2D pos, std::pair<int, int> size) = 0;
 
-        virtual void renderRectangle(Primitives::Rectangle*, int x, int y, int w, int h) = 0;
-        virtual void renderRectangle(Primitives::Rectangle*, int x, int y) = 0;
+        virtual void renderRectangle(Primitives::RectangleComponent*, int x, int y, int w, int h) = 0;
 
-        virtual void renderCircle(Primitives::Circle*, int centerX, int centerY, int r) = 0;
+        virtual void renderCircle(::Primitives::Circle*, int centerX, int centerY, int r) = 0;
     };
 }

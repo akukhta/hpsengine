@@ -1,6 +1,7 @@
 #pragma once
 #include "../GameObject/GameObject.h"
 #include "../Components/SpriteComponent.h"
+#include "../Components/primitives/RectangleComponent.h"
 
 class TestActor : public SDLCore::GameObject
 {
@@ -11,4 +12,5 @@ public:
 
 private:
     SDLCore::SpriteComponent* spriteComponent{nullptr};
+    SDLCore::Primitives::RectangleComponent*  rectangleComponent{nullptr};
 };

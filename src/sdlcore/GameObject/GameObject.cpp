@@ -1,37 +1,5 @@
 #include "GameObject.h"
 
-void SDLCore::GameObject::render(IRenderer *renderer, int x, int y)
-{
-    for (auto & renderable : renderableComponents)
-    {
-        renderable->render(renderer, x, y);
-    }
-}
-
-void SDLCore::GameObject::render(IRenderer *renderer, int x, int y, int w, int h)
-{
-    for (auto & renderable : renderableComponents)
-    {
-        renderable->render(renderer, x, y, w, h);
-    }
-}
-
-void SDLCore::GameObject::render(IRenderer *renderer, const Math::Rectangle &src, const Math::Rectangle &dst)
-{
-    for (auto & renderable : renderableComponents)
-    {
-        renderable->render(renderer, src, dst);
-    }
-}
-
-void SDLCore::GameObject::render(IRenderer *renderer, int x, int y, int r)
-{
-    for (auto & renderable : renderableComponents)
-    {
-        renderable->render(renderer, x, y, r);
-    }
-}
-
 void SDLCore::GameObject::render(IRenderer *renderer)
 {
     for (auto& renderable : renderableComponents)

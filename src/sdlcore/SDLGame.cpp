@@ -2,10 +2,8 @@
 #include "SDLAnimatedSpriteSheet.h"
 #include "SDLTexture.h"
 #include "../primitives/Colors.h"
-#include "../primitives/Rectangle.h"
 #include "SDLTimeController.h"
 #include <iostream>
-
 #include "Texture/LoadPNG.h"
 #include "Texture/TextureManager.h"
 #include "Actors/TestActor.h"
@@ -38,8 +36,8 @@ void SDLCore::SDLGame::run()
     // auto animation = SDLAnimatedSpriteSheet::loadPNG(renderer.get(), "/Users/khk/Downloads/FREE_Samurai 2D Pixel Art v1.2/Sprites/attack.png",
     //     std::make_pair(96, 96), 0.2, 7);
 
-    Primitives::Rectangle rect{100, 100, Primitives::Colors::Red, true};
-    Primitives::Circle c{300, 300, 120, Primitives::Colors::Gray, true};
+    //Primitives::RectangleComponent rect{{0, 0100, 100}, Primitives::Colors::Red, true};
+    ::Primitives::Circle c{300, 300, 120, ::Primitives::Colors::Gray, true};
 
     // animation.setDuration(1);
     // animation.setIsRepeating(true);
