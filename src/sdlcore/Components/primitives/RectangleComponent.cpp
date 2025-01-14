@@ -9,5 +9,5 @@ SDLCore::Primitives::RectangleComponent::RectangleComponent(SDLCore::Math::IVect
 void SDLCore::Primitives::RectangleComponent::render(SDLCore::IRenderer *renderer)
 {
     auto pos = parent->getPosition();
-    renderer->renderRectangle(this, pos.x + relativePosition.x, pos.y + relativePosition.y, width, height);
+    renderer->renderRectangle(this, pos.x + relativeLocation.x, pos.y + relativeLocation.y, width, height);
 }

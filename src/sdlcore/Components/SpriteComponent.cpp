@@ -25,5 +25,5 @@ void SDLCore::SpriteComponent::render(IRenderer* renderer)
 {
     auto pos = parent->getPosition();
     auto texture = textureManager->getTexture(textureID);
-    renderer->renderTexture(texture, pos + relativePosition, spriteSize);
+    renderer->renderTexture(texture, pos + relativeLocation, spriteSize);
 }

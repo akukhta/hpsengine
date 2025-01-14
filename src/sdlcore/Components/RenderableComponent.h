@@ -9,9 +9,13 @@ namespace SDLCore
         public IUpdatable
     {
     public:
-        RenderableComponent(Math::IVector2D relativePosition);
+        RenderableComponent(Math::IVector2D relativeLocation);
 
-        Math::IVector2D const& getRelativePosition() const;
+        void setRelativeLocation(Math::IVector2D relativeLocation);
+        Math::IVector2D const& getRelativeLocation() const;
+
+        void setScale(Math::FVector2D scale);
+        Math::FVector2D const& getScale() const;
 
         void update(double deltaTime) override;
 
@@ -20,6 +24,7 @@ namespace SDLCore
 
     protected:
         GameObject* parent;
-        Math::IVector2D relativePosition;
+        Math::IVector2D relativeLocation{0, 0};
+        Math::FVector2D scale{1.f, 1.f};
     };
 }

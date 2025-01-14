@@ -16,8 +16,8 @@ void SDLCore::Primitives::CircleComponent::render(SDLCore::IRenderer *renderer)
 {
     auto parentPos = parent->getPosition();
 
-    auto currX = parentPos.x + relativePosition.x;
-    auto currY = parentPos.y + relativePosition.y;
+    auto currX = parentPos.x + relativeLocation.x;
+    auto currY = parentPos.y + relativeLocation.y;
 
     if (!filled &&  (currX != prevX || currY != prevY))
     {

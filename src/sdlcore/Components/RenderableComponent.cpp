@@ -1,12 +1,27 @@
 #include "RenderableComponent.h"
 
-SDLCore::RenderableComponent::RenderableComponent(Math::IVector2D relativePosition)
-    : relativePosition(relativePosition)
+SDLCore::RenderableComponent::RenderableComponent(Math::IVector2D relativeLocation)
+    : relativeLocation(relativeLocation)
 {}
 
-SDLCore::Math::IVector2D const & SDLCore::RenderableComponent::getRelativePosition() const
+void SDLCore::RenderableComponent::setRelativeLocation(Math::IVector2D relativeLocation)
 {
-    return relativePosition;
+    this->relativeLocation = relativeLocation;
+}
+
+SDLCore::Math::IVector2D const & SDLCore::RenderableComponent::getRelativeLocation() const
+{
+    return relativeLocation;
+}
+
+void SDLCore::RenderableComponent::setScale(Math::FVector2D scale)
+{
+    this->scale = scale;
+}
+
+SDLCore::Math::FVector2D const& SDLCore::RenderableComponent::getScale() const
+{
+    return scale;
 }
 
 void SDLCore::RenderableComponent::update(double deltaTime)

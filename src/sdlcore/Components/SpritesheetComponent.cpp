@@ -1,7 +1,6 @@
 #include "SpritesheetComponent.h"
 #include "../GameObject/GameObject.h"
 #include "../Texture/TextureManager.h"
-#include <iostream>
 
 SDLCore::SpritesheetComponent::SpritesheetComponent(class TextureManager *textureManager, Math::IVector2D const &relativePosition,
     std::unique_ptr<SDLAnimatedSpriteSheet> spritesheet)
@@ -16,8 +15,8 @@ spritesheet->frameSize.second};
 
     auto pos = getParent()->getPosition();
 
-    Math::Rectangle dstRect{pos.x + relativePosition.x, pos.y + relativePosition.y,
-        spritesheet->frameSize.first, spritesheet->frameSize.second};
+    Math::Rectangle dstRect{pos.x + relativeLocation.x, pos.y + relativeLocation.y,
+        static_cast<int>(scale.x * spritesheet->frameSize.first), static_cast<int>(scale.y * spritesheet->frameSize.second)};
 
     renderer->renderTexture(textureManager->getTexture(spritesheet->textureId), srcRect, dstRect);
 }
@@ -53,8 +52,6 @@ void SDLCore::SpritesheetComponent::update(double deltaTime)
 
         spritesheet->currentFrameTime = 0;
     }
-
-    std::cout << spritesheet->currentFrameIndex << "\n";
 }
 
 void SDLCore::SpritesheetComponent::setSpritesheet(std::unique_ptr<SDLAnimatedSpriteSheet> spritesheet)

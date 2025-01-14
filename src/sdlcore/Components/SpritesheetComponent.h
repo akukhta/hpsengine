@@ -12,6 +12,7 @@ namespace SDLCore
         void render(IRenderer *renderer) override;
         void update(double deltaTime) override;
         void setSpritesheet(std::unique_ptr<SDLAnimatedSpriteSheet> spritesheet);
+        SDLAnimatedSpriteSheet* getSpritesheet() const;
 
     private:
         std::unique_ptr<SDLAnimatedSpriteSheet> spritesheet;
@@ -19,4 +20,9 @@ namespace SDLCore
         std::uint32_t textureID;
         std::pair<int, int> spriteSize;
     };
+
+    inline SDLAnimatedSpriteSheet * SpritesheetComponent::getSpritesheet() const
+    {
+        return spritesheet.get();
+    }
 }

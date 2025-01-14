@@ -7,14 +7,19 @@
 
 TestActor::TestActor(SDLCore::IRenderer* renderer, SDLCore::TextureManager* textureManager, std::uint32_t textureID, SDLCore::Math::IVector2D componentOffset)
 {
-//    spriteComponent = createComponent<SDLCore::SpriteComponent>(textureManager, textureID, componentOffset);
-//    rectangleComponent = createComponent<SDLCore::Primitives::RectangleComponent>(SDLCore::Math::IVector2D{100, 100}, 320, 240, Primitives::Colors::Red, true);
-//    circle_component = createComponent<SDLCore::Primitives::CircleComponent>(SDLCore::Math::IVector2D{320, 240}, 50, Primitives::Colors::Gray, true);
+    spriteComponent = createComponent<SDLCore::SpriteComponent>(textureManager, textureID, componentOffset);
+    rectangleComponent = createComponent<SDLCore::Primitives::RectangleComponent>(SDLCore::Math::IVector2D{100, 100}, 320, 240, Primitives::Colors::Red, true);
+    circle_component = createComponent<SDLCore::Primitives::CircleComponent>(SDLCore::Math::IVector2D{320, 240}, 50, Primitives::Colors::Gray, true);
 
     auto animatedTextureID = textureManager->loadTexture<SDLCore::LoadPNG>("/Users/khk/Downloads/FREE_Samurai 2D Pixel Art v1.2/Sprites/attack.png", renderer);
 
     spritesheet_component = createComponent<SDLCore::SpritesheetComponent>(textureManager, componentOffset,
         std::make_unique<SDLCore::SDLAnimatedSpriteSheet>(textureManager, animatedTextureID, std::make_pair(96, 96), 1, 7));
+
+    spritesheet_component->setRelativeLocation({-300,-200});
+    spritesheet_component->setScale({7, 7});
+    spritesheet_component->getSpritesheet()->setDuration(1);
+    spritesheet_component->getSpritesheet()->isLoop(true);
 }
 
 SDLCore::GameObject* TestActor::clone()
