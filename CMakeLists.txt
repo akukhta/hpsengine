@@ -61,6 +61,10 @@ add_executable(sdlplgrd main.cpp
         src/sdlcore/Components/SpritesheetComponent.h
 )
 
+add_compile_options(-Wall)
+add_compile_options(-Wextra)
+add_compile_options(-Werror)
+
 target_link_libraries(${PROJECT_NAME} SDL2::SDL2main)
 target_link_libraries(${PROJECT_NAME} SDL2::SDL2)
 target_link_libraries(${PROJECT_NAME} SDL2_ttf::SDL2_ttf-static)

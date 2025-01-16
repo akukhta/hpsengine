@@ -6,6 +6,10 @@ SDLCore::Primitives::RectangleComponent::RectangleComponent(SDLCore::Math::IVect
     : RenderableComponent(pos), color(color), width(width), height(height), fill(fill)
 {}
 
+SDLCore::Primitives::RectangleComponent::RectangleComponent(Math::Rectangle box, SDL_Color color, bool fill)
+    : RenderableComponent(Math::IVector2D{box.x,box.y}), color(color), width(box.width), height(box.height), fill(fill)
+{}
+
 void SDLCore::Primitives::RectangleComponent::render(SDLCore::IRenderer *renderer)
 {
     auto pos = parent->getPosition();

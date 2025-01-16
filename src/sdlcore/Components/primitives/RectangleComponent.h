@@ -14,6 +14,7 @@ namespace SDLCore::Primitives
     {
     public:
         RectangleComponent(SDLCore::Math::IVector2D pos, int width, int height, SDL_Color color, bool fill = true);
+        RectangleComponent(Math::Rectangle box, SDL_Color color, bool fill = false);
 
         void render(SDLCore::IRenderer *renderer) override;
 
