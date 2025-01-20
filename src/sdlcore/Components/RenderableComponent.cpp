@@ -16,7 +16,12 @@ SDLCore::Math::IVector2D SDLCore::RenderableComponent::getRelativeLocation() con
     return relativeLocation;
 }
 
-SDLCore::Math::IVector2D SDLCore::RenderableComponent::getParentWorldLocation()
+std::pair<int, int> SDLCore::RenderableComponent::getRenderableSize() const
+{
+    return std::make_pair(this->relativeLocation.x * scale.x, this->relativeLocation.y * scale.y);
+}
+
+SDLCore::Math::IVector2D SDLCore::RenderableComponent::getParentWorldLocation() const
 {
     if (auto sceneEntityPtr = dynamic_cast<ISceneEntity*>(parent))
     {
@@ -24,6 +29,18 @@ SDLCore::Math::IVector2D SDLCore::RenderableComponent::getParentWorldLocation()
     }
 
     return {0,0};
+}
+
+std::pair<int, int> SDLCore::RenderableComponent::getParentRenderableSize()
+{
+    if (auto renderableParent = dynamic_cast<IRenderable*>(parent); renderableParent != nullptr)
+    {
+        return renderableParent->getRenderableSize();
+    }
+    else
+    {
+        return {0,0};
+    }
 }
 
 void SDLCore::RenderableComponent::setScale(Math::FVector2D scale)
@@ -34,11 +51,6 @@ void SDLCore::RenderableComponent::setScale(Math::FVector2D scale)
 SDLCore::Math::FVector2D const& SDLCore::RenderableComponent::getScale() const
 {
     return scale;
-}
-
-std::pair<int, int> SDLCore::RenderableComponent::getRenderableSize() const
-{
-    return std::make_pair(relativeLocation.x * scale.x, relativeLocation.y * scale.y);
 }
 
 void SDLCore::RenderableComponent::update(double deltaTime)

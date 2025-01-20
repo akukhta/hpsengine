@@ -15,3 +15,9 @@ void SDLCore::Primitives::RectangleComponent::render(SDLCore::IRenderer *rendere
     auto pos = getParentWorldLocation();
     renderer->renderRectangle(this, pos.x + relativeLocation.x, pos.y + relativeLocation.y, width, height);
 }
+
+std::pair<int, int> SDLCore::Primitives::RectangleComponent::getRenderableSize() const
+{
+    auto parentPos = getWorldLocation();
+    return std::make_pair(parentPos.x + width, parentPos.y + height);
+}

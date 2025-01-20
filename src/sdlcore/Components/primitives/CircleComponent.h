@@ -18,6 +18,8 @@ namespace SDLCore::Primitives
 
         void render(SDLCore::IRenderer *renderer) override;
 
+        std::pair<int, int> getRenderableSize() const override;
+
     private:
         friend class SDLCore::SDLRenderer;
         std::vector<SDL_Point> points;
@@ -29,6 +31,7 @@ namespace SDLCore::Primitives
         int prevRadius;
         bool filled;
 
+    private:
         void calculatePoints(int centerX, int centerY, int radius);
     };
 }

@@ -15,6 +15,8 @@ namespace SDLCore
 
         void render(IRenderer* renderer) override;
 
+        std::pair<int, int> getRenderableSize() const override;
+
     protected:
         TextureManager* textureManager = nullptr;
         std::uint32_t textureID;

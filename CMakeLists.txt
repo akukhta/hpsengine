@@ -61,6 +61,8 @@ add_executable(sdlplgrd main.cpp
         src/sdlcore/Components/SpritesheetComponent.h
         src/sdlcore/Entity/IEntity.h
         src/sdlcore/Entity/ISceneEntity.h
+        src/sdlcore/Components/debug/BoundingBox.cpp
+        src/sdlcore/Components/debug/BoundingBox.h
 )
 
 add_compile_options(-Wall)

@@ -20,9 +20,12 @@ TestActor::TestActor(SDLCore::IRenderer* renderer, SDLCore::TextureManager* text
     spritesheet_component->setScale({7, 7});
     spritesheet_component->getSpritesheet()->setDuration(1);
     spritesheet_component->getSpritesheet()->isLoop(true);
+
+    boundBox = createComponent<SDLCore::BoundingBox>(this, Primitives::Colors::White);
 }
 
 SDLCore::GameObject* TestActor::clone()
 {
     return new TestActor(*this);
 }
+

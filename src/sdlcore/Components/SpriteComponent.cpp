@@ -28,3 +28,8 @@ void SDLCore::SpriteComponent::render(IRenderer* renderer)
     auto texture = textureManager->getTexture(textureID);
     renderer->renderTexture(texture, pos + relativeLocation, spriteSize);
 }
+
+std::pair<int, int> SDLCore::SpriteComponent::getRenderableSize() const
+{
+    return std::make_pair(spriteSize.first * scale.x, spriteSize.second * scale.y);
+}

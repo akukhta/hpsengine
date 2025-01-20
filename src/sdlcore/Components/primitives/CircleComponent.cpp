@@ -15,7 +15,6 @@ SDLCore::Primitives::CircleComponent::CircleComponent(Math::IVector2D relativePo
 void SDLCore::Primitives::CircleComponent::render(SDLCore::IRenderer *renderer)
 {
     Math::IVector2D parentLocation = getParentWorldLocation();
-
     auto currX = parentLocation.x + relativeLocation.x;
     auto currY = parentLocation.y + relativeLocation.y;
 
@@ -25,6 +24,12 @@ void SDLCore::Primitives::CircleComponent::render(SDLCore::IRenderer *renderer)
     }
 
     renderer->renderCircle(this, currX, currY, r);
+}
+
+std::pair<int, int> SDLCore::Primitives::CircleComponent::getRenderableSize() const
+{
+    auto pos = getWorldLocation();
+    return std::make_pair(pos.x + r, pos.y + r);
 }
 
 void SDLCore::Primitives::CircleComponent::calculatePoints(int centerX, int centerY, int radius)

@@ -18,11 +18,15 @@ namespace SDLCore::Primitives
 
         void render(SDLCore::IRenderer *renderer) override;
 
+        std::pair<int, int> getRenderableSize() const override;
+
+    protected:
+        int width;
+        int height;
+
     private:
         friend class SDLCore::SDLRenderer;
 
-        int width;
-        int height;
         SDL_Color color;
         bool fill;
     };

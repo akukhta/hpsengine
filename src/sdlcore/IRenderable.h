@@ -1,4 +1,6 @@
 #pragma once
+#include <utility>
+
 #include "Math/Rectangle.h"
 
 namespace SDLCore
@@ -13,6 +15,8 @@ namespace SDLCore
 
         IRenderable& operator=(const IRenderable&) = default;
         IRenderable& operator=(IRenderable&&) = default;
+
+        virtual std::pair<int, int> getRenderableSize() const = 0;
 
         virtual ~IRenderable() = default;
 
