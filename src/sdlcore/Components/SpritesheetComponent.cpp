@@ -58,3 +58,9 @@ void SDLCore::SpritesheetComponent::setSpritesheet(std::unique_ptr<SDLAnimatedSp
 {
     this->spritesheet = std::move(spritesheet);
 }
+
+std::pair<int, int> SDLCore::SpritesheetComponent::getRenderableSize() const
+{
+    auto pos = getWorldLocation();
+    return std::make_pair(pos.x + spritesheet->frameSize.first * scale.x, pos.y + spritesheet->frameSize.second * scale.y);
+}

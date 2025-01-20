@@ -13,12 +13,12 @@ namespace SDLCore
         void update(double deltaTime) override;
         void setSpritesheet(std::unique_ptr<SDLAnimatedSpriteSheet> spritesheet);
         SDLAnimatedSpriteSheet* getSpritesheet() const;
+        std::pair<int, int> getRenderableSize() const override;
 
     private:
         std::unique_ptr<SDLAnimatedSpriteSheet> spritesheet;
         TextureManager* textureManager = nullptr;
         std::uint32_t textureID;
-        std::pair<int, int> spriteSize;
     };
 
     inline SDLAnimatedSpriteSheet * SpritesheetComponent::getSpritesheet() const
