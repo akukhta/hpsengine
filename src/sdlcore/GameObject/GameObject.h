@@ -32,7 +32,7 @@ namespace SDLCore
         Math::IVector2D getWorldLocation() const override;
         Math::IVector2D getRelativeLocation() const override;
 
-        std::pair<int, int> getRenderableSize() const override;
+        Math::Rectangle getBoundingBox() const override;
 
     protected:
         Math::IVector2D position{0, 0};

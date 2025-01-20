@@ -10,7 +10,7 @@ namespace SDLCore
 
         void render(SDLCore::IRenderer *renderer) override;
 
-        std::pair<int, int> getRenderableSize() const override;
+        Math::Rectangle getBoundingBox() const override;
 
     private:
         void calculateBoundingBox();

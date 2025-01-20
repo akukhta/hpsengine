@@ -59,8 +59,8 @@ void SDLCore::SpritesheetComponent::setSpritesheet(std::unique_ptr<SDLAnimatedSp
     this->spritesheet = std::move(spritesheet);
 }
 
-std::pair<int, int> SDLCore::SpritesheetComponent::getRenderableSize() const
+SDLCore::Math::Rectangle SDLCore::SpritesheetComponent::getBoundingBox() const
 {
     auto pos = getWorldLocation();
-    return std::make_pair(pos.x + spritesheet->frameSize.first * scale.x, pos.y + spritesheet->frameSize.second * scale.y);
+    return Math::Rectangle{pos.x, pos.y, static_cast<int>(spritesheet->frameSize.first * scale.x),  static_cast<int>(spritesheet->frameSize.second * scale.y)};
 }

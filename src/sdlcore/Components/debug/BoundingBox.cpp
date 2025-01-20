@@ -12,16 +12,20 @@ void SDLCore::BoundingBox::render(SDLCore::IRenderer *renderer)
     RectangleComponent::render(renderer);
 }
 
-std::pair<int, int> SDLCore::BoundingBox::getRenderableSize() const
+SDLCore::Math::Rectangle SDLCore::BoundingBox::getBoundingBox() const
 {
-    return std::make_pair(std::numeric_limits<int>::min(), std::numeric_limits<int>::min());
+    return Math::Rectangle::createMin();
 }
 
 void SDLCore::BoundingBox::calculateBoundingBox()
 {
-    relativeLocation = getParentWorldLocation();
-    auto bounds = getParentRenderableSize();
+    if (auto renderableParent = dynamic_cast<IRenderable*>(parent); renderableParent != nullptr)
+    {
+        auto parentBBox = renderableParent->getBoundingBox();
 
-    width = bounds.first;
-    height = bounds.second;
+        relativeLocation = Math::IVector2D{parentBBox.x, parentBBox.y};
+
+        width = parentBBox.width;
+        height = parentBBox.height;
+    }
 }

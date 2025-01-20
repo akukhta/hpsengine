@@ -16,9 +16,11 @@ SDLCore::Math::IVector2D SDLCore::RenderableComponent::getRelativeLocation() con
     return relativeLocation;
 }
 
-std::pair<int, int> SDLCore::RenderableComponent::getRenderableSize() const
+SDLCore::Math::Rectangle SDLCore::RenderableComponent::getBoundingBox() const
 {
-    return std::make_pair(this->relativeLocation.x * scale.x, this->relativeLocation.y * scale.y);
+    auto worldPos = getWorldLocation();
+    return Math::Rectangle{worldPos.x, worldPos.y,
+        static_cast<int>(scale.x), static_cast<int>(scale.y)};
 }
 
 SDLCore::Math::IVector2D SDLCore::RenderableComponent::getParentWorldLocation() const
@@ -31,11 +33,11 @@ SDLCore::Math::IVector2D SDLCore::RenderableComponent::getParentWorldLocation() 
     return {0,0};
 }
 
-std::pair<int, int> SDLCore::RenderableComponent::getParentRenderableSize()
+SDLCore::Math::Rectangle SDLCore::RenderableComponent::getParentRenderableSize()
 {
     if (auto renderableParent = dynamic_cast<IRenderable*>(parent); renderableParent != nullptr)
     {
-        return renderableParent->getRenderableSize();
+        return renderableParent->getBoundingBox();
     }
     else
     {

@@ -29,7 +29,9 @@ void SDLCore::SpriteComponent::render(IRenderer* renderer)
     renderer->renderTexture(texture, pos + relativeLocation, spriteSize);
 }
 
-std::pair<int, int> SDLCore::SpriteComponent::getRenderableSize() const
+SDLCore::Math::Rectangle SDLCore::SpriteComponent::getBoundingBox() const
 {
-    return std::make_pair(spriteSize.first * scale.x, spriteSize.second * scale.y);
+    auto worldLocation = getWorldLocation();
+    return Math::Rectangle{worldLocation.x, worldLocation.y,
+        static_cast<int>(spriteSize.first * scale.x), static_cast<int>(spriteSize.second * scale.y)};
 }

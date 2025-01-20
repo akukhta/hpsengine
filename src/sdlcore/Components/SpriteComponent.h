@@ -15,7 +15,7 @@ namespace SDLCore
 
         void render(IRenderer* renderer) override;
 
-        std::pair<int, int> getRenderableSize() const override;
+        Math::Rectangle getBoundingBox() const override;
 
     protected:
         TextureManager* textureManager = nullptr;

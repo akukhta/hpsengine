@@ -24,12 +24,13 @@ namespace SDLCore
         Math::IVector2D getWorldLocation() const override;
         Math::IVector2D getRelativeLocation() const override;
 
-        std::pair<int, int> getRenderableSize() const override;
+        Math::Rectangle getBoundingBox() const override;
 
     protected:
 
         Math::IVector2D getParentWorldLocation() const;
-        std::pair<int, int> getParentRenderableSize();
+
+        Math::Rectangle getParentRenderableSize();
 
         Math::IVector2D relativeLocation{0, 0};
         Math::FVector2D scale{1.f, 1.f};

@@ -18,7 +18,7 @@ namespace SDLCore::Primitives
 
         void render(SDLCore::IRenderer *renderer) override;
 
-        std::pair<int, int> getRenderableSize() const override;
+        Math::Rectangle getBoundingBox() const override;
 
     protected:
         int width;

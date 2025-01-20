@@ -1,7 +1,7 @@
 #pragma once
 #include <utility>
-
 #include "Math/Rectangle.h"
+#include "Math/Vector2D.h"
 
 namespace SDLCore
 {
@@ -16,7 +16,7 @@ namespace SDLCore
         IRenderable& operator=(const IRenderable&) = default;
         IRenderable& operator=(IRenderable&&) = default;
 
-        virtual std::pair<int, int> getRenderableSize() const = 0;
+        virtual Math::Rectangle getBoundingBox() const = 0;
 
         virtual ~IRenderable() = default;
 

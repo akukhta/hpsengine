@@ -26,10 +26,10 @@ void SDLCore::Primitives::CircleComponent::render(SDLCore::IRenderer *renderer)
     renderer->renderCircle(this, currX, currY, r);
 }
 
-std::pair<int, int> SDLCore::Primitives::CircleComponent::getRenderableSize() const
+SDLCore::Math::Rectangle SDLCore::Primitives::CircleComponent::getBoundingBox() const
 {
     auto pos = getWorldLocation();
-    return std::make_pair(pos.x + r, pos.y + r);
+    return Math::Rectangle{pos.x, pos.y, r, r};
 }
 
 void SDLCore::Primitives::CircleComponent::calculatePoints(int centerX, int centerY, int radius)
