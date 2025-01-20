@@ -14,7 +14,7 @@ void SDLCore::BoundingBox::render(SDLCore::IRenderer *renderer)
 
 SDLCore::Math::Rectangle SDLCore::BoundingBox::getBoundingBox() const
 {
-    return Math::Rectangle::createMin();
+    return Math::Rectangle::createDefaultBoundingBox();
 }
 
 void SDLCore::BoundingBox::calculateBoundingBox()

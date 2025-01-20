@@ -33,16 +33,16 @@ SDLCore::Math::IVector2D SDLCore::GameObject::getRelativeLocation() const
 
 SDLCore::Math::Rectangle SDLCore::GameObject::getBoundingBox() const
 {
-    Math::Rectangle boundingBox = Math::Rectangle::createMin();
+    Math::Rectangle boundingBox = Math::Rectangle::createDefaultBoundingBox();
 
     for (auto &renderable : renderableComponents)
     {
         auto componentSize = renderable->getBoundingBox();
 
-        boundingBox.x = std::max(boundingBox.x, componentSize.x);
-        boundingBox.y = std::max(boundingBox.y, componentSize.y);
-        boundingBox.width = std::max(boundingBox.width, componentSize.width);
-        boundingBox.height = std::max(boundingBox.height, componentSize.height);
+        boundingBox.x = std::min(boundingBox.x, componentSize.x);
+        boundingBox.y = std::min(boundingBox.y, componentSize.y);
+        boundingBox.width = std::max(boundingBox.width, componentSize.width + componentSize.x);
+        boundingBox.height = std::max(boundingBox.height, componentSize.height + componentSize.y);
     }
 
     return boundingBox;

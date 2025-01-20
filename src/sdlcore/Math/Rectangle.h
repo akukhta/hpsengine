@@ -9,12 +9,12 @@ namespace SDLCore::Math
         int width;
         int height;
 
-        static constexpr Rectangle createMin()
+        static constexpr Rectangle createDefaultBoundingBox()
         {
             return Rectangle
             {
-                    std::numeric_limits<int>::min(),
-                    std::numeric_limits<int>::min(),
+                    std::numeric_limits<int>::max(),
+                    std::numeric_limits<int>::max(),
                  std::numeric_limits<int>::min(),
                 std::numeric_limits<int>::min(),
             };
