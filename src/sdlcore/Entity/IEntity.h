@@ -24,8 +24,6 @@ namespace SDLCore
         }
 
     protected:
-        virtual Math::IVector2D getParentLocation() const = 0;
-
         IEntity* parent = nullptr;
     };
 }

@@ -14,7 +14,7 @@ SDLCore::Primitives::CircleComponent::CircleComponent(Math::IVector2D relativePo
 
 void SDLCore::Primitives::CircleComponent::render(SDLCore::IRenderer *renderer)
 {
-    Math::IVector2D parentLocation = getParentLocation();
+    Math::IVector2D parentLocation = getParentWorldLocation();
 
     auto currX = parentLocation.x + relativeLocation.x;
     auto currY = parentLocation.y + relativeLocation.y;

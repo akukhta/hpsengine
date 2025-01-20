@@ -23,7 +23,8 @@ SDLCore::SpriteComponent::SpriteComponent(TextureManager *textureManager, std::u
 
 void SDLCore::SpriteComponent::render(IRenderer* renderer)
 {
-    auto pos = getParentLocation();
+    Math::IVector2D pos = getParentWorldLocation();
+
     auto texture = textureManager->getTexture(textureID);
     renderer->renderTexture(texture, pos + relativeLocation, spriteSize);
 }

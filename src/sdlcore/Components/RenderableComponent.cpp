@@ -11,9 +11,19 @@ void SDLCore::RenderableComponent::setRelativeLocation(Math::IVector2D relativeL
     this->relativeLocation = relativeLocation;
 }
 
-SDLCore::Math::IVector2D const & SDLCore::RenderableComponent::getRelativeLocation() const
+SDLCore::Math::IVector2D SDLCore::RenderableComponent::getRelativeLocation() const
 {
     return relativeLocation;
+}
+
+SDLCore::Math::IVector2D SDLCore::RenderableComponent::getParentWorldLocation()
+{
+    if (auto sceneEntityPtr = dynamic_cast<ISceneEntity*>(parent))
+    {
+        return sceneEntityPtr->getWorldLocation();
+    }
+
+    return {0,0};
 }
 
 void SDLCore::RenderableComponent::setScale(Math::FVector2D scale)
@@ -36,17 +46,14 @@ void SDLCore::RenderableComponent::update(double deltaTime)
     ;
 }
 
-SDLCore::Math::IVector2D SDLCore::RenderableComponent::getParentLocation() const
+SDLCore::Math::IVector2D SDLCore::RenderableComponent::getWorldLocation() const
 {
-    if (auto renderableParent = dynamic_cast<RenderableComponent*>(getParent()); renderableParent != nullptr)
+    if (auto sceneEntityPtr = dynamic_cast<ISceneEntity*>(parent); sceneEntityPtr != nullptr)
     {
-        return renderableParent->getRelativeLocation();
+        return sceneEntityPtr->getWorldLocation() + relativeLocation;
     }
-
-    if (auto gameobjParent = dynamic_cast<GameObject*>(getParent()); gameobjParent != nullptr)
+    else
     {
-        return gameobjParent->getPosition();
+        return relativeLocation;
     }
-
-    return {0, 0};
 }

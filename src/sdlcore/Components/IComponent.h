@@ -4,7 +4,7 @@
 
 namespace SDLCore
 {
-    class IComponent : public IEntity
+    class IComponent : virtual public IEntity
     {
     public:
         virtual ~IComponent() = default;

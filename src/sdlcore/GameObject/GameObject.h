@@ -3,6 +3,7 @@
 #include "../IRenderable.h"
 #include "../IUpdatable.h"
 #include "../Components/IComponent.h"
+#include "../Entity/ISceneEntity.h"
 #include "../Math/Vector2D.h"
 
 namespace SDLCore
@@ -10,7 +11,7 @@ namespace SDLCore
     template<typename ComponentType>
     concept IsComponentType = std::is_base_of_v<IComponent, ComponentType>;
 
-    class GameObject : public IEntity, public IRenderable, public IUpdatable
+    class GameObject : public ISceneEntity, public IRenderable, public IUpdatable
     {
     public:
         GameObject() = default;
@@ -27,12 +28,11 @@ namespace SDLCore
 
         virtual GameObject* clone() = 0;
 
-        Math::IVector2D getPosition() const;
         void setPosition(Math::IVector2D position);
+        Math::IVector2D getWorldLocation() const override;
+        Math::IVector2D getRelativeLocation() const override;
 
     protected:
-        Math::IVector2D getParentLocation() const override;
-
         Math::IVector2D position{0, 0};
 
         template <typename ComponentType, typename... Args>

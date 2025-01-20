@@ -16,17 +16,17 @@ void SDLCore::GameObject::update(double deltaTime)
     }
 }
 
-SDLCore::Math::IVector2D SDLCore::GameObject::getPosition() const
-{
-    return position;
-}
-
 void SDLCore::GameObject::setPosition(Math::IVector2D position)
 {
     this->position = position;
 }
 
-SDLCore::Math::IVector2D SDLCore::GameObject::getParentLocation() const
+SDLCore::Math::IVector2D SDLCore::GameObject::getWorldLocation() const
 {
     return position;
+}
+
+SDLCore::Math::IVector2D SDLCore::GameObject::getRelativeLocation() const
+{
+    return {0, 0};
 }
