@@ -25,3 +25,8 @@ void SDLCore::GameObject::setPosition(Math::IVector2D position)
 {
     this->position = position;
 }
+
+SDLCore::Math::IVector2D SDLCore::GameObject::getParentLocation() const
+{
+    return position;
+}

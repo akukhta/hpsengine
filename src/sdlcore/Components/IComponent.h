@@ -1,15 +1,12 @@
 #pragma once
-#include "../IRenderable.h"
-#include "../IUpdatable.h"
+#include "../Entity/IEntity.h"
+#include "../Math/Vector2D.h"
 
 namespace SDLCore
 {
-    class IComponent
+    class IComponent : public IEntity
     {
     public:
         virtual ~IComponent() = default;
-
-        virtual void setParent(class GameObject* parent) = 0;
-        virtual GameObject* getParent() const = 0;
     };
 }

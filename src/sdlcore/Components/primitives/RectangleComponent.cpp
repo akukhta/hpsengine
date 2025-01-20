@@ -12,6 +12,6 @@ SDLCore::Primitives::RectangleComponent::RectangleComponent(Math::Rectangle box,
 
 void SDLCore::Primitives::RectangleComponent::render(SDLCore::IRenderer *renderer)
 {
-    auto pos = parent->getPosition();
+    auto pos = getParentLocation();
     renderer->renderRectangle(this, pos.x + relativeLocation.x, pos.y + relativeLocation.y, width, height);
 }

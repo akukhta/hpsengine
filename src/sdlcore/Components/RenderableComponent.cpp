@@ -1,5 +1,7 @@
 #include "RenderableComponent.h"
 
+#include "../GameObject/GameObject.h"
+
 SDLCore::RenderableComponent::RenderableComponent(Math::IVector2D relativeLocation)
     : relativeLocation(relativeLocation)
 {}
@@ -24,17 +26,27 @@ SDLCore::Math::FVector2D const& SDLCore::RenderableComponent::getScale() const
     return scale;
 }
 
+std::pair<int, int> SDLCore::RenderableComponent::getRenderableSize() const
+{
+    return std::make_pair(relativeLocation.x * scale.x, relativeLocation.y * scale.y);
+}
+
 void SDLCore::RenderableComponent::update(double deltaTime)
 {
-
+    ;
 }
 
-void SDLCore::RenderableComponent::setParent(GameObject *parent)
+SDLCore::Math::IVector2D SDLCore::RenderableComponent::getParentLocation() const
 {
-    this->parent = parent;
-}
+    if (auto renderableParent = dynamic_cast<RenderableComponent*>(getParent()); renderableParent != nullptr)
+    {
+        return renderableParent->getRelativeLocation();
+    }
 
-SDLCore::GameObject * SDLCore::RenderableComponent::getParent() const
-{
-    return parent;
+    if (auto gameobjParent = dynamic_cast<GameObject*>(getParent()); gameobjParent != nullptr)
+    {
+        return gameobjParent->getPosition();
+    }
+
+    return {0, 0};
 }

@@ -10,7 +10,7 @@ namespace SDLCore
     template<typename ComponentType>
     concept IsComponentType = std::is_base_of_v<IComponent, ComponentType>;
 
-    class GameObject : public IRenderable, public IUpdatable
+    class GameObject : public IEntity, public IRenderable, public IUpdatable
     {
     public:
         GameObject() = default;
@@ -31,6 +31,8 @@ namespace SDLCore
         void setPosition(Math::IVector2D position);
 
     protected:
+        Math::IVector2D getParentLocation() const override;
+
         Math::IVector2D position{0, 0};
 
         template <typename ComponentType, typename... Args>

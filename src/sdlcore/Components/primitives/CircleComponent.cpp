@@ -14,10 +14,10 @@ SDLCore::Primitives::CircleComponent::CircleComponent(Math::IVector2D relativePo
 
 void SDLCore::Primitives::CircleComponent::render(SDLCore::IRenderer *renderer)
 {
-    auto parentPos = parent->getPosition();
+    Math::IVector2D parentLocation = getParentLocation();
 
-    auto currX = parentPos.x + relativeLocation.x;
-    auto currY = parentPos.y + relativeLocation.y;
+    auto currX = parentLocation.x + relativeLocation.x;
+    auto currY = parentLocation.y + relativeLocation.y;
 
     if (!filled &&  (currX != prevX || currY != prevY))
     {

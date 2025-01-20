@@ -59,6 +59,7 @@ add_executable(sdlplgrd main.cpp
         src/sdlcore/Components/RenderableComponent.cpp
         src/sdlcore/Components/SpritesheetComponent.cpp
         src/sdlcore/Components/SpritesheetComponent.h
+        src/sdlcore/Entity/IEntity.h
 )
 
 add_compile_options(-Wall)

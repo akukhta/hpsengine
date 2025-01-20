@@ -13,7 +13,7 @@ void SDLCore::SpritesheetComponent::render(IRenderer *renderer)
         0,spritesheet->frameSize.first,
 spritesheet->frameSize.second};
 
-    auto pos = getParent()->getPosition();
+    auto pos = getParentLocation();
 
     Math::Rectangle dstRect{pos.x + relativeLocation.x, pos.y + relativeLocation.y,
         static_cast<int>(scale.x * spritesheet->frameSize.first), static_cast<int>(scale.y * spritesheet->frameSize.second)};
