@@ -1,0 +1,31 @@
+\doxysection{Sprite\+Component.\+h}
+\hypertarget{_sprite_component_8h_source}{}\label{_sprite_component_8h_source}\index{src/sdlcore/Components/SpriteComponent.h@{src/sdlcore/Components/SpriteComponent.h}}
+\mbox{\hyperlink{_sprite_component_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_renderable_component_8h}{RenderableComponent.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_d_l_texture_8h}{../SDLTexture.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_s_d_l_core}{SDLCore}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_s_d_l_core_1_1_sprite_component_ad09672580a91ff60b646aa5893283157}{SpriteComponent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_s_d_l_core_1_1_renderable_component_acb2eadd47e625a732b0963e39ab93384}{RenderableComponent}}}
+\DoxyCodeLine{00008\ \ \ \ \ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_sprite_component_ad09672580a91ff60b646aa5893283157}{SpriteComponent}}(\textcolor{keyword}{class}\ \mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager}{TextureManager}}*\ \mbox{\hyperlink{class_s_d_l_core_1_1_sprite_component_ac5e188d4ca1bc1fc1ac8b82302351c1e}{textureManager}},\ std::uint32\_t\ textureId,}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math::IVector2D}}\ \textcolor{keyword}{const}\&\ relativePosition);}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_sprite_component_ad09672580a91ff60b646aa5893283157}{SpriteComponent}}(\mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager}{TextureManager}}*\ \mbox{\hyperlink{class_s_d_l_core_1_1_sprite_component_ac5e188d4ca1bc1fc1ac8b82302351c1e}{textureManager}},\ std::uint32\_t\ \mbox{\hyperlink{class_s_d_l_core_1_1_sprite_component_ae8459efcdac0f306cf4573dd12337740}{textureID}},}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math::IVector2D}}\ \textcolor{keyword}{const}\&\ relativePosition,\ std::pair<int,\ int>\ \mbox{\hyperlink{class_s_d_l_core_1_1_sprite_component_a61a341abe6b37386b5c8a6465a59e945}{spriteSize}});}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_sprite_component_ab587d0f78b3ccbf1def45d1d8f0ba674}{render}}(\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer}{IRenderer}}*\ renderer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_d_l_core_1_1_math_1_1_rectangle}{Math::Rectangle}}\ \mbox{\hyperlink{class_s_d_l_core_1_1_sprite_component_a58bf56b00b24ef0becf97d1d605c9902}{getBoundingBox}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager}{TextureManager}}*\ \mbox{\hyperlink{class_s_d_l_core_1_1_sprite_component_ac5e188d4ca1bc1fc1ac8b82302351c1e}{textureManager}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ std::uint32\_t\ \mbox{\hyperlink{class_s_d_l_core_1_1_sprite_component_ae8459efcdac0f306cf4573dd12337740}{textureID}};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ std::pair<int,\ int>\ \mbox{\hyperlink{class_s_d_l_core_1_1_sprite_component_a61a341abe6b37386b5c8a6465a59e945}{spriteSize}};}
+\DoxyCodeLine{00024\ \ \ \ \ \};}
+\DoxyCodeLine{00025\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,24 @@
+\doxysection{Bounding\+Box.\+h}
+\hypertarget{_bounding_box_8h_source}{}\label{_bounding_box_8h_source}\index{src/sdlcore/Components/debug/BoundingBox.h@{src/sdlcore/Components/debug/BoundingBox.h}}
+\mbox{\hyperlink{_bounding_box_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_rectangle_component_8h}{../primitives/RectangleComponent.h}}"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_s_d_l_core}{SDLCore}}}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_s_d_l_core_1_1_bounding_box_a3a98bd7a5714c35cde2e3cb8029df565}{BoundingBox}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_s_d_l_core_1_1_primitives_1_1_rectangle_component}{Primitives::RectangleComponent}}}
+\DoxyCodeLine{00007\ \ \ \ \ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_bounding_box_a3a98bd7a5714c35cde2e3cb8029df565}{BoundingBox}}(\mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{IEntity}}*\ \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity_a6d7b5f756cbb6c89874464a470ff6d62}{parent}},\ SDL\_Color\ color);}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_bounding_box_a7273d9b5cb99d1779e70f68e2daba99d}{render}}(\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer}{SDLCore::IRenderer}}\ *renderer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_d_l_core_1_1_math_1_1_rectangle}{Math::Rectangle}}\ \mbox{\hyperlink{class_s_d_l_core_1_1_bounding_box_a29d25bf234248f12ace48e2c32861405}{getBoundingBox}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ calculateBoundingBox();}
+\DoxyCodeLine{00017\ \ \ \ \ \};}
+\DoxyCodeLine{00018\ \}}
+
+\end{DoxyCode}

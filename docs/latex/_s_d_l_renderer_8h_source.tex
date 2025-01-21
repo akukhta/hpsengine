@@ -1,0 +1,54 @@
+\doxysection{SDLRenderer.\+h}
+\hypertarget{_s_d_l_renderer_8h_source}{}\label{_s_d_l_renderer_8h_source}\index{src/sdlcore/SDLRenderer.h@{src/sdlcore/SDLRenderer.h}}
+\mbox{\hyperlink{_s_d_l_renderer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_renderer_8h}{IRenderer.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_s_d_l_core}{SDLCore}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_a284b21f151a9ae7b9c2b6534306e52a1}{SDLRenderer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer_a785f01f7a56f1036cde4122c7e8bdad4}{IRenderer}}}
+\DoxyCodeLine{00011\ \ \ \ \ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_a284b21f151a9ae7b9c2b6534306e52a1}{SDLRenderer}}(\textcolor{keyword}{class}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_window}{SDLWindow}}*\ window);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_ad6d779832476178754057960701cca3a}{setResolution}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_ad6d779832476178754057960701cca3a}{setResolution}}(std::pair<int,\ int>\ resolution);}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ std::pair<int,\ int>\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_a9059407bf7a7d5ce322193d29f52a38b}{getResolution}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifndef\ \_DEBUG}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ SDL\_Renderer*\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_a91f60cbeb8e8891b80d275f4fb622c52}{getRenderer}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ renderer.get();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_aa51ac7f1e00d11703df066e443a68381}{renderTexture}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_ac7731316e6499f47cdc8b802d82d091d}{startRendering}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_a86853f9eb6713e1251da3e5abd57abaf}{finishRendering}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_aa51ac7f1e00d11703df066e443a68381}{renderTexture}}(\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}}*\ texture,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_aa51ac7f1e00d11703df066e443a68381}{renderTexture}}(\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}}*\ texture,\ \mbox{\hyperlink{struct_s_d_l_core_1_1_math_1_1_rectangle}{Math::Rectangle}}\ \textcolor{keyword}{const}\ \&src,\ \mbox{\hyperlink{struct_s_d_l_core_1_1_math_1_1_rectangle}{Math::Rectangle}}\ \textcolor{keyword}{const}\ \&dst)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_aa51ac7f1e00d11703df066e443a68381}{renderTexture}}(\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}}*\ texture,\ \mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math::IVector2D}}\ pos,\ std::pair<int,\ int>\ size)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_a0e5db437a40d99b18afdd602f7c80fda}{renderRectangle}}(\mbox{\hyperlink{class_s_d_l_core_1_1_primitives_1_1_rectangle_component}{Primitives::RectangleComponent}}*\ rectangle,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_a715bda9fbca8d61c35e63778df7f6046}{renderCircle}}(\mbox{\hyperlink{class_s_d_l_core_1_1_primitives_1_1_circle_component}{Primitives::CircleComponent}}*\ circle,\ \textcolor{keywordtype}{int}\ centerX,\ \textcolor{keywordtype}{int}\ centerY,\ \textcolor{keywordtype}{int}\ r)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ std::pair<int,\ int>\ resolution;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }RendererPtr\ =\ std::unique\_ptr<SDL\_Renderer,\ \textcolor{keyword}{decltype}(\&SDL\_DestroyRenderer)>;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ RendererPtr\ renderer\{\textcolor{keyword}{nullptr},\ \&SDL\_DestroyRenderer\};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ changeResolution();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ SDL\_Color\ getDrawColor()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setDrawColor(SDL\_Color\ color);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ SDL\_Color\ exchangeColor(SDL\_Color\ color);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \};}
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}

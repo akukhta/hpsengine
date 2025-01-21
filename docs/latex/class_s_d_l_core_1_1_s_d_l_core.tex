@@ -1,0 +1,202 @@
+\doxysection{SDLCore\+::SDLCore Class Reference}
+\hypertarget{class_s_d_l_core_1_1_s_d_l_core}{}\label{class_s_d_l_core_1_1_s_d_l_core}\index{SDLCore::SDLCore@{SDLCore::SDLCore}}
+
+
+{\ttfamily \#include $<$SDLCore.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3}{Subsystem}} \+: std\+::uint32\+\_\+t \{ \newline
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3aefb4777327e6f704fb1519c1882f93ec}{Timer}} = 0x00000001u
+, \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3ab22f0418e8ac915eb66f829d262d14a2}{Audio}} = 0x00000010u
+, \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a34e2d1989a1dbf75cd631596133ee5ee}{Video}} = 0x00000020u
+, \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a1162b85b7b993e2edf7da29dd8abf7e2}{Joystick}} = 0x00000200u
+, \newline
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a5297f85f5ba60ced03847806f18c8449}{Haptic}} = 0x00001000u
+, \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a221f6781b4faa2d321ca0d928f518d6e}{Gamepad}} = 0x00002000u
+, \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a87f9f735a1d36793ceaecd4e47124b63}{Events}} = 0x00004000u
+, \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a06b185256c71c1aec263c6e22bf8ef6b}{Sensor}} = 0x00008000u
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6c3e47e8b9790070e9380b924be282e5}{SDLCore}} ()=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_aa1a601b924902beae16a119c0fd57983}{SDLCore}} (const \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core}{SDLCore}} \&)=delete
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core}{SDLCore}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a2ba0eef4f5e8a6abaece266168e6476c}{operator=}} (const \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core}{SDLCore}} \&)=delete
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_aced3825a2dcf40d21c4ca11df5e803cd}{SDLCore}} (\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core}{SDLCore}} \&\&)=delete
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core}{SDLCore}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a4788f7647ccd235005bfb3e37a5490ec}{operator=}} (\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core}{SDLCore}} \&\&)=delete
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a080f98a08b79a7bef179319c0569d3b4}{\texorpdfstring{$\sim$}{\string~}\+SDLCore}} ()
+\item 
+bool \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_ab075f6fd432df728fe269f55911d7589}{init\+SDL}} ()
+\item 
+bool \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a71dcf82c6becea569fab8aaa139aa0bc}{init\+Image}} ()
+\item 
+bool \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a29af1fc06b0fb9e5e1c33c01a8a7b0f4}{init\+Font}} ()
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_window}{SDLWindow}} $>$ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_af3e20456790bafebe401a4538683fe61}{create\+Window}} (std\+::string\+\_\+view title, std\+::pair$<$ int, int $>$ size, std\+::pair$<$ int, int $>$ pos, bool is\+Shown, bool is\+Fullscreen)
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer}{SDLRenderer}} $>$ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a25174c953b08015bebedc954f1db1e67}{create\+Renderer}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_window}{SDLWindow}} $>$ \&window)
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer}{SDLRenderer}} $>$ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a89df936dee6343614eb5fd5899e4b963}{create\+Renderer}} (\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_window}{SDLWindow}} \texorpdfstring{$\ast$}{*}window)
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_event_handler}{SDLEvent\+Handler}} $>$ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a38c0cc8852b20776104278d2ebefe967}{create\+Event\+Handler}} ()
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_time_controller}{SDLTime\+Controller}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_aec6cc0390246b6618be90431a3619d84}{get\+Time\+Controller}} ()
+\item 
+bool \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a1c381385b6be8324ba1114c2e1dee22c}{is\+Initialized}} (\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3}{Subsystem}} subsystem) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to initialize SDL subsystems And create SDL objects and wrappers, such as \doxylink{class_s_d_l_core_1_1_s_d_l_window}{SDLWindow}, \doxylink{class_s_d_l_core_1_1_s_d_l_renderer}{SDLRenderer}, etc. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!Subsystem@{Subsystem}}
+\index{Subsystem@{Subsystem}!SDLCore::SDLCore@{SDLCore::SDLCore}}
+\doxysubsubsection{\texorpdfstring{Subsystem}{Subsystem}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3} 
+enum class \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3}{SDLCore\+::\+SDLCore\+::\+Subsystem}} \+: std\+::uint32\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Timer@{Timer}!SDLCore::SDLCore@{SDLCore::SDLCore}}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!Timer@{Timer}}}\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3aefb4777327e6f704fb1519c1882f93ec}\label{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3aefb4777327e6f704fb1519c1882f93ec} 
+Timer&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Audio@{Audio}!SDLCore::SDLCore@{SDLCore::SDLCore}}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!Audio@{Audio}}}\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3ab22f0418e8ac915eb66f829d262d14a2}\label{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3ab22f0418e8ac915eb66f829d262d14a2} 
+Audio&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Video@{Video}!SDLCore::SDLCore@{SDLCore::SDLCore}}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!Video@{Video}}}\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a34e2d1989a1dbf75cd631596133ee5ee}\label{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a34e2d1989a1dbf75cd631596133ee5ee} 
+Video&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Joystick@{Joystick}!SDLCore::SDLCore@{SDLCore::SDLCore}}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!Joystick@{Joystick}}}\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a1162b85b7b993e2edf7da29dd8abf7e2}\label{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a1162b85b7b993e2edf7da29dd8abf7e2} 
+Joystick&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Haptic@{Haptic}!SDLCore::SDLCore@{SDLCore::SDLCore}}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!Haptic@{Haptic}}}\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a5297f85f5ba60ced03847806f18c8449}\label{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a5297f85f5ba60ced03847806f18c8449} 
+Haptic&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Gamepad@{Gamepad}!SDLCore::SDLCore@{SDLCore::SDLCore}}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!Gamepad@{Gamepad}}}\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a221f6781b4faa2d321ca0d928f518d6e}\label{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a221f6781b4faa2d321ca0d928f518d6e} 
+Gamepad&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Events@{Events}!SDLCore::SDLCore@{SDLCore::SDLCore}}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!Events@{Events}}}\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a87f9f735a1d36793ceaecd4e47124b63}\label{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a87f9f735a1d36793ceaecd4e47124b63} 
+Events&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sensor@{Sensor}!SDLCore::SDLCore@{SDLCore::SDLCore}}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!Sensor@{Sensor}}}\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a06b185256c71c1aec263c6e22bf8ef6b}\label{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a06b185256c71c1aec263c6e22bf8ef6b} 
+Sensor&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_a6c3e47e8b9790070e9380b924be282e5}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!SDLCore@{SDLCore}}
+\index{SDLCore@{SDLCore}!SDLCore::SDLCore@{SDLCore::SDLCore}}
+\doxysubsubsection{\texorpdfstring{SDLCore()}{SDLCore()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_core_a6c3e47e8b9790070e9380b924be282e5} 
+SDLCore\+::\+SDLCore\+::\+SDLCore (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_aa1a601b924902beae16a119c0fd57983}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!SDLCore@{SDLCore}}
+\index{SDLCore@{SDLCore}!SDLCore::SDLCore@{SDLCore::SDLCore}}
+\doxysubsubsection{\texorpdfstring{SDLCore()}{SDLCore()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_core_aa1a601b924902beae16a119c0fd57983} 
+SDLCore\+::\+SDLCore\+::\+SDLCore (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core}{SDLCore}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_aced3825a2dcf40d21c4ca11df5e803cd}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!SDLCore@{SDLCore}}
+\index{SDLCore@{SDLCore}!SDLCore::SDLCore@{SDLCore::SDLCore}}
+\doxysubsubsection{\texorpdfstring{SDLCore()}{SDLCore()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_core_aced3825a2dcf40d21c4ca11df5e803cd} 
+SDLCore\+::\+SDLCore\+::\+SDLCore (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core}{SDLCore}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_a080f98a08b79a7bef179319c0569d3b4}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!````~SDLCore@{\texorpdfstring{$\sim$}{\string~}SDLCore}}
+\index{````~SDLCore@{\texorpdfstring{$\sim$}{\string~}SDLCore}!SDLCore::SDLCore@{SDLCore::SDLCore}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SDLCore()}{\string~SDLCore()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_core_a080f98a08b79a7bef179319c0569d3b4} 
+SDLCore\+::\+SDLCore\+::\texorpdfstring{$\sim$}{\string~}\+SDLCore (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_a38c0cc8852b20776104278d2ebefe967}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!createEventHandler@{createEventHandler}}
+\index{createEventHandler@{createEventHandler}!SDLCore::SDLCore@{SDLCore::SDLCore}}
+\doxysubsubsection{\texorpdfstring{createEventHandler()}{createEventHandler()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_core_a38c0cc8852b20776104278d2ebefe967} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_event_handler}{SDLCore\+::\+SDLEvent\+Handler}} $>$ SDLCore\+::\+SDLCore\+::create\+Event\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_a89df936dee6343614eb5fd5899e4b963}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!createRenderer@{createRenderer}}
+\index{createRenderer@{createRenderer}!SDLCore::SDLCore@{SDLCore::SDLCore}}
+\doxysubsubsection{\texorpdfstring{createRenderer()}{createRenderer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_core_a89df936dee6343614eb5fd5899e4b963} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer}{SDLCore\+::\+SDLRenderer}} $>$ SDLCore\+::\+SDLCore\+::create\+Renderer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_window}{SDLWindow}} \texorpdfstring{$\ast$}{*}}]{window}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_a25174c953b08015bebedc954f1db1e67}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!createRenderer@{createRenderer}}
+\index{createRenderer@{createRenderer}!SDLCore::SDLCore@{SDLCore::SDLCore}}
+\doxysubsubsection{\texorpdfstring{createRenderer()}{createRenderer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_core_a25174c953b08015bebedc954f1db1e67} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer}{SDLCore\+::\+SDLRenderer}} $>$ SDLCore\+::\+SDLCore\+::create\+Renderer (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_window}{SDLWindow}} $>$ \&}]{window}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_af3e20456790bafebe401a4538683fe61}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!createWindow@{createWindow}}
+\index{createWindow@{createWindow}!SDLCore::SDLCore@{SDLCore::SDLCore}}
+\doxysubsubsection{\texorpdfstring{createWindow()}{createWindow()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_core_af3e20456790bafebe401a4538683fe61} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_window}{SDLCore\+::\+SDLWindow}} $>$ SDLCore\+::\+SDLCore\+::create\+Window (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{title}{, }\item[{std\+::pair$<$ int, int $>$}]{size}{, }\item[{std\+::pair$<$ int, int $>$}]{pos}{, }\item[{bool}]{is\+Shown}{, }\item[{bool}]{is\+Fullscreen}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_aec6cc0390246b6618be90431a3619d84}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!getTimeController@{getTimeController}}
+\index{getTimeController@{getTimeController}!SDLCore::SDLCore@{SDLCore::SDLCore}}
+\doxysubsubsection{\texorpdfstring{getTimeController()}{getTimeController()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_core_aec6cc0390246b6618be90431a3619d84} 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_time_controller}{SDLCore\+::\+SDLTime\+Controller}} \& SDLCore\+::\+SDLCore\+::get\+Time\+Controller (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_a29af1fc06b0fb9e5e1c33c01a8a7b0f4}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!initFont@{initFont}}
+\index{initFont@{initFont}!SDLCore::SDLCore@{SDLCore::SDLCore}}
+\doxysubsubsection{\texorpdfstring{initFont()}{initFont()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_core_a29af1fc06b0fb9e5e1c33c01a8a7b0f4} 
+bool SDLCore\+::\+SDLCore\+::init\+Font (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_a71dcf82c6becea569fab8aaa139aa0bc}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!initImage@{initImage}}
+\index{initImage@{initImage}!SDLCore::SDLCore@{SDLCore::SDLCore}}
+\doxysubsubsection{\texorpdfstring{initImage()}{initImage()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_core_a71dcf82c6becea569fab8aaa139aa0bc} 
+bool SDLCore\+::\+SDLCore\+::init\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_ab075f6fd432df728fe269f55911d7589}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!initSDL@{initSDL}}
+\index{initSDL@{initSDL}!SDLCore::SDLCore@{SDLCore::SDLCore}}
+\doxysubsubsection{\texorpdfstring{initSDL()}{initSDL()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_core_ab075f6fd432df728fe269f55911d7589} 
+bool SDLCore\+::\+SDLCore\+::init\+SDL (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_a1c381385b6be8324ba1114c2e1dee22c}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!isInitialized@{isInitialized}}
+\index{isInitialized@{isInitialized}!SDLCore::SDLCore@{SDLCore::SDLCore}}
+\doxysubsubsection{\texorpdfstring{isInitialized()}{isInitialized()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_core_a1c381385b6be8324ba1114c2e1dee22c} 
+bool SDLCore\+::\+SDLCore\+::is\+Initialized (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3}{Subsystem}}}]{subsystem}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_a2ba0eef4f5e8a6abaece266168e6476c}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!operator=@{operator=}}
+\index{operator=@{operator=}!SDLCore::SDLCore@{SDLCore::SDLCore}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_core_a2ba0eef4f5e8a6abaece266168e6476c} 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core}{SDLCore}} \& SDLCore\+::\+SDLCore\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core}{SDLCore}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_core_a4788f7647ccd235005bfb3e37a5490ec}\index{SDLCore::SDLCore@{SDLCore::SDLCore}!operator=@{operator=}}
+\index{operator=@{operator=}!SDLCore::SDLCore@{SDLCore::SDLCore}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_core_a4788f7647ccd235005bfb3e37a5490ec} 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core}{SDLCore}} \& SDLCore\+::\+SDLCore\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core}{SDLCore}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/sdlcore/\mbox{\hyperlink{_s_d_l_core_8h}{SDLCore.\+h}}\item 
+src/sdlcore/\mbox{\hyperlink{_s_d_l_core_8cpp}{SDLCore.\+cpp}}\end{DoxyCompactItemize}

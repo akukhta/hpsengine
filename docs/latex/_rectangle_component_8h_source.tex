@@ -1,0 +1,39 @@
+\doxysection{Rectangle\+Component.\+h}
+\hypertarget{_rectangle_component_8h_source}{}\label{_rectangle_component_8h_source}\index{src/sdlcore/Components/primitives/RectangleComponent.h@{src/sdlcore/Components/primitives/RectangleComponent.h}}
+\mbox{\hyperlink{_rectangle_component_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_renderable_8h}{../../IRenderable.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_renderable_component_8h}{../RenderableComponent.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SDL2/SDL\_pixels.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_s_d_l_core}{SDLCore}}\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer}{SDLRenderer}};}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{GameObject}};}
+\DoxyCodeLine{00009\ \}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_s_d_l_core_1_1_primitives}{SDLCore::Primitives}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_s_d_l_core_1_1_primitives_1_1_rectangle_component_a58d8ef881dec9fe6b54bcc3b471f3c2f}{RectangleComponent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_s_d_l_core_1_1_renderable_component_acb2eadd47e625a732b0963e39ab93384}{RenderableComponent}}}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_primitives_1_1_rectangle_component_a58d8ef881dec9fe6b54bcc3b471f3c2f}{RectangleComponent}}(\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{SDLCore::Math::IVector2D}}\ pos,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_s_d_l_core_1_1_primitives_1_1_rectangle_component_af9ca4176008981ffc095fa3d1ea03d5d}{width}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_s_d_l_core_1_1_primitives_1_1_rectangle_component_ab9196e0c3afc06bf56f9ac8f00af9ee8}{height}},\ SDL\_Color\ color,\ \textcolor{keywordtype}{bool}\ fill\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_primitives_1_1_rectangle_component_a58d8ef881dec9fe6b54bcc3b471f3c2f}{RectangleComponent}}(\mbox{\hyperlink{struct_s_d_l_core_1_1_math_1_1_rectangle}{Math::Rectangle}}\ box,\ SDL\_Color\ color,\ \textcolor{keywordtype}{bool}\ fill\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_primitives_1_1_rectangle_component_a12514c3b2c06a035065cbab6b6983ba5}{render}}(\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer}{SDLCore::IRenderer}}\ *renderer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_d_l_core_1_1_math_1_1_rectangle}{Math::Rectangle}}\ \mbox{\hyperlink{class_s_d_l_core_1_1_primitives_1_1_rectangle_component_a694d2fcfcfe88639abf73fff5e1c4f0c}{getBoundingBox}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_s_d_l_core_1_1_primitives_1_1_rectangle_component_af9ca4176008981ffc095fa3d1ea03d5d}{width}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_s_d_l_core_1_1_primitives_1_1_rectangle_component_ab9196e0c3afc06bf56f9ac8f00af9ee8}{height}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer}{SDLCore::SDLRenderer}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ SDL\_Color\ color;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ fill;}
+\DoxyCodeLine{00032\ \ \ \ \ \};}
+\DoxyCodeLine{00033\ \}}
+
+\end{DoxyCode}

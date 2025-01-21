@@ -1,0 +1,70 @@
+\doxysection{Game\+Object.\+h}
+\hypertarget{_game_object_8h_source}{}\label{_game_object_8h_source}\index{src/sdlcore/GameObject/GameObject.h@{src/sdlcore/GameObject/GameObject.h}}
+\mbox{\hyperlink{_game_object_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_renderable_8h}{../IRenderable.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_updatable_8h}{../IUpdatable.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_component_8h}{../Components/IComponent.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_scene_entity_8h}{../Entity/ISceneEntity.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vector2_d_8h}{../Math/Vector2D.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_s_d_l_core}{SDLCore}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ ComponentType>}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{concept\ }\mbox{\hyperlink{concept_s_d_l_core_1_1_is_component_type}{IsComponentType}}\ =\ std::is\_base\_of\_v<IComponent,\ ComponentType>;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_s_d_l_core_1_1_game_object_ad1c82df4038da2ddfb67a78adb6425c2}{GameObject}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_s_d_l_core_1_1_i_scene_entity}{ISceneEntity}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable_ae20c0f49778ef7a4a4d9452037c7e3e2}{IRenderable}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable_a157f9720c692597aa213dab72da0536d}{IUpdatable}}}
+\DoxyCodeLine{00015\ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_ad1c82df4038da2ddfb67a78adb6425c2}{GameObject}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_a9ca5ced71d6b1c8bff7e2960fea48def}{GameObject}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_ad1c82df4038da2ddfb67a78adb6425c2}{GameObject}}\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_af49e2e0edd21dbc7adb1cd072e43cec9}{GameObject}}(\mbox{\hyperlink{class_s_d_l_core_1_1_game_object_ad1c82df4038da2ddfb67a78adb6425c2}{GameObject}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_ad1c82df4038da2ddfb67a78adb6425c2}{GameObject}}\&\ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_ada81b9ca236f441e6a1613e278680fe2}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_ad1c82df4038da2ddfb67a78adb6425c2}{GameObject}}\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_ad1c82df4038da2ddfb67a78adb6425c2}{GameObject}}\&\ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_a4a51fd03bdafe92b5ac60774cf3f47f7}{operator=}}(\mbox{\hyperlink{class_s_d_l_core_1_1_game_object_ad1c82df4038da2ddfb67a78adb6425c2}{GameObject}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_a0e03411d0300c6bfe6f639f889018528}{\string~GameObject}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_a399891f7194d86688da577099ea0c3f0}{render}}(\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer}{IRenderer}}\ *renderer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_a1e41083819a0ff807c6f94ef089d77b4}{update}}(\textcolor{keywordtype}{double}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_ad1c82df4038da2ddfb67a78adb6425c2}{GameObject}}*\ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_ac8cbd44e9a483d9a113308928cdf4f8c}{clone}}()\ =\ 0;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_af3fbe745e80455e6325f1b336516b3b4}{setPosition}}(\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math::IVector2D}}\ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_a381801f5604120536cf3de16a98e65d2}{position}});}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math::IVector2D}}\ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_af7757b500c257a721a22c1641be2b836}{getWorldLocation}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math::IVector2D}}\ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_a3cb51d33a7b11b63aad8a6b8db6b7a94}{getRelativeLocation}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_d_l_core_1_1_math_1_1_rectangle}{Math::Rectangle}}\ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_a79488b0b135e2f481321a4115b6b72ad}{getBoundingBox}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math::IVector2D}}\ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_a381801f5604120536cf3de16a98e65d2}{position}}\{0,\ 0\};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ ComponentType,\ \textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ \mbox{\hyperlink{concept_s_d_l_core_1_1_is_component_type}{IsComponentType<ComponentType>}}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ ComponentType*\ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_a498a98ab7586710e58930ec70f89c61c}{createComponent}}(Args\&\&\ ...\ args)}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ ComponentType*\ component\ =\ \textcolor{keyword}{new}\ ComponentType\{std::forward<Args>(args)...\};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_base\_of\_v<IRenderable,\ ComponentType>)}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ renderableComponents.push\_back(component);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_base\_of\_v<IUpdatable,\ ComponentType>)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ updatableComponents.push\_back(component);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ component-\/>setParent(\textcolor{keyword}{this});}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ component;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ std::vector<IRenderable*>\ renderableComponents;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ std::vector<IUpdatable*>\ updatableComponents;}
+\DoxyCodeLine{00063\ \ \ \ \ \};}
+\DoxyCodeLine{00064\ \}}
+
+\end{DoxyCode}

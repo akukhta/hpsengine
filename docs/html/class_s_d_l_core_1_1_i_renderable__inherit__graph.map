@@ -1,0 +1,19 @@
+<map id="SDLCore::IRenderable" name="SDLCore::IRenderable">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,105,159,132"/>
+<area shape="rect" id="Node000002" href="$class_s_d_l_core_1_1_game_object.html" title=" " alt="" coords="237,43,393,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,98,261,67,263,73,149,103"/>
+<area shape="rect" id="Node000004" href="$class_s_d_l_core_1_1_renderable_component.html" title=" " alt="" coords="207,131,423,157"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="174,126,207,130,206,135,173,131"/>
+<area shape="rect" id="Node000003" href="$class_test_actor.html" title=" " alt="" coords="540,5,618,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="408,40,540,21,540,27,409,45"/>
+<area shape="rect" id="Node000005" href="$class_s_d_l_core_1_1_primitives_1_1_circle_component.html" title=" " alt="" coords="508,56,650,99"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="385,124,507,93,509,98,386,129"/>
+<area shape="rect" id="Node000006" href="$class_s_d_l_core_1_1_primitives_1_1_rectangle_component.html" title=" " alt="" coords="502,123,657,165"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="439,141,501,141,501,147,439,147"/>
+<area shape="rect" id="Node000008" href="$class_s_d_l_core_1_1_sprite_component.html" title=" " alt="" coords="487,189,671,216"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="393,159,516,186,515,191,392,164"/>
+<area shape="rect" id="Node000009" href="$class_s_d_l_core_1_1_spritesheet_component.html" title=" " alt="" coords="471,240,687,267"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="352,164,407,195,472,226,508,237,507,242,470,230,404,200,349,168"/>
+<area shape="rect" id="Node000007" href="$class_s_d_l_core_1_1_bounding_box.html" title=" " alt="" coords="735,131,896,157"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="672,141,735,141,735,147,672,147"/>
+</map>

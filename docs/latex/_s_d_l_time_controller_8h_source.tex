@@ -1,0 +1,45 @@
+\doxysection{SDLTime\+Controller.\+h}
+\hypertarget{_s_d_l_time_controller_8h_source}{}\label{_s_d_l_time_controller_8h_source}\index{src/sdlcore/SDLTimeController.h@{src/sdlcore/SDLTimeController.h}}
+\mbox{\hyperlink{_s_d_l_time_controller_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_s_d_l_core}{SDLCore}}}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_time_controller_ad3cfe8a65aac92c87e6731a6274c7e95}{SDLTimeController}}}
+\DoxyCodeLine{00007\ \ \ \ \ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_time_controller_ad3cfe8a65aac92c87e6731a6274c7e95}{SDLTimeController}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_time_controller_ad3cfe8a65aac92c87e6731a6274c7e95}{SDLTimeController}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_time_controller_ad3cfe8a65aac92c87e6731a6274c7e95}{SDLTimeController}}\&\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_time_controller_a8358b992fe9b1aafb8cdccd7582c9ba4}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_time_controller_ad3cfe8a65aac92c87e6731a6274c7e95}{SDLTimeController}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_time_controller_afd875cc41ab54ea454298fff514d519f}{SDLTimeController}}(\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_time_controller_ad3cfe8a65aac92c87e6731a6274c7e95}{SDLTimeController}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_time_controller_ad3cfe8a65aac92c87e6731a6274c7e95}{SDLTimeController}}\&\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_time_controller_a650fd5dfda637eae6689c0b2613c6c94}{operator=}}(\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_time_controller_ad3cfe8a65aac92c87e6731a6274c7e95}{SDLTimeController}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Static\ proxy\ functions\ to\ avoid\ calls\ to\ "{}getInstance()"{}\ every\ time}}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_time_controller_a691d7af8847cc607a9f13e6a1f0869da}{getDeltaTime}}();}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_time_controller_a7f3ae792e548c946cde662df75c27335}{update}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_time_controller_a7d1711e69485305ee79d1729688d74ff}{pause}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_time_controller_a874382518321c3d4c72cf48a877f4882}{resume}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_time_controller_a70e91d6e3078e856ef6a442862e73b7d}{reset}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_time_controller_ad3cfe8a65aac92c87e6731a6274c7e95}{SDLTimeController}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_time_controller_ad3cfe8a65aac92c87e6731a6274c7e95}{\string~SDLTimeController}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_time_controller_ad3cfe8a65aac92c87e6731a6274c7e95}{SDLTimeController}}\&\ getInstance();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::uint32\_t\ currentTicks\ =\ 0;\ \textcolor{comment}{//\ Last\ checked\ ticks}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ deltaTime\ =\ 0;\ \textcolor{comment}{//\ In\ Seconds\ (1\ =\ 1\ second)}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ getDeltaTimeImpl()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ updateImpl();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ pauseImpl();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ resumeImpl();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ resetImpl();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isPaused\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{namespace_s_d_l_core}{SDLCore}};}
+\DoxyCodeLine{00038\ \ \ \ \ \};}
+\DoxyCodeLine{00039\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,23 @@
+<map id="SDLCore::SpriteComponent" name="SDLCore::SpriteComponent">
+<area shape="rect" id="Node000001" title=" " alt="" coords="907,163,1091,189"/>
+<area shape="rect" id="Node000002" href="$class_s_d_l_core_1_1_renderable_component.html" title=" " alt="" coords="548,120,765,147"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="781,146,906,162,906,167,780,151"/>
+<area shape="rect" id="Node000003" href="$class_s_d_l_core_1_1_i_component.html" title=" " alt="" coords="332,19,486,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="480,48,500,55,572,87,632,117,629,122,570,92,498,60,478,53"/>
+<area shape="rect" id="Node000004" href="$class_s_d_l_core_1_1_i_entity.html" title=" " alt="" coords="35,45,156,72"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="172,50,331,36,331,41,172,55"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="66,28,76,21,95,19,113,21,124,27,127,37,123,46,118,44,122,36,120,31,112,26,96,24,78,26,69,32"/>
+<area shape="rect" id="Node000005" href="$class_s_d_l_core_1_1_i_scene_entity.html" title=" " alt="" coords="330,69,488,96"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="172,62,330,74,329,79,172,67"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="493,97,588,117,587,122,492,102"/>
+<area shape="rect" id="Node000006" href="$class_s_d_l_core_1_1_i_renderable.html" title=" " alt="" coords="332,120,486,147"/>
+<area shape="poly" id="edge7_Node000002_Node000006" title=" " alt="" coords="501,131,548,131,548,136,501,136"/>
+<area shape="rect" id="Node000007" href="$class_s_d_l_core_1_1_i_updatable.html" title=" " alt="" coords="336,171,482,197"/>
+<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="492,164,587,145,588,150,493,170"/>
+<area shape="rect" id="Node000008" href="$class_s_d_l_core_1_1_texture_manager.html" title=" " alt="" coords="568,187,745,213"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="760,193,882,185,906,183,906,189,883,191,760,198"/>
+<area shape="rect" id="Node000009" href="$class_s_d_l_core_1_1_i_texture_manager.html" title=" " alt="" coords="319,221,499,248"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="514,217,568,210,568,215,515,223"/>
+<area shape="rect" id="Node000010" href="$struct_s_d_l_core_1_1_i_texture_manager_1_1_as_ref.html" title=" " alt="" coords="5,213,186,256"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="201,232,318,232,318,237,201,237"/>
+</map>

@@ -1,0 +1,231 @@
+\doxysection{SDLCore\+::Renderable\+Component Class Reference}
+\hypertarget{class_s_d_l_core_1_1_renderable_component}{}\label{class_s_d_l_core_1_1_renderable_component}\index{SDLCore::RenderableComponent@{SDLCore::RenderableComponent}}
+
+
+{\ttfamily \#include $<$Renderable\+Component.\+h$>$}
+
+
+
+Inheritance diagram for SDLCore\+::Renderable\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_d_l_core_1_1_renderable_component__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for SDLCore\+::Renderable\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_d_l_core_1_1_renderable_component__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_renderable_component_acb2eadd47e625a732b0963e39ab93384}{Renderable\+Component}} (\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math\+::\+IVector2D}} \mbox{\hyperlink{class_s_d_l_core_1_1_renderable_component_a23237adcc70cd15ba1f0e5b257212eaa}{relative\+Location}})
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_renderable_component_a6a4ecc77a2b6f09dceb696dd880b7d1c}{set\+Relative\+Location}} (\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math\+::\+IVector2D}} \mbox{\hyperlink{class_s_d_l_core_1_1_renderable_component_a23237adcc70cd15ba1f0e5b257212eaa}{relative\+Location}})
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_renderable_component_ae7197da8749ccc3d4353cf970757644e}{set\+Scale}} (\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ab1fdcf0d314b74165785e4e265ed89a4}{Math\+::\+FVector2D}} \mbox{\hyperlink{class_s_d_l_core_1_1_renderable_component_a218edef42de82baadc348472d6add11b}{scale}})
+\item 
+\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ab1fdcf0d314b74165785e4e265ed89a4}{Math\+::\+FVector2D}} const \& \mbox{\hyperlink{class_s_d_l_core_1_1_renderable_component_aa24f1e34c765f4faa5af2463b4709092}{get\+Scale}} () const
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_renderable_component_aa3a9f8a12b8a236a9e321573ee2a9b3f}{update}} (double delta\+Time) override
+\item 
+\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math\+::\+IVector2D}} \mbox{\hyperlink{class_s_d_l_core_1_1_renderable_component_a7d3f3e1b51f306bdf09d4283e0174c6d}{get\+World\+Location}} () const override
+\item 
+\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math\+::\+IVector2D}} \mbox{\hyperlink{class_s_d_l_core_1_1_renderable_component_a2063d2bcdc751e98a1abfdbbdc3b9636}{get\+Relative\+Location}} () const override
+\item 
+\mbox{\hyperlink{struct_s_d_l_core_1_1_math_1_1_rectangle}{Math\+::\+Rectangle}} \mbox{\hyperlink{class_s_d_l_core_1_1_renderable_component_a738b8e01f9c8ded7f2781ce42f337420}{get\+Bounding\+Box}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_s_d_l_core_1_1_i_component}{SDLCore\+::\+IComponent}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_s_d_l_core_1_1_i_component_a212c8ebc9f1818651297592268ace671}{\texorpdfstring{$\sim$}{\string~}\+IComponent}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{SDLCore\+::\+IEntity}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_entity_ad35fb81713e17331f2e6ba60d8e3daac}{IEntity}} ()=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_entity_aa50814a98eb1f26b49e61f0ba4023c7f}{IEntity}} (const \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{IEntity}} \&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_entity_a7ddd9e07ca117961bdc89637010707f7}{IEntity}} (\mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{IEntity}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{IEntity}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity_a72aa18ee137406d8f9f3f4cb9b38d388}{operator=}} (const \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{IEntity}} \&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{IEntity}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity_ab1cede987c1f56589a39fdb68d71104d}{operator=}} (\mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{IEntity}} \&\&)=default
+\item 
+virtual \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity_a63ba7de151343ab4bee246e1f393657d}{\texorpdfstring{$\sim$}{\string~}\+IEntity}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity_ad64d24462e6e4ac09a2ce06e444d0857}{set\+Parent}} (\mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{IEntity}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_s_d_l_core_1_1_i_entity_a6d7b5f756cbb6c89874464a470ff6d62}{parent}})
+\item 
+virtual \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{IEntity}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity_ac2a66f0e390159d1361d228e981b58cf}{get\+Parent}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable}{SDLCore\+::\+IRenderable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable_ae20c0f49778ef7a4a4d9452037c7e3e2}{IRenderable}} ()=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable_a3d0e3c77955650318814795e01907648}{IRenderable}} (const \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable}{IRenderable}} \&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable_a548929c5da91f9ce35eaf3a714d86d49}{IRenderable}} (\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable}{IRenderable}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable}{IRenderable}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable_a0c17f0fccdcd0890dac86a5506030339}{operator=}} (const \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable}{IRenderable}} \&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable}{IRenderable}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable_a34dbf44ccb033236a0dbdfaf324dd864}{operator=}} (\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable}{IRenderable}} \&\&)=default
+\item 
+virtual \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable_aba7bf3b0fa4f021eac8d669a521bf336}{\texorpdfstring{$\sim$}{\string~}\+IRenderable}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable_a84b3ad1feec09df6bd8cde2a50dc352a}{render}} (class \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer}{IRenderer}} \texorpdfstring{$\ast$}{*}renderer)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable}{SDLCore\+::\+IUpdatable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable_a157f9720c692597aa213dab72da0536d}{IUpdatable}} ()=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable_a00e0781253729aca5d1a3bf6e65d7133}{IUpdatable}} (const \mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable}{IUpdatable}} \&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable_a08d86205d5709a6a41ae9d82c98bc3ad}{IUpdatable}} (\mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable}{IUpdatable}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable}{IUpdatable}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable_a2158c764359fb5c3b465ef9dec167bfd}{operator=}} (const \mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable}{IUpdatable}} \&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable}{IUpdatable}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable_ac82c207a749204d3c24d4529d7310be7}{operator=}} (\mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable}{IUpdatable}} \&\&)=default
+\item 
+virtual \mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable_ab6550701ce18ed54bfc9d7e7e469f899}{\texorpdfstring{$\sim$}{\string~}\+IUpdatable}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math\+::\+IVector2D}} \mbox{\hyperlink{class_s_d_l_core_1_1_renderable_component_a9c2170c6141f2e0451d0a3242ae0c5fe}{get\+Parent\+World\+Location}} () const
+\item 
+\mbox{\hyperlink{struct_s_d_l_core_1_1_math_1_1_rectangle}{Math\+::\+Rectangle}} \mbox{\hyperlink{class_s_d_l_core_1_1_renderable_component_a90f19c23f3c20cdaf3e65cc1d0ad0368}{get\+Parent\+Renderable\+Size}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math\+::\+IVector2D}} \mbox{\hyperlink{class_s_d_l_core_1_1_renderable_component_a23237adcc70cd15ba1f0e5b257212eaa}{relative\+Location}} \{0, 0\}
+\item 
+\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ab1fdcf0d314b74165785e4e265ed89a4}{Math\+::\+FVector2D}} \mbox{\hyperlink{class_s_d_l_core_1_1_renderable_component_a218edef42de82baadc348472d6add11b}{scale}} \{1.f, 1.f\}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{SDLCore\+::\+IEntity}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{IEntity}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity_a6d7b5f756cbb6c89874464a470ff6d62}{parent}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_s_d_l_core_1_1_renderable_component_acb2eadd47e625a732b0963e39ab93384}\index{SDLCore::RenderableComponent@{SDLCore::RenderableComponent}!RenderableComponent@{RenderableComponent}}
+\index{RenderableComponent@{RenderableComponent}!SDLCore::RenderableComponent@{SDLCore::RenderableComponent}}
+\doxysubsubsection{\texorpdfstring{RenderableComponent()}{RenderableComponent()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_renderable_component_acb2eadd47e625a732b0963e39ab93384} 
+SDLCore\+::\+Renderable\+Component\+::\+Renderable\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math\+::\+IVector2D}}}]{relative\+Location}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_s_d_l_core_1_1_renderable_component_a738b8e01f9c8ded7f2781ce42f337420}\index{SDLCore::RenderableComponent@{SDLCore::RenderableComponent}!getBoundingBox@{getBoundingBox}}
+\index{getBoundingBox@{getBoundingBox}!SDLCore::RenderableComponent@{SDLCore::RenderableComponent}}
+\doxysubsubsection{\texorpdfstring{getBoundingBox()}{getBoundingBox()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_renderable_component_a738b8e01f9c8ded7f2781ce42f337420} 
+\mbox{\hyperlink{struct_s_d_l_core_1_1_math_1_1_rectangle}{SDLCore\+::\+Math\+::\+Rectangle}} SDLCore\+::\+Renderable\+Component\+::get\+Bounding\+Box (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable_a7c1cba6d32a89a5a9b96322c5941c4dd}{SDLCore\+::\+IRenderable}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_s_d_l_core_1_1_sprite_component_a58bf56b00b24ef0becf97d1d605c9902}{SDLCore\+::\+Sprite\+Component}}, and \mbox{\hyperlink{class_s_d_l_core_1_1_spritesheet_component_a04b45a48d320ff871ccea0a6f0a07766}{SDLCore\+::\+Spritesheet\+Component}}.
+
+\Hypertarget{class_s_d_l_core_1_1_renderable_component_a90f19c23f3c20cdaf3e65cc1d0ad0368}\index{SDLCore::RenderableComponent@{SDLCore::RenderableComponent}!getParentRenderableSize@{getParentRenderableSize}}
+\index{getParentRenderableSize@{getParentRenderableSize}!SDLCore::RenderableComponent@{SDLCore::RenderableComponent}}
+\doxysubsubsection{\texorpdfstring{getParentRenderableSize()}{getParentRenderableSize()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_renderable_component_a90f19c23f3c20cdaf3e65cc1d0ad0368} 
+\mbox{\hyperlink{struct_s_d_l_core_1_1_math_1_1_rectangle}{SDLCore\+::\+Math\+::\+Rectangle}} SDLCore\+::\+Renderable\+Component\+::get\+Parent\+Renderable\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_s_d_l_core_1_1_renderable_component_a9c2170c6141f2e0451d0a3242ae0c5fe}\index{SDLCore::RenderableComponent@{SDLCore::RenderableComponent}!getParentWorldLocation@{getParentWorldLocation}}
+\index{getParentWorldLocation@{getParentWorldLocation}!SDLCore::RenderableComponent@{SDLCore::RenderableComponent}}
+\doxysubsubsection{\texorpdfstring{getParentWorldLocation()}{getParentWorldLocation()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_renderable_component_a9c2170c6141f2e0451d0a3242ae0c5fe} 
+\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{SDLCore\+::\+Math\+::\+IVector2D}} SDLCore\+::\+Renderable\+Component\+::get\+Parent\+World\+Location (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_s_d_l_core_1_1_renderable_component_a2063d2bcdc751e98a1abfdbbdc3b9636}\index{SDLCore::RenderableComponent@{SDLCore::RenderableComponent}!getRelativeLocation@{getRelativeLocation}}
+\index{getRelativeLocation@{getRelativeLocation}!SDLCore::RenderableComponent@{SDLCore::RenderableComponent}}
+\doxysubsubsection{\texorpdfstring{getRelativeLocation()}{getRelativeLocation()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_renderable_component_a2063d2bcdc751e98a1abfdbbdc3b9636} 
+\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{SDLCore\+::\+Math\+::\+IVector2D}} SDLCore\+::\+Renderable\+Component\+::get\+Relative\+Location (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_s_d_l_core_1_1_i_scene_entity_a492923a9f18aaebacc58fbf582778571}{SDLCore\+::\+IScene\+Entity}}.
+
+\Hypertarget{class_s_d_l_core_1_1_renderable_component_aa24f1e34c765f4faa5af2463b4709092}\index{SDLCore::RenderableComponent@{SDLCore::RenderableComponent}!getScale@{getScale}}
+\index{getScale@{getScale}!SDLCore::RenderableComponent@{SDLCore::RenderableComponent}}
+\doxysubsubsection{\texorpdfstring{getScale()}{getScale()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_renderable_component_aa24f1e34c765f4faa5af2463b4709092} 
+\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ab1fdcf0d314b74165785e4e265ed89a4}{SDLCore\+::\+Math\+::\+FVector2D}} const  \& SDLCore\+::\+Renderable\+Component\+::get\+Scale (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_s_d_l_core_1_1_renderable_component_a7d3f3e1b51f306bdf09d4283e0174c6d}\index{SDLCore::RenderableComponent@{SDLCore::RenderableComponent}!getWorldLocation@{getWorldLocation}}
+\index{getWorldLocation@{getWorldLocation}!SDLCore::RenderableComponent@{SDLCore::RenderableComponent}}
+\doxysubsubsection{\texorpdfstring{getWorldLocation()}{getWorldLocation()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_renderable_component_a7d3f3e1b51f306bdf09d4283e0174c6d} 
+\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{SDLCore\+::\+Math\+::\+IVector2D}} SDLCore\+::\+Renderable\+Component\+::get\+World\+Location (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_s_d_l_core_1_1_i_scene_entity_ad5682a3069acd2b82a93818b02a57d57}{SDLCore\+::\+IScene\+Entity}}.
+
+\Hypertarget{class_s_d_l_core_1_1_renderable_component_a6a4ecc77a2b6f09dceb696dd880b7d1c}\index{SDLCore::RenderableComponent@{SDLCore::RenderableComponent}!setRelativeLocation@{setRelativeLocation}}
+\index{setRelativeLocation@{setRelativeLocation}!SDLCore::RenderableComponent@{SDLCore::RenderableComponent}}
+\doxysubsubsection{\texorpdfstring{setRelativeLocation()}{setRelativeLocation()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_renderable_component_a6a4ecc77a2b6f09dceb696dd880b7d1c} 
+void SDLCore\+::\+Renderable\+Component\+::set\+Relative\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math\+::\+IVector2D}}}]{relative\+Location}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_renderable_component_ae7197da8749ccc3d4353cf970757644e}\index{SDLCore::RenderableComponent@{SDLCore::RenderableComponent}!setScale@{setScale}}
+\index{setScale@{setScale}!SDLCore::RenderableComponent@{SDLCore::RenderableComponent}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_renderable_component_ae7197da8749ccc3d4353cf970757644e} 
+void SDLCore\+::\+Renderable\+Component\+::set\+Scale (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ab1fdcf0d314b74165785e4e265ed89a4}{Math\+::\+FVector2D}}}]{scale}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_renderable_component_aa3a9f8a12b8a236a9e321573ee2a9b3f}\index{SDLCore::RenderableComponent@{SDLCore::RenderableComponent}!update@{update}}
+\index{update@{update}!SDLCore::RenderableComponent@{SDLCore::RenderableComponent}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_renderable_component_aa3a9f8a12b8a236a9e321573ee2a9b3f} 
+void SDLCore\+::\+Renderable\+Component\+::update (\begin{DoxyParamCaption}\item[{double}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable_acbec6e1bc835577188e253be4418cd22}{SDLCore\+::\+IUpdatable}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_s_d_l_core_1_1_spritesheet_component_a2af75d9f1ec07afbd01ed0b896a0bd9b}{SDLCore\+::\+Spritesheet\+Component}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_s_d_l_core_1_1_renderable_component_a23237adcc70cd15ba1f0e5b257212eaa}\index{SDLCore::RenderableComponent@{SDLCore::RenderableComponent}!relativeLocation@{relativeLocation}}
+\index{relativeLocation@{relativeLocation}!SDLCore::RenderableComponent@{SDLCore::RenderableComponent}}
+\doxysubsubsection{\texorpdfstring{relativeLocation}{relativeLocation}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_renderable_component_a23237adcc70cd15ba1f0e5b257212eaa} 
+\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math\+::\+IVector2D}} SDLCore\+::\+Renderable\+Component\+::relative\+Location \{0, 0\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_s_d_l_core_1_1_renderable_component_a218edef42de82baadc348472d6add11b}\index{SDLCore::RenderableComponent@{SDLCore::RenderableComponent}!scale@{scale}}
+\index{scale@{scale}!SDLCore::RenderableComponent@{SDLCore::RenderableComponent}}
+\doxysubsubsection{\texorpdfstring{scale}{scale}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_renderable_component_a218edef42de82baadc348472d6add11b} 
+\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ab1fdcf0d314b74165785e4e265ed89a4}{Math\+::\+FVector2D}} SDLCore\+::\+Renderable\+Component\+::scale \{1.f, 1.f\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/sdlcore/\+Components/\mbox{\hyperlink{_renderable_component_8h}{Renderable\+Component.\+h}}\item 
+src/sdlcore/\+Components/\mbox{\hyperlink{_renderable_component_8cpp}{Renderable\+Component.\+cpp}}\end{DoxyCompactItemize}

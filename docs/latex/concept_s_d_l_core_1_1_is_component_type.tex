@@ -1,0 +1,13 @@
+\doxysection{SDLCore\+::Is\+Component\+Type Concept Reference}
+\hypertarget{concept_s_d_l_core_1_1_is_component_type}{}\label{concept_s_d_l_core_1_1_is_component_type}\index{SDLCore::IsComponentType@{SDLCore::IsComponentType}}
+
+
+{\ttfamily \#include $<$Game\+Object.\+h$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ ComponentType>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{concept_s_d_l_core_1_1_is_component_type}{SDLCore::IsComponentType}}\ =\ \ std::is\_base\_of\_v<IComponent,\ ComponentType>}
+
+\end{DoxyCode}

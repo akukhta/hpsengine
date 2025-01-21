@@ -1,0 +1,31 @@
+\doxysection{SDLWindow.\+h}
+\hypertarget{_s_d_l_window_8h_source}{}\label{_s_d_l_window_8h_source}\index{src/sdlcore/SDLWindow.h@{src/sdlcore/SDLWindow.h}}
+\mbox{\hyperlink{_s_d_l_window_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string\_view>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_s_d_l_core}{SDLCore}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_window_af45da63c97f29d6ffdb6d9b637d9a96a}{SDLWindow}}}
+\DoxyCodeLine{00010\ \ \ \ \ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_window_af45da63c97f29d6ffdb6d9b637d9a96a}{SDLWindow}}(std::string\_view\ title,\ std::pair<int,\ int>\ size,\ std::pair<int,\ int>\ pos,\ \textcolor{keywordtype}{bool}\ isShown,\ \textcolor{keywordtype}{bool}\ isFullscreen);}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ std::string\_view\ windowName;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ std::pair<int,\ int>\ size;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ std::pair<int,\ int>\ position;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isShown;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isFullscreen;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }WindowPtr\ =\ std::unique\_ptr<SDL\_Window,\ \textcolor{keyword}{decltype}(\&SDL\_DestroyWindow)>;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ WindowPtr\ window\ =\ WindowPtr(\textcolor{keyword}{nullptr},\ \&SDL\_DestroyWindow);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_window_a6b759ab354ae37afcd13dfd78eeb6ffc}{SDLRenderer}};}
+\DoxyCodeLine{00025\ \ \ \ \ \};}
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}

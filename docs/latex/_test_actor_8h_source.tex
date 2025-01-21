@@ -1,0 +1,27 @@
+\doxysection{Test\+Actor.\+h}
+\hypertarget{_test_actor_8h_source}{}\label{_test_actor_8h_source}\index{src/sdlcore/Actors/TestActor.h@{src/sdlcore/Actors/TestActor.h}}
+\mbox{\hyperlink{_test_actor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_object_8h}{../GameObject/GameObject.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_sprite_component_8h}{../Components/SpriteComponent.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_spritesheet_component_8h}{../Components/SpritesheetComponent.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_bounding_box_8h}{../Components/debug/BoundingBox.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_rectangle_component_8h}{../Components/primitives/RectangleComponent.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_circle_component_8h}{../Components/primitives/CircleComponent.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_test_actor_a2bb0d310b32c6c334b82b9290d6ec563}{TestActor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{SDLCore::GameObject}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_test_actor_a2bb0d310b32c6c334b82b9290d6ec563}{TestActor}}(\textcolor{keyword}{class}\ \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer}{SDLCore::IRenderer}}*\ renderer,\ \textcolor{keyword}{class}\ \mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager}{SDLCore::TextureManager}}*\ textureManager,\ std::uint32\_t\ textureID,\ \mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{SDLCore::Math::IVector2D}}\ componentOffset\ =\ \{0,\ 0\});}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_ad1c82df4038da2ddfb67a78adb6425c2}{GameObject}}*\ \mbox{\hyperlink{class_test_actor_ab85ec0db26bc91e98431cac6eb3b2849}{clone}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_sprite_component}{SDLCore::SpriteComponent}}*\ spriteComponent\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_primitives_1_1_rectangle_component}{SDLCore::Primitives::RectangleComponent}}*\ \ rectangleComponent\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_primitives_1_1_circle_component}{SDLCore::Primitives::CircleComponent}}*\ circle\_component\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_spritesheet_component}{SDLCore::SpritesheetComponent}}*\ spritesheet\_component\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_bounding_box}{SDLCore::BoundingBox}}*\ boundBox\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00021\ \};}
+
+\end{DoxyCode}

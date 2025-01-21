@@ -1,0 +1,35 @@
+\doxysection{Spritesheet\+Component.\+h}
+\hypertarget{_spritesheet_component_8h_source}{}\label{_spritesheet_component_8h_source}\index{src/sdlcore/Components/SpritesheetComponent.h@{src/sdlcore/Components/SpritesheetComponent.h}}
+\mbox{\hyperlink{_spritesheet_component_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_renderable_component_8h}{RenderableComponent.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_d_l_animated_sprite_sheet_8h}{../SDLAnimatedSpriteSheet.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_s_d_l_core}{SDLCore}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_s_d_l_core_1_1_spritesheet_component_a202327eabb8c8c3079766326fa5a3625}{SpritesheetComponent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_s_d_l_core_1_1_renderable_component_acb2eadd47e625a732b0963e39ab93384}{RenderableComponent}}}
+\DoxyCodeLine{00008\ \ \ \ \ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_spritesheet_component_a202327eabb8c8c3079766326fa5a3625}{SpritesheetComponent}}(\textcolor{keyword}{class}\ \mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager}{TextureManager}}*\ textureManager,\ \mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math::IVector2D}}\ \textcolor{keyword}{const}\&\ relativePosition,\ std::unique\_ptr<SDLAnimatedSpriteSheet>\ spritesheet\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_spritesheet_component_a6bc36d1a487509ec6e042d4d899e812e}{render}}(\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer}{IRenderer}}\ *renderer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_spritesheet_component_a2af75d9f1ec07afbd01ed0b896a0bd9b}{update}}(\textcolor{keywordtype}{double}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_spritesheet_component_a964755fbd1d550ca60abd4f083294f8b}{setSpritesheet}}(std::unique\_ptr<SDLAnimatedSpriteSheet>\ spritesheet);}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_animated_sprite_sheet}{SDLAnimatedSpriteSheet}}*\ \mbox{\hyperlink{class_s_d_l_core_1_1_spritesheet_component_aeafe83a8fa5ed9f0c868419dfc654a74}{getSpritesheet}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_d_l_core_1_1_math_1_1_rectangle}{Math::Rectangle}}\ \mbox{\hyperlink{class_s_d_l_core_1_1_spritesheet_component_a04b45a48d320ff871ccea0a6f0a07766}{getBoundingBox}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ std::unique\_ptr<SDLAnimatedSpriteSheet>\ spritesheet;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager}{TextureManager}}*\ textureManager\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ std::uint32\_t\ textureID;}
+\DoxyCodeLine{00023\ \ \ \ \ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_animated_sprite_sheet}{SDLAnimatedSpriteSheet}}\ *\ \mbox{\hyperlink{class_s_d_l_core_1_1_spritesheet_component_aeafe83a8fa5ed9f0c868419dfc654a74}{SpritesheetComponent::getSpritesheet}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00026\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ spritesheet.get();}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}

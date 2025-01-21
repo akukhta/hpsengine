@@ -1,0 +1,42 @@
+\doxysection{SDLGame.\+h}
+\hypertarget{_s_d_l_game_8h_source}{}\label{_s_d_l_game_8h_source}\index{src/sdlcore/SDLGame.h@{src/sdlcore/SDLGame.h}}
+\mbox{\hyperlink{_s_d_l_game_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_d_l_renderer_8h}{SDLRenderer.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_d_l_event_handler_8h}{SDLEventHandler.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_scene_8h}{Scene/Scene.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_texture_manager_8h}{Texture/TextureManager.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_s_d_l_core}{SDLCore}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_game_ab3ab455ceb4b5c2d75991ec19f3a7484}{SDLGame}}}
+\DoxyCodeLine{00010\ \ \ \ \ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }RendererPtr\ =\ std::unique\_ptr<SDLRenderer>;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }EventHandlerPtr\ =\ std::unique\_ptr<SDLEventHandler>;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_game_ab3ab455ceb4b5c2d75991ec19f3a7484}{SDLGame}}(RendererPtr\ renderer,\ EventHandlerPtr\ eventHandler);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_game_acceaeed95f9ff78cb26045b469195ff4}{init}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_game_aa24e68000cdb8739221adb408bb796f7}{run}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_game_a0695a1ad7d6ec003c9f636119120ff01}{isRunning}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_game_a2452cc56b579b5a65aa2594371cf0ded}{onGameQuit}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ update();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ handleEvents();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ render();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ RendererPtr\ renderer;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ EventHandlerPtr\ eventHandler;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ std::unique\_ptr<TextureManager>\ textureManager;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isRunning\_\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ std::unique\_ptr<Scene>\ scene;}
+\DoxyCodeLine{00035\ \ \ \ \ \};}
+\DoxyCodeLine{00036\ \}}
+
+\end{DoxyCode}

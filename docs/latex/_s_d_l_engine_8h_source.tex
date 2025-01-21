@@ -1,0 +1,40 @@
+\doxysection{SDLEngine.\+h}
+\hypertarget{_s_d_l_engine_8h_source}{}\label{_s_d_l_engine_8h_source}\index{src/sdlcore/SDLEngine.h@{src/sdlcore/SDLEngine.h}}
+\mbox{\hyperlink{_s_d_l_engine_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_s_d_l_core}{SDLCore}}}
+\DoxyCodeLine{00004\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ InputManager,\ \textcolor{keyword}{class}\ Renderer,\ \textcolor{keyword}{class}\ Gameplay>}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_engine_a05ce7a9a89df120dcef9241c2a6dc014}{SDLEngine}}}
+\DoxyCodeLine{00012\ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_engine_a05ce7a9a89df120dcef9241c2a6dc014}{SDLEngine}}(InputManager\&\ input\_manager,\ Renderer\&\ renderer,\ Gameplay\&\ gameplay)}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ :\ input\_manager\_(input\_manager),\ renderer\_(renderer),}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ gameplay\_(gameplay)\ \{\}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_engine_afb1593551ebe16d861dcee5b3214406d}{run}}()}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (isRunning\_)}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ input\_manager\_.handleEvents();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameplay\_.update();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ renderer\_.render();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_engine_a0cf0ad434f58cad662ee279ce71b9e1b}{isRunning}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00028\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isRunning\_;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isRunning\_\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ InputManager\&\ input\_manager\_;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ Renderer\&\ renderer\_;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ Gameplay\&\ gameplay\_;}
+\DoxyCodeLine{00038\ \ \ \ \ \};}
+\DoxyCodeLine{00039\ \}}
+
+\end{DoxyCode}

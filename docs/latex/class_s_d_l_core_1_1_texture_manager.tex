@@ -1,0 +1,149 @@
+\doxysection{SDLCore\+::Texture\+Manager Class Reference}
+\hypertarget{class_s_d_l_core_1_1_texture_manager}{}\label{class_s_d_l_core_1_1_texture_manager}\index{SDLCore::TextureManager@{SDLCore::TextureManager}}
+
+
+{\ttfamily \#include $<$Texture\+Manager.\+h$>$}
+
+
+
+Inheritance diagram for SDLCore\+::Texture\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{class_s_d_l_core_1_1_texture_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for SDLCore\+::Texture\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{class_s_d_l_core_1_1_texture_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager_a80f9ce1fe939a8bf7d5f763eb27063c0}{Texture\+Manager}} ()=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager_a8b805cf18f6c8903064454942924cca6}{Texture\+Manager}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_s_d_l_core_1_1_texture_load_strategy_factory}{Texture\+Load\+Strategy\+Factory}} $>$ load\+Factory)
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager_ae27d548d5392ffb24b68a0f0c9a9a919}{get\+Texture}} (std\+::uint32\+\_\+t texture\+Descriptor) noexcept override
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager_ab841f4c41b18673824862c15841c1240}{get\+Texture}} (std\+::uint32\+\_\+t texture\+Descriptor, const \mbox{\hyperlink{struct_s_d_l_core_1_1_i_texture_manager_1_1_as_ref}{As\+Ref}} \&tag) override
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager_a1971efe78dfc69595dfc812da601fdbf}{get\+Texture}} (const std\+::string \&name) noexcept override
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager_a7c9ad06a4545b1c421c3602ebb13e104}{get\+Texture}} (const std\+::string \&name, const \mbox{\hyperlink{struct_s_d_l_core_1_1_i_texture_manager_1_1_as_ref}{As\+Ref}} \&tag) override
+\item 
+{\footnotesize template$<$typename Load\+Strategy$>$ \newline
+requires std\+::is\+\_\+base\+\_\+of\+\_\+v$<$\mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_load_strategy}{ITexture\+Load\+Strategy}}, Load\+Strategy$>$}\\std\+::uint32\+\_\+t \mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager_a73984c7f7c2aead6c4737102fad25a00}{load\+Texture}} (const std\+::string \&file\+Name, \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer}{IRenderer}} \texorpdfstring{$\ast$}{*}renderer, const std\+::string \&texture\+Name=std\+::string\{\})
+\item 
+std\+::uint32\+\_\+t \mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager_a8c2652744c327b13ecf2c2b99ed232e6}{load\+Texture}} (const std\+::string \&file\+Name, \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer}{IRenderer}} \texorpdfstring{$\ast$}{*}renderer, \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_load_strategy}{ITexture\+Load\+Strategy}} \texorpdfstring{$\ast$}{*}load\+Strategy, const std\+::string \&texture\+Name) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager}{SDLCore\+::\+ITexture\+Manager}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_ab0fc7db1c326634661401e8facdc42b2}{ITexture\+Manager}} ()=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_abd190541f087cc937f494d4b255ae97b}{ITexture\+Manager}} (const \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager}{ITexture\+Manager}} \&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_a1f3bc74682ca5dfcfa246c6f71ef4df1}{ITexture\+Manager}} (\mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager}{ITexture\+Manager}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager}{ITexture\+Manager}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_a1a1926ffbaeaf0e5a3c6261956094a67}{operator=}} (const \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager}{ITexture\+Manager}} \&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager}{ITexture\+Manager}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_a9d7026874b1ed4c2972e1e6d3a0946f4}{operator=}} (\mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager}{ITexture\+Manager}} \&\&)=default
+\item 
+virtual \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_a15e325e1f4cfab5791fec4b86a85f6db}{\texorpdfstring{$\sim$}{\string~}\+ITexture\+Manager}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager}{SDLCore\+::\+ITexture\+Manager}}}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr \mbox{\hyperlink{struct_s_d_l_core_1_1_i_texture_manager_1_1_as_ref}{As\+Ref}} \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_a066e5bf98b27c79082f566d719aeb6fe}{Get\+Reference}} \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_s_d_l_core_1_1_texture_manager_a80f9ce1fe939a8bf7d5f763eb27063c0}\index{SDLCore::TextureManager@{SDLCore::TextureManager}!TextureManager@{TextureManager}}
+\index{TextureManager@{TextureManager}!SDLCore::TextureManager@{SDLCore::TextureManager}}
+\doxysubsubsection{\texorpdfstring{TextureManager()}{TextureManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_texture_manager_a80f9ce1fe939a8bf7d5f763eb27063c0} 
+SDLCore\+::\+Texture\+Manager\+::\+Texture\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_s_d_l_core_1_1_texture_manager_a8b805cf18f6c8903064454942924cca6}\index{SDLCore::TextureManager@{SDLCore::TextureManager}!TextureManager@{TextureManager}}
+\index{TextureManager@{TextureManager}!SDLCore::TextureManager@{SDLCore::TextureManager}}
+\doxysubsubsection{\texorpdfstring{TextureManager()}{TextureManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_texture_manager_a8b805cf18f6c8903064454942924cca6} 
+SDLCore\+::\+Texture\+Manager\+::\+Texture\+Manager (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_s_d_l_core_1_1_texture_load_strategy_factory}{Texture\+Load\+Strategy\+Factory}} $>$}]{load\+Factory}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_s_d_l_core_1_1_texture_manager_a1971efe78dfc69595dfc812da601fdbf}\index{SDLCore::TextureManager@{SDLCore::TextureManager}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!SDLCore::TextureManager@{SDLCore::TextureManager}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_texture_manager_a1971efe78dfc69595dfc812da601fdbf} 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLCore\+::\+SDLTexture}} \texorpdfstring{$\ast$}{*} SDLCore\+::\+Texture\+Manager\+::get\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Implements \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_a07bcb2b78dad815b6456ff06858bdcd6}{SDLCore\+::\+ITexture\+Manager}}.
+
+\Hypertarget{class_s_d_l_core_1_1_texture_manager_a7c9ad06a4545b1c421c3602ebb13e104}\index{SDLCore::TextureManager@{SDLCore::TextureManager}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!SDLCore::TextureManager@{SDLCore::TextureManager}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_texture_manager_a7c9ad06a4545b1c421c3602ebb13e104} 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLCore\+::\+SDLTexture}} \& SDLCore\+::\+Texture\+Manager\+::get\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const \mbox{\hyperlink{struct_s_d_l_core_1_1_i_texture_manager_1_1_as_ref}{As\+Ref}} \&}]{tag}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_a861b68366dc149ee95ddaf9484cc29ea}{SDLCore\+::\+ITexture\+Manager}}.
+
+\Hypertarget{class_s_d_l_core_1_1_texture_manager_ae27d548d5392ffb24b68a0f0c9a9a919}\index{SDLCore::TextureManager@{SDLCore::TextureManager}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!SDLCore::TextureManager@{SDLCore::TextureManager}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_texture_manager_ae27d548d5392ffb24b68a0f0c9a9a919} 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLCore\+::\+SDLTexture}} \texorpdfstring{$\ast$}{*} SDLCore\+::\+Texture\+Manager\+::get\+Texture (\begin{DoxyParamCaption}\item[{std\+::uint32\+\_\+t}]{texture\+Descriptor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Implements \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_acf7b7fc5d68ad92e4b0d2f08cd35b29d}{SDLCore\+::\+ITexture\+Manager}}.
+
+\Hypertarget{class_s_d_l_core_1_1_texture_manager_ab841f4c41b18673824862c15841c1240}\index{SDLCore::TextureManager@{SDLCore::TextureManager}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!SDLCore::TextureManager@{SDLCore::TextureManager}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_texture_manager_ab841f4c41b18673824862c15841c1240} 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLCore\+::\+SDLTexture}} \& SDLCore\+::\+Texture\+Manager\+::get\+Texture (\begin{DoxyParamCaption}\item[{std\+::uint32\+\_\+t}]{texture\+Descriptor}{, }\item[{const \mbox{\hyperlink{struct_s_d_l_core_1_1_i_texture_manager_1_1_as_ref}{As\+Ref}} \&}]{tag}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_a3b2309d5dffc311af357f04da772a529}{SDLCore\+::\+ITexture\+Manager}}.
+
+\Hypertarget{class_s_d_l_core_1_1_texture_manager_a73984c7f7c2aead6c4737102fad25a00}\index{SDLCore::TextureManager@{SDLCore::TextureManager}!loadTexture@{loadTexture}}
+\index{loadTexture@{loadTexture}!SDLCore::TextureManager@{SDLCore::TextureManager}}
+\doxysubsubsection{\texorpdfstring{loadTexture()}{loadTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_texture_manager_a73984c7f7c2aead6c4737102fad25a00} 
+template$<$typename Load\+Strategy$>$ \newline
+requires std\+::is\+\_\+base\+\_\+of\+\_\+v$<$\mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_load_strategy}{ITexture\+Load\+Strategy}}, Load\+Strategy$>$\\
+std\+::uint32\+\_\+t SDLCore\+::\+Texture\+Manager\+::load\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name}{, }\item[{\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer}{IRenderer}} \texorpdfstring{$\ast$}{*}}]{renderer}{, }\item[{const std\+::string \&}]{texture\+Name}{ = {\ttfamily std\+:\+:string\{\}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_s_d_l_core_1_1_texture_manager_a8c2652744c327b13ecf2c2b99ed232e6}\index{SDLCore::TextureManager@{SDLCore::TextureManager}!loadTexture@{loadTexture}}
+\index{loadTexture@{loadTexture}!SDLCore::TextureManager@{SDLCore::TextureManager}}
+\doxysubsubsection{\texorpdfstring{loadTexture()}{loadTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_texture_manager_a8c2652744c327b13ecf2c2b99ed232e6} 
+std\+::uint32\+\_\+t SDLCore\+::\+Texture\+Manager\+::load\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name}{, }\item[{\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer}{IRenderer}} \texorpdfstring{$\ast$}{*}}]{renderer}{, }\item[{\mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_load_strategy}{ITexture\+Load\+Strategy}} \texorpdfstring{$\ast$}{*}}]{load\+Strategy}{, }\item[{const std\+::string \&}]{texture\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_a6e87f850c70583a423e8d503ad0f4726}{SDLCore\+::\+ITexture\+Manager}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/sdlcore/\+Texture/\mbox{\hyperlink{_texture_manager_8h}{Texture\+Manager.\+h}}\item 
+src/sdlcore/\+Texture/\mbox{\hyperlink{_texture_manager_8cpp}{Texture\+Manager.\+cpp}}\end{DoxyCompactItemize}

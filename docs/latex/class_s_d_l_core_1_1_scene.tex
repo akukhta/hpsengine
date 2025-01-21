@@ -1,0 +1,101 @@
+\doxysection{SDLCore\+::Scene Class Reference}
+\hypertarget{class_s_d_l_core_1_1_scene}{}\label{class_s_d_l_core_1_1_scene}\index{SDLCore::Scene@{SDLCore::Scene}}
+
+
+{\ttfamily \#include $<$Scene.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_scene_a6a3cbe7e364d1349c963f88b6abd79ab}{Scene}} ()=default
+\item 
+std\+::uint32\+\_\+t \mbox{\hyperlink{class_s_d_l_core_1_1_scene_a39d8aca541375342d536ac3989bf693a}{add\+Object}} (\mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*}object)
+\item 
+std\+::uint32\+\_\+t \mbox{\hyperlink{class_s_d_l_core_1_1_scene_af02202bc3be1c061cf409b2868bccbe8}{add\+Object}} (\mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*}object, std\+::string const \&object\+Name)
+\item 
+std\+::uint32\+\_\+t \mbox{\hyperlink{class_s_d_l_core_1_1_scene_a550d349c134d2f8c723511f1bb388b24}{add\+Object}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} $>$ object)
+\item 
+std\+::uint32\+\_\+t \mbox{\hyperlink{class_s_d_l_core_1_1_scene_a3232f9299dd37db8e1666b7e084ffb49}{add\+Object}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} $>$ object, std\+::string const \&object\+Name)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} $>$ \mbox{\hyperlink{class_s_d_l_core_1_1_scene_a4ce947c27a2faa8a13d0ee6843577300}{get\+Object}} (std\+::uint32\+\_\+t object\+Id)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} $>$ \mbox{\hyperlink{class_s_d_l_core_1_1_scene_a94ff1e34dd3ca02caef8d4f7fc8ebfcd}{get\+Object}} (std\+::string const \&object\+Name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_s_d_l_core_1_1_scene_a5caad3273b0784140f467be9a56c65cd}{SDLGame}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_s_d_l_core_1_1_scene}{Scene} class is responsible for an aggregation of game objects used in a scene It stores updatable and renderable objects in a separate containers The class should support following operations\+:
+\begin{DoxyEnumerate}
+\item adding of objects
+\item Getting a reference to an object by Object\textquotesingle{}s name
+\item Getting a reference to an object by Object\textquotesingle{}s id
+\item Removing of an object from the scene by a name
+\item Removing of an object from the scene by Object\textquotesingle{}s id 
+\end{DoxyEnumerate}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_s_d_l_core_1_1_scene_a6a3cbe7e364d1349c963f88b6abd79ab}\index{SDLCore::Scene@{SDLCore::Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!SDLCore::Scene@{SDLCore::Scene}}
+\doxysubsubsection{\texorpdfstring{Scene()}{Scene()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_scene_a6a3cbe7e364d1349c963f88b6abd79ab} 
+SDLCore\+::\+Scene\+::\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_s_d_l_core_1_1_scene_a39d8aca541375342d536ac3989bf693a}\index{SDLCore::Scene@{SDLCore::Scene}!addObject@{addObject}}
+\index{addObject@{addObject}!SDLCore::Scene@{SDLCore::Scene}}
+\doxysubsubsection{\texorpdfstring{addObject()}{addObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_scene_a39d8aca541375342d536ac3989bf693a} 
+std\+::uint32\+\_\+t SDLCore\+::\+Scene\+::add\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*}}]{object}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_scene_af02202bc3be1c061cf409b2868bccbe8}\index{SDLCore::Scene@{SDLCore::Scene}!addObject@{addObject}}
+\index{addObject@{addObject}!SDLCore::Scene@{SDLCore::Scene}}
+\doxysubsubsection{\texorpdfstring{addObject()}{addObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_scene_af02202bc3be1c061cf409b2868bccbe8} 
+std\+::uint32\+\_\+t SDLCore\+::\+Scene\+::add\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*}}]{object}{, }\item[{std\+::string const \&}]{object\+Name}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_scene_a550d349c134d2f8c723511f1bb388b24}\index{SDLCore::Scene@{SDLCore::Scene}!addObject@{addObject}}
+\index{addObject@{addObject}!SDLCore::Scene@{SDLCore::Scene}}
+\doxysubsubsection{\texorpdfstring{addObject()}{addObject()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_scene_a550d349c134d2f8c723511f1bb388b24} 
+std\+::uint32\+\_\+t SDLCore\+::\+Scene\+::add\+Object (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} $>$}]{object}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_scene_a3232f9299dd37db8e1666b7e084ffb49}\index{SDLCore::Scene@{SDLCore::Scene}!addObject@{addObject}}
+\index{addObject@{addObject}!SDLCore::Scene@{SDLCore::Scene}}
+\doxysubsubsection{\texorpdfstring{addObject()}{addObject()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_scene_a3232f9299dd37db8e1666b7e084ffb49} 
+std\+::uint32\+\_\+t SDLCore\+::\+Scene\+::add\+Object (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} $>$}]{object}{, }\item[{std\+::string const \&}]{object\+Name}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_scene_a94ff1e34dd3ca02caef8d4f7fc8ebfcd}\index{SDLCore::Scene@{SDLCore::Scene}!getObject@{getObject}}
+\index{getObject@{getObject}!SDLCore::Scene@{SDLCore::Scene}}
+\doxysubsubsection{\texorpdfstring{getObject()}{getObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_scene_a94ff1e34dd3ca02caef8d4f7fc8ebfcd} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{SDLCore\+::\+Game\+Object}} $>$ SDLCore\+::\+Scene\+::get\+Object (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{object\+Name}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_scene_a4ce947c27a2faa8a13d0ee6843577300}\index{SDLCore::Scene@{SDLCore::Scene}!getObject@{getObject}}
+\index{getObject@{getObject}!SDLCore::Scene@{SDLCore::Scene}}
+\doxysubsubsection{\texorpdfstring{getObject()}{getObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_scene_a4ce947c27a2faa8a13d0ee6843577300} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{SDLCore\+::\+Game\+Object}} $>$ SDLCore\+::\+Scene\+::get\+Object (\begin{DoxyParamCaption}\item[{std\+::uint32\+\_\+t}]{object\+Id}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_s_d_l_core_1_1_scene_a5caad3273b0784140f467be9a56c65cd}\index{SDLCore::Scene@{SDLCore::Scene}!SDLGame@{SDLGame}}
+\index{SDLGame@{SDLGame}!SDLCore::Scene@{SDLCore::Scene}}
+\doxysubsubsection{\texorpdfstring{SDLGame}{SDLGame}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_scene_a5caad3273b0784140f467be9a56c65cd} 
+friend class \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_game}{SDLGame}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/sdlcore/\+Scene/\mbox{\hyperlink{_scene_8h}{Scene.\+h}}\item 
+src/sdlcore/\+Scene/\mbox{\hyperlink{_scene_8cpp}{Scene.\+cpp}}\end{DoxyCompactItemize}

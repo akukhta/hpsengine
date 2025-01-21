@@ -1,0 +1,196 @@
+\doxysection{SDLCore\+::SDLRenderer Class Reference}
+\hypertarget{class_s_d_l_core_1_1_s_d_l_renderer}{}\label{class_s_d_l_core_1_1_s_d_l_renderer}\index{SDLCore::SDLRenderer@{SDLCore::SDLRenderer}}
+
+
+Class performs drawing to the associated window.  
+
+
+
+
+{\ttfamily \#include $<$SDLRenderer.\+h$>$}
+
+
+
+Inheritance diagram for SDLCore\+::SDLRenderer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{class_s_d_l_core_1_1_s_d_l_renderer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for SDLCore\+::SDLRenderer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{class_s_d_l_core_1_1_s_d_l_renderer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_a284b21f151a9ae7b9c2b6534306e52a1}{SDLRenderer}} (class \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_window}{SDLWindow}} \texorpdfstring{$\ast$}{*}window)
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_ad6d779832476178754057960701cca3a}{set\+Resolution}} (int width, int height)
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_a3eda56db1f4751f7df92d819347c0ba7}{set\+Resolution}} (std\+::pair$<$ int, int $>$ resolution)
+\item 
+std\+::pair$<$ int, int $>$ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_a9059407bf7a7d5ce322193d29f52a38b}{get\+Resolution}} () const
+\item 
+SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_a91f60cbeb8e8891b80d275f4fb622c52}{get\+Renderer}} () const
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_aa51ac7f1e00d11703df066e443a68381}{render\+Texture}} ()
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_ac7731316e6499f47cdc8b802d82d091d}{start\+Rendering}} () override
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_a86853f9eb6713e1251da3e5abd57abaf}{finish\+Rendering}} () override
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_a169e697620808b60c060078fa4fa40da}{render\+Texture}} (\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}} \texorpdfstring{$\ast$}{*}texture, int x, int y, int w, int h) override
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_a684e4ece84ecaa1ed28a0b12d7e5f833}{render\+Texture}} (\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}} \texorpdfstring{$\ast$}{*}texture, \mbox{\hyperlink{struct_s_d_l_core_1_1_math_1_1_rectangle}{Math\+::\+Rectangle}} const \&src, \mbox{\hyperlink{struct_s_d_l_core_1_1_math_1_1_rectangle}{Math\+::\+Rectangle}} const \&dst) override
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_a0e9dc196ed98b16d639c83d5d0da3d6f}{render\+Texture}} (\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}} \texorpdfstring{$\ast$}{*}texture, \mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math\+::\+IVector2D}} pos, std\+::pair$<$ int, int $>$ size) override
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_a0e5db437a40d99b18afdd602f7c80fda}{render\+Rectangle}} (\mbox{\hyperlink{class_s_d_l_core_1_1_primitives_1_1_rectangle_component}{Primitives\+::\+Rectangle\+Component}} \texorpdfstring{$\ast$}{*}rectangle, int x, int y, int w, int h) override
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer_a715bda9fbca8d61c35e63778df7f6046}{render\+Circle}} (\mbox{\hyperlink{class_s_d_l_core_1_1_primitives_1_1_circle_component}{Primitives\+::\+Circle\+Component}} \texorpdfstring{$\ast$}{*}circle, int centerX, int centerY, int r) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer}{SDLCore\+::\+IRenderer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer_a785f01f7a56f1036cde4122c7e8bdad4}{IRenderer}} ()=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer_a85889e0e57756d5cb770fc94a271582a}{IRenderer}} (const \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer}{IRenderer}} \&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer_a837d1913624af895de2b5a92f1e5c908}{IRenderer}} (\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer}{IRenderer}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer}{IRenderer}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer_a3dcd3392f800b46a6ff4e7ff80674380}{operator=}} (const \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer}{IRenderer}} \&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer}{IRenderer}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer_a4d170ab78eb2c7cd3443ad215ccc838f}{operator=}} (\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer}{IRenderer}} \&\&)=default
+\item 
+virtual \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer_ab62cf42219d34515fcb250b5ec4f7429}{\texorpdfstring{$\sim$}{\string~}\+IRenderer}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class performs drawing to the associated window. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_renderer_a284b21f151a9ae7b9c2b6534306e52a1}\index{SDLCore::SDLRenderer@{SDLCore::SDLRenderer}!SDLRenderer@{SDLRenderer}}
+\index{SDLRenderer@{SDLRenderer}!SDLCore::SDLRenderer@{SDLCore::SDLRenderer}}
+\doxysubsubsection{\texorpdfstring{SDLRenderer()}{SDLRenderer()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_renderer_a284b21f151a9ae7b9c2b6534306e52a1} 
+SDLCore\+::\+SDLRenderer\+::\+SDLRenderer (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_window}{SDLWindow}} \texorpdfstring{$\ast$}{*}}]{window}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_renderer_a86853f9eb6713e1251da3e5abd57abaf}\index{SDLCore::SDLRenderer@{SDLCore::SDLRenderer}!finishRendering@{finishRendering}}
+\index{finishRendering@{finishRendering}!SDLCore::SDLRenderer@{SDLCore::SDLRenderer}}
+\doxysubsubsection{\texorpdfstring{finishRendering()}{finishRendering()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_renderer_a86853f9eb6713e1251da3e5abd57abaf} 
+void SDLCore\+::\+SDLRenderer\+::finish\+Rendering (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer_a8e8b41eb0a51d6b137d5f68eb6635f8e}{SDLCore\+::\+IRenderer}}.
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_renderer_a91f60cbeb8e8891b80d275f4fb622c52}\index{SDLCore::SDLRenderer@{SDLCore::SDLRenderer}!getRenderer@{getRenderer}}
+\index{getRenderer@{getRenderer}!SDLCore::SDLRenderer@{SDLCore::SDLRenderer}}
+\doxysubsubsection{\texorpdfstring{getRenderer()}{getRenderer()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_renderer_a91f60cbeb8e8891b80d275f4fb622c52} 
+SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*} SDLCore\+::\+SDLRenderer\+::get\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_renderer_a9059407bf7a7d5ce322193d29f52a38b}\index{SDLCore::SDLRenderer@{SDLCore::SDLRenderer}!getResolution@{getResolution}}
+\index{getResolution@{getResolution}!SDLCore::SDLRenderer@{SDLCore::SDLRenderer}}
+\doxysubsubsection{\texorpdfstring{getResolution()}{getResolution()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_renderer_a9059407bf7a7d5ce322193d29f52a38b} 
+std\+::pair$<$ int, int $>$ SDLCore\+::\+SDLRenderer\+::get\+Resolution (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_renderer_a715bda9fbca8d61c35e63778df7f6046}\index{SDLCore::SDLRenderer@{SDLCore::SDLRenderer}!renderCircle@{renderCircle}}
+\index{renderCircle@{renderCircle}!SDLCore::SDLRenderer@{SDLCore::SDLRenderer}}
+\doxysubsubsection{\texorpdfstring{renderCircle()}{renderCircle()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_renderer_a715bda9fbca8d61c35e63778df7f6046} 
+void SDLCore\+::\+SDLRenderer\+::render\+Circle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_d_l_core_1_1_primitives_1_1_circle_component}{Primitives\+::\+Circle\+Component}} \texorpdfstring{$\ast$}{*}}]{circle}{, }\item[{int}]{centerX}{, }\item[{int}]{centerY}{, }\item[{int}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer_aa9152c1d0fe4ee31fcf8b4cfeb85ed86}{SDLCore\+::\+IRenderer}}.
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_renderer_a0e5db437a40d99b18afdd602f7c80fda}\index{SDLCore::SDLRenderer@{SDLCore::SDLRenderer}!renderRectangle@{renderRectangle}}
+\index{renderRectangle@{renderRectangle}!SDLCore::SDLRenderer@{SDLCore::SDLRenderer}}
+\doxysubsubsection{\texorpdfstring{renderRectangle()}{renderRectangle()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_renderer_a0e5db437a40d99b18afdd602f7c80fda} 
+void SDLCore\+::\+SDLRenderer\+::render\+Rectangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_d_l_core_1_1_primitives_1_1_rectangle_component}{Primitives\+::\+Rectangle\+Component}} \texorpdfstring{$\ast$}{*}}]{rectangle}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{w}{, }\item[{int}]{h}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer_afb560f7c80ba8440d4185d9f553dc168}{SDLCore\+::\+IRenderer}}.
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_renderer_aa51ac7f1e00d11703df066e443a68381}\index{SDLCore::SDLRenderer@{SDLCore::SDLRenderer}!renderTexture@{renderTexture}}
+\index{renderTexture@{renderTexture}!SDLCore::SDLRenderer@{SDLCore::SDLRenderer}}
+\doxysubsubsection{\texorpdfstring{renderTexture()}{renderTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_renderer_aa51ac7f1e00d11703df066e443a68381} 
+void SDLCore\+::\+SDLRenderer\+::render\+Texture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_renderer_a169e697620808b60c060078fa4fa40da}\index{SDLCore::SDLRenderer@{SDLCore::SDLRenderer}!renderTexture@{renderTexture}}
+\index{renderTexture@{renderTexture}!SDLCore::SDLRenderer@{SDLCore::SDLRenderer}}
+\doxysubsubsection{\texorpdfstring{renderTexture()}{renderTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_renderer_a169e697620808b60c060078fa4fa40da} 
+void SDLCore\+::\+SDLRenderer\+::render\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}} \texorpdfstring{$\ast$}{*}}]{texture}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{w}{, }\item[{int}]{h}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer_ae710a59ed7d267059454ce6d64a26a0c}{SDLCore\+::\+IRenderer}}.
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_renderer_a0e9dc196ed98b16d639c83d5d0da3d6f}\index{SDLCore::SDLRenderer@{SDLCore::SDLRenderer}!renderTexture@{renderTexture}}
+\index{renderTexture@{renderTexture}!SDLCore::SDLRenderer@{SDLCore::SDLRenderer}}
+\doxysubsubsection{\texorpdfstring{renderTexture()}{renderTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_renderer_a0e9dc196ed98b16d639c83d5d0da3d6f} 
+void SDLCore\+::\+SDLRenderer\+::render\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}} \texorpdfstring{$\ast$}{*}}]{texture}{, }\item[{\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math\+::\+IVector2D}}}]{pos}{, }\item[{std\+::pair$<$ int, int $>$}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer_a934ccd100f4b4d67aea84873447c8229}{SDLCore\+::\+IRenderer}}.
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_renderer_a684e4ece84ecaa1ed28a0b12d7e5f833}\index{SDLCore::SDLRenderer@{SDLCore::SDLRenderer}!renderTexture@{renderTexture}}
+\index{renderTexture@{renderTexture}!SDLCore::SDLRenderer@{SDLCore::SDLRenderer}}
+\doxysubsubsection{\texorpdfstring{renderTexture()}{renderTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_renderer_a684e4ece84ecaa1ed28a0b12d7e5f833} 
+void SDLCore\+::\+SDLRenderer\+::render\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}} \texorpdfstring{$\ast$}{*}}]{texture}{, }\item[{\mbox{\hyperlink{struct_s_d_l_core_1_1_math_1_1_rectangle}{Math\+::\+Rectangle}} const \&}]{src}{, }\item[{\mbox{\hyperlink{struct_s_d_l_core_1_1_math_1_1_rectangle}{Math\+::\+Rectangle}} const \&}]{dst}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer_a1ec573534fe1b5f3e500de466ae9fccd}{SDLCore\+::\+IRenderer}}.
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_renderer_ad6d779832476178754057960701cca3a}\index{SDLCore::SDLRenderer@{SDLCore::SDLRenderer}!setResolution@{setResolution}}
+\index{setResolution@{setResolution}!SDLCore::SDLRenderer@{SDLCore::SDLRenderer}}
+\doxysubsubsection{\texorpdfstring{setResolution()}{setResolution()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_renderer_ad6d779832476178754057960701cca3a} 
+void SDLCore\+::\+SDLRenderer\+::set\+Resolution (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_renderer_a3eda56db1f4751f7df92d819347c0ba7}\index{SDLCore::SDLRenderer@{SDLCore::SDLRenderer}!setResolution@{setResolution}}
+\index{setResolution@{setResolution}!SDLCore::SDLRenderer@{SDLCore::SDLRenderer}}
+\doxysubsubsection{\texorpdfstring{setResolution()}{setResolution()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_renderer_a3eda56db1f4751f7df92d819347c0ba7} 
+void SDLCore\+::\+SDLRenderer\+::set\+Resolution (\begin{DoxyParamCaption}\item[{std\+::pair$<$ int, int $>$}]{resolution}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_renderer_ac7731316e6499f47cdc8b802d82d091d}\index{SDLCore::SDLRenderer@{SDLCore::SDLRenderer}!startRendering@{startRendering}}
+\index{startRendering@{startRendering}!SDLCore::SDLRenderer@{SDLCore::SDLRenderer}}
+\doxysubsubsection{\texorpdfstring{startRendering()}{startRendering()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_renderer_ac7731316e6499f47cdc8b802d82d091d} 
+void SDLCore\+::\+SDLRenderer\+::start\+Rendering (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer_a0d0ee014ece63f4a45d57d0a3cfcd7d4}{SDLCore\+::\+IRenderer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/sdlcore/\mbox{\hyperlink{_s_d_l_renderer_8h}{SDLRenderer.\+h}}\item 
+src/sdlcore/\mbox{\hyperlink{_s_d_l_renderer_8cpp}{SDLRenderer.\+cpp}}\end{DoxyCompactItemize}

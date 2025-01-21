@@ -1,0 +1,189 @@
+\doxysection{SDLCore\+::SDLTexture Class Reference}
+\hypertarget{class_s_d_l_core_1_1_s_d_l_texture}{}\label{class_s_d_l_core_1_1_s_d_l_texture}\index{SDLCore::SDLTexture@{SDLCore::SDLTexture}}
+
+
+{\ttfamily \#include $<$SDLTexture.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_ab0c399add032017734b9c25f60ac0a9b}{Texture\+Ptr}} = std\+::unique\+\_\+ptr$<$SDL\+\_\+\+Texture, decltype(\&SDL\+\_\+\+Destroy\+Texture)$>$
+\item 
+using \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_a5359c702c957503270767eac5fc96fa0}{Surface\+Ptr}} = std\+::unique\+\_\+ptr$<$SDL\+\_\+\+Surface, decltype(\&SDL\+\_\+\+Free\+Surface)$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_a1b3ff2c049616cb70466a7be2d83df47}{SDLTexture}} (\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_ab0c399add032017734b9c25f60ac0a9b}{Texture\+Ptr}} \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_a1d86d1aeef4b8d61d0be55b8394b0dac}{texture}})
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_a6a5f2967ade49f268d7914a4b53da317}{set\+Texture\+Size}} (std\+::pair$<$ int, int $>$ const \&size)
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_a8e320a62f0d5cd30bae8a899df7616ed}{set\+Texture\+Size}} (int width, int height)
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_a1c66f57969583e477ad0645d7d50a8d4}{set\+Texture\+Size}} (int const \texorpdfstring{$\ast$}{*}width, int const \texorpdfstring{$\ast$}{*}height)
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_a71729c7c87edb0cec83f0cc4ecb1f676}{set\+Texture\+Offset}} (std\+::pair$<$ int, int $>$ const \&offset)
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_a182fe3e1f5795ea0d7e67f31e69831b5}{set\+Texture\+Offset}} (int x, int y)
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_a65402c6082aff3169b9d5fc1bfb0b9c3}{set\+Texture\+Offset}} (int const \texorpdfstring{$\ast$}{*}x, int const \texorpdfstring{$\ast$}{*}y)
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_a8b9f0476fa48dd46817621a7c2dcd99f}{reset\+Size\+And\+Offset}} ()
+\item 
+std\+::pair$<$ int, int $>$ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_a519ccfd65aeeec4f40740776a4d5fcd2}{get\+Texture\+Size}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}} \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_a84004dcdde496910d7bfc9f3706a8a1e}{load\+From\+BMP}} (std\+::string const \&file\+Name, class \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer}{SDLRenderer}} const \texorpdfstring{$\ast$}{*}renderer)
+\item 
+static \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}} \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_ac7cac6285a971f1dd4c2e0c6b53b55d9}{load\+PNG}} (std\+::string const \&file\+Name, \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer}{SDLRenderer}} const \texorpdfstring{$\ast$}{*}renderer)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_ab0c399add032017734b9c25f60ac0a9b}{Texture\+Ptr}} \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_a7149ed7a18bab642d9b9518a55411a72}{load\+PNGRaw}} (std\+::string const \&file\+Name, \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer}{SDLRenderer}} const \texorpdfstring{$\ast$}{*}renderer)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_ab0c399add032017734b9c25f60ac0a9b}{Texture\+Ptr}} \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_a1d86d1aeef4b8d61d0be55b8394b0dac}{texture}}
+\item 
+std\+::pair$<$ int, int $>$ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_aadf7596e8265a3c26f02e24b1d4c5d65}{texture\+Size}}
+\item 
+SDL\+\_\+\+Rect \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_ad89dbab1dbc801a85b5793033ba6a43b}{src\+Rect}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_a6b759ab354ae37afcd13dfd78eeb6ffc}{SDLRenderer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_texture_a5359c702c957503270767eac5fc96fa0}\index{SDLCore::SDLTexture@{SDLCore::SDLTexture}!SurfacePtr@{SurfacePtr}}
+\index{SurfacePtr@{SurfacePtr}!SDLCore::SDLTexture@{SDLCore::SDLTexture}}
+\doxysubsubsection{\texorpdfstring{SurfacePtr}{SurfacePtr}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_texture_a5359c702c957503270767eac5fc96fa0} 
+using \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_a5359c702c957503270767eac5fc96fa0}{SDLCore\+::\+SDLTexture\+::\+Surface\+Ptr}} = std\+::unique\+\_\+ptr$<$SDL\+\_\+\+Surface, decltype(\&SDL\+\_\+\+Free\+Surface)$>$}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_texture_ab0c399add032017734b9c25f60ac0a9b}\index{SDLCore::SDLTexture@{SDLCore::SDLTexture}!TexturePtr@{TexturePtr}}
+\index{TexturePtr@{TexturePtr}!SDLCore::SDLTexture@{SDLCore::SDLTexture}}
+\doxysubsubsection{\texorpdfstring{TexturePtr}{TexturePtr}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_texture_ab0c399add032017734b9c25f60ac0a9b} 
+using \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_ab0c399add032017734b9c25f60ac0a9b}{SDLCore\+::\+SDLTexture\+::\+Texture\+Ptr}} = std\+::unique\+\_\+ptr$<$SDL\+\_\+\+Texture, decltype(\&SDL\+\_\+\+Destroy\+Texture)$>$}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_texture_a1b3ff2c049616cb70466a7be2d83df47}\index{SDLCore::SDLTexture@{SDLCore::SDLTexture}!SDLTexture@{SDLTexture}}
+\index{SDLTexture@{SDLTexture}!SDLCore::SDLTexture@{SDLCore::SDLTexture}}
+\doxysubsubsection{\texorpdfstring{SDLTexture()}{SDLTexture()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_texture_a1b3ff2c049616cb70466a7be2d83df47} 
+SDLCore\+::\+SDLTexture\+::\+SDLTexture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_ab0c399add032017734b9c25f60ac0a9b}{Texture\+Ptr}}}]{texture}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_texture_a519ccfd65aeeec4f40740776a4d5fcd2}\index{SDLCore::SDLTexture@{SDLCore::SDLTexture}!getTextureSize@{getTextureSize}}
+\index{getTextureSize@{getTextureSize}!SDLCore::SDLTexture@{SDLCore::SDLTexture}}
+\doxysubsubsection{\texorpdfstring{getTextureSize()}{getTextureSize()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_texture_a519ccfd65aeeec4f40740776a4d5fcd2} 
+std\+::pair$<$ int, int $>$ SDLCore\+::\+SDLTexture\+::get\+Texture\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_texture_a84004dcdde496910d7bfc9f3706a8a1e}\index{SDLCore::SDLTexture@{SDLCore::SDLTexture}!loadFromBMP@{loadFromBMP}}
+\index{loadFromBMP@{loadFromBMP}!SDLCore::SDLTexture@{SDLCore::SDLTexture}}
+\doxysubsubsection{\texorpdfstring{loadFromBMP()}{loadFromBMP()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_texture_a84004dcdde496910d7bfc9f3706a8a1e} 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLCore\+::\+SDLTexture}} SDLCore\+::\+SDLTexture\+::load\+From\+BMP (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{file\+Name}{, }\item[{class \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer}{SDLRenderer}} const \texorpdfstring{$\ast$}{*}}]{renderer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_texture_ac7cac6285a971f1dd4c2e0c6b53b55d9}\index{SDLCore::SDLTexture@{SDLCore::SDLTexture}!loadPNG@{loadPNG}}
+\index{loadPNG@{loadPNG}!SDLCore::SDLTexture@{SDLCore::SDLTexture}}
+\doxysubsubsection{\texorpdfstring{loadPNG()}{loadPNG()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_texture_ac7cac6285a971f1dd4c2e0c6b53b55d9} 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLCore\+::\+SDLTexture}} SDLCore\+::\+SDLTexture\+::load\+PNG (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{file\+Name}{, }\item[{\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer}{SDLRenderer}} const \texorpdfstring{$\ast$}{*}}]{renderer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_texture_a7149ed7a18bab642d9b9518a55411a72}\index{SDLCore::SDLTexture@{SDLCore::SDLTexture}!loadPNGRaw@{loadPNGRaw}}
+\index{loadPNGRaw@{loadPNGRaw}!SDLCore::SDLTexture@{SDLCore::SDLTexture}}
+\doxysubsubsection{\texorpdfstring{loadPNGRaw()}{loadPNGRaw()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_texture_a7149ed7a18bab642d9b9518a55411a72} 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_ab0c399add032017734b9c25f60ac0a9b}{SDLCore\+::\+SDLTexture\+::\+Texture\+Ptr}} SDLCore\+::\+SDLTexture\+::load\+PNGRaw (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{file\+Name}{, }\item[{\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer}{SDLRenderer}} const \texorpdfstring{$\ast$}{*}}]{renderer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_texture_a8b9f0476fa48dd46817621a7c2dcd99f}\index{SDLCore::SDLTexture@{SDLCore::SDLTexture}!resetSizeAndOffset@{resetSizeAndOffset}}
+\index{resetSizeAndOffset@{resetSizeAndOffset}!SDLCore::SDLTexture@{SDLCore::SDLTexture}}
+\doxysubsubsection{\texorpdfstring{resetSizeAndOffset()}{resetSizeAndOffset()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_texture_a8b9f0476fa48dd46817621a7c2dcd99f} 
+void SDLCore\+::\+SDLTexture\+::reset\+Size\+And\+Offset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_texture_a65402c6082aff3169b9d5fc1bfb0b9c3}\index{SDLCore::SDLTexture@{SDLCore::SDLTexture}!setTextureOffset@{setTextureOffset}}
+\index{setTextureOffset@{setTextureOffset}!SDLCore::SDLTexture@{SDLCore::SDLTexture}}
+\doxysubsubsection{\texorpdfstring{setTextureOffset()}{setTextureOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_texture_a65402c6082aff3169b9d5fc1bfb0b9c3} 
+void SDLCore\+::\+SDLTexture\+::set\+Texture\+Offset (\begin{DoxyParamCaption}\item[{int const \texorpdfstring{$\ast$}{*}}]{x}{, }\item[{int const \texorpdfstring{$\ast$}{*}}]{y}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_texture_a182fe3e1f5795ea0d7e67f31e69831b5}\index{SDLCore::SDLTexture@{SDLCore::SDLTexture}!setTextureOffset@{setTextureOffset}}
+\index{setTextureOffset@{setTextureOffset}!SDLCore::SDLTexture@{SDLCore::SDLTexture}}
+\doxysubsubsection{\texorpdfstring{setTextureOffset()}{setTextureOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_texture_a182fe3e1f5795ea0d7e67f31e69831b5} 
+void SDLCore\+::\+SDLTexture\+::set\+Texture\+Offset (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_texture_a71729c7c87edb0cec83f0cc4ecb1f676}\index{SDLCore::SDLTexture@{SDLCore::SDLTexture}!setTextureOffset@{setTextureOffset}}
+\index{setTextureOffset@{setTextureOffset}!SDLCore::SDLTexture@{SDLCore::SDLTexture}}
+\doxysubsubsection{\texorpdfstring{setTextureOffset()}{setTextureOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_texture_a71729c7c87edb0cec83f0cc4ecb1f676} 
+void SDLCore\+::\+SDLTexture\+::set\+Texture\+Offset (\begin{DoxyParamCaption}\item[{std\+::pair$<$ int, int $>$ const \&}]{offset}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_texture_a1c66f57969583e477ad0645d7d50a8d4}\index{SDLCore::SDLTexture@{SDLCore::SDLTexture}!setTextureSize@{setTextureSize}}
+\index{setTextureSize@{setTextureSize}!SDLCore::SDLTexture@{SDLCore::SDLTexture}}
+\doxysubsubsection{\texorpdfstring{setTextureSize()}{setTextureSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_texture_a1c66f57969583e477ad0645d7d50a8d4} 
+void SDLCore\+::\+SDLTexture\+::set\+Texture\+Size (\begin{DoxyParamCaption}\item[{int const \texorpdfstring{$\ast$}{*}}]{width}{, }\item[{int const \texorpdfstring{$\ast$}{*}}]{height}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_texture_a8e320a62f0d5cd30bae8a899df7616ed}\index{SDLCore::SDLTexture@{SDLCore::SDLTexture}!setTextureSize@{setTextureSize}}
+\index{setTextureSize@{setTextureSize}!SDLCore::SDLTexture@{SDLCore::SDLTexture}}
+\doxysubsubsection{\texorpdfstring{setTextureSize()}{setTextureSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_texture_a8e320a62f0d5cd30bae8a899df7616ed} 
+void SDLCore\+::\+SDLTexture\+::set\+Texture\+Size (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_texture_a6a5f2967ade49f268d7914a4b53da317}\index{SDLCore::SDLTexture@{SDLCore::SDLTexture}!setTextureSize@{setTextureSize}}
+\index{setTextureSize@{setTextureSize}!SDLCore::SDLTexture@{SDLCore::SDLTexture}}
+\doxysubsubsection{\texorpdfstring{setTextureSize()}{setTextureSize()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_texture_a6a5f2967ade49f268d7914a4b53da317} 
+void SDLCore\+::\+SDLTexture\+::set\+Texture\+Size (\begin{DoxyParamCaption}\item[{std\+::pair$<$ int, int $>$ const \&}]{size}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_texture_a6b759ab354ae37afcd13dfd78eeb6ffc}\index{SDLCore::SDLTexture@{SDLCore::SDLTexture}!SDLRenderer@{SDLRenderer}}
+\index{SDLRenderer@{SDLRenderer}!SDLCore::SDLTexture@{SDLCore::SDLTexture}}
+\doxysubsubsection{\texorpdfstring{SDLRenderer}{SDLRenderer}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_texture_a6b759ab354ae37afcd13dfd78eeb6ffc} 
+friend class \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_renderer}{SDLRenderer}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_texture_ad89dbab1dbc801a85b5793033ba6a43b}\index{SDLCore::SDLTexture@{SDLCore::SDLTexture}!srcRect@{srcRect}}
+\index{srcRect@{srcRect}!SDLCore::SDLTexture@{SDLCore::SDLTexture}}
+\doxysubsubsection{\texorpdfstring{srcRect}{srcRect}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_texture_ad89dbab1dbc801a85b5793033ba6a43b} 
+SDL\+\_\+\+Rect SDLCore\+::\+SDLTexture\+::src\+Rect\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_texture_a1d86d1aeef4b8d61d0be55b8394b0dac}\index{SDLCore::SDLTexture@{SDLCore::SDLTexture}!texture@{texture}}
+\index{texture@{texture}!SDLCore::SDLTexture@{SDLCore::SDLTexture}}
+\doxysubsubsection{\texorpdfstring{texture}{texture}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_texture_a1d86d1aeef4b8d61d0be55b8394b0dac} 
+\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture_ab0c399add032017734b9c25f60ac0a9b}{Texture\+Ptr}} SDLCore\+::\+SDLTexture\+::texture\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_s_d_l_core_1_1_s_d_l_texture_aadf7596e8265a3c26f02e24b1d4c5d65}\index{SDLCore::SDLTexture@{SDLCore::SDLTexture}!textureSize@{textureSize}}
+\index{textureSize@{textureSize}!SDLCore::SDLTexture@{SDLCore::SDLTexture}}
+\doxysubsubsection{\texorpdfstring{textureSize}{textureSize}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_s_d_l_texture_aadf7596e8265a3c26f02e24b1d4c5d65} 
+std\+::pair$<$int, int$>$ SDLCore\+::\+SDLTexture\+::texture\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/sdlcore/\mbox{\hyperlink{_s_d_l_texture_8h}{SDLTexture.\+h}}\item 
+src/sdlcore/\mbox{\hyperlink{_s_d_l_texture_8cpp}{SDLTexture.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,45 @@
+\doxysection{Texture\+Manager.\+h}
+\hypertarget{_texture_manager_8h_source}{}\label{_texture_manager_8h_source}\index{src/sdlcore/Texture/TextureManager.h@{src/sdlcore/Texture/TextureManager.h}}
+\mbox{\hyperlink{_texture_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_texture_manager_8h}{ITextureManager.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_texture_load_strategy_factory_8h}{TextureLoadStrategyFactory.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_s_d_l_core}{SDLCore}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager_a80f9ce1fe939a8bf7d5f763eb27063c0}{TextureManager}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_ab0fc7db1c326634661401e8facdc42b2}{ITextureManager}}}
+\DoxyCodeLine{00009\ \ \ \ \ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager_a80f9ce1fe939a8bf7d5f763eb27063c0}{TextureManager}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager_a80f9ce1fe939a8bf7d5f763eb27063c0}{TextureManager}}(std::unique\_ptr<TextureLoadStrategyFactory>\ loadFactory);}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}}*\ \mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager_ae27d548d5392ffb24b68a0f0c9a9a919}{getTexture}}(std::uint32\_t\ textureDescriptor)\ \textcolor{keyword}{noexcept}\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}}\&\ \mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager_ae27d548d5392ffb24b68a0f0c9a9a919}{getTexture}}(std::uint32\_t\ textureDescriptor,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_s_d_l_core_1_1_i_texture_manager_1_1_as_ref}{AsRef}}\ \&tag)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}}*\ \mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager_ae27d548d5392ffb24b68a0f0c9a9a919}{getTexture}}(\textcolor{keyword}{const}\ std::string\ \&name)\ \textcolor{keyword}{noexcept}\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}}\&\ \mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager_ae27d548d5392ffb24b68a0f0c9a9a919}{getTexture}}(\textcolor{keyword}{const}\ std::string\ \&name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_s_d_l_core_1_1_i_texture_manager_1_1_as_ref}{AsRef}}\ \&tag)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ LoadStrategy>}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ std::is\_base\_of\_v<ITextureLoadStrategy,\ LoadStrategy>}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ std::uint32\_t\ \mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager_a73984c7f7c2aead6c4737102fad25a00}{loadTexture}}(\textcolor{keyword}{const}\ std::string\ \&fileName,\ \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer}{IRenderer}}\ *renderer,\ \textcolor{keyword}{const}\ std::string\ \&textureName\ =\ std::string\{\})}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ loadStrategy\ =\ loadFactory-\/>getStrategy<LoadStrategy>();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager_a73984c7f7c2aead6c4737102fad25a00}{loadTexture}}(fileName,\ renderer,\ loadStrategy,\ textureName);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ std::uint32\_t\ \mbox{\hyperlink{class_s_d_l_core_1_1_texture_manager_a73984c7f7c2aead6c4737102fad25a00}{loadTexture}}(\textcolor{keyword}{const}\ std::string\ \&fileName,\ IRenderer\ *renderer,\ ITextureLoadStrategy\ *loadStrategy,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&textureName)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ std::unique\_ptr<TextureLoadStrategyFactory>\ loadFactory;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ std::uint32\_t>\ nameDescriptorMap;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ std::unordered\_map<std::uint32\_t,\ std::unique\_ptr<SDLTexture>>\ textures;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ std::uint32\_t\ nextTextureDescriptor\ =\ 1;}
+\DoxyCodeLine{00038\ \ \ \ \ \};}
+\DoxyCodeLine{00039\ \}}
+
+\end{DoxyCode}

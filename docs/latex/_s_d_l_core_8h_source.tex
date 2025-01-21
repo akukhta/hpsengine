@@ -1,0 +1,53 @@
+\doxysection{SDLCore.\+h}
+\hypertarget{_s_d_l_core_8h_source}{}\label{_s_d_l_core_8h_source}\index{src/sdlcore/SDLCore.h@{src/sdlcore/SDLCore.h}}
+\mbox{\hyperlink{_s_d_l_core_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_d_l_window_8h}{SDLWindow.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_d_l_renderer_8h}{SDLRenderer.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_d_l_time_controller_8h}{SDLTimeController.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_d_l_event_handler_8h}{SDLEventHandler.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_s_d_l_core}{SDLCore}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{namespace_s_d_l_core}{SDLCore}}}
+\DoxyCodeLine{00012\ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6c3e47e8b9790070e9380b924be282e5}{SDLCore}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_aa1a601b924902beae16a119c0fd57983}{SDLCore}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_s_d_l_core}{SDLCore}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_s_d_l_core}{SDLCore}}\&\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a2ba0eef4f5e8a6abaece266168e6476c}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_s_d_l_core}{SDLCore}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_aced3825a2dcf40d21c4ca11df5e803cd}{SDLCore}}(\mbox{\hyperlink{namespace_s_d_l_core}{SDLCore}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_s_d_l_core}{SDLCore}}\&\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a4788f7647ccd235005bfb3e37a5490ec}{operator=}}(\mbox{\hyperlink{namespace_s_d_l_core}{SDLCore}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_s_d_l_core}{\string~SDLCore}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_ab075f6fd432df728fe269f55911d7589}{initSDL}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a71dcf82c6becea569fab8aaa139aa0bc}{initImage}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a29af1fc06b0fb9e5e1c33c01a8a7b0f4}{initFont}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ std::unique\_ptr<SDLWindow>\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_af3e20456790bafebe401a4538683fe61}{createWindow}}(std::string\_view\ title,\ std::pair<int,\ int>\ size,\ std::pair<int,\ int>\ pos,\ \textcolor{keywordtype}{bool}\ isShown,\ \textcolor{keywordtype}{bool}\ isFullscreen);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ std::unique\_ptr<SDLRenderer>\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a25174c953b08015bebedc954f1db1e67}{createRenderer}}(std::unique\_ptr<SDLWindow>\ \&window);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ std::unique\_ptr<SDLRenderer>\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a25174c953b08015bebedc954f1db1e67}{createRenderer}}(\mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_window}{SDLWindow}}*\ window);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ std::unique\_ptr<SDLEventHandler>\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a38c0cc8852b20776104278d2ebefe967}{createEventHandler}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_time_controller}{SDLTimeController}}\&\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_aec6cc0390246b6618be90431a3619d84}{getTimeController}}();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3}{Subsystem}}\ :\ std::uint32\_t}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3aefb4777327e6f704fb1519c1882f93ec}{Timer}}\ =\ 0x00000001u,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3ab22f0418e8ac915eb66f829d262d14a2}{Audio}}\ =\ 0x00000010u,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a34e2d1989a1dbf75cd631596133ee5ee}{Video}}\ =\ 0x00000020u,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a1162b85b7b993e2edf7da29dd8abf7e2}{Joystick}}\ =\ 0x00000200u,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a5297f85f5ba60ced03847806f18c8449}{Haptic}}\ =\ 0x00001000u,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a221f6781b4faa2d321ca0d928f518d6e}{Gamepad}}\ =\ 0x00002000u,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a87f9f735a1d36793ceaecd4e47124b63}{Events}}\ =\ 0x00004000u,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_core_a6ec05763f08b41ab549426aa0c9d74d3a06b185256c71c1aec263c6e22bf8ef6b}{Sensor}}\ =\ 0x00008000u,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isInitialized(Subsystem\ subsystem)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ \ \ \ \ \};}
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}

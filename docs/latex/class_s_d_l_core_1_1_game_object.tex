@@ -1,0 +1,251 @@
+\doxysection{SDLCore\+::Game\+Object Class Reference}
+\hypertarget{class_s_d_l_core_1_1_game_object}{}\label{class_s_d_l_core_1_1_game_object}\index{SDLCore::GameObject@{SDLCore::GameObject}}
+
+
+{\ttfamily \#include $<$Game\+Object.\+h$>$}
+
+
+
+Inheritance diagram for SDLCore\+::Game\+Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_d_l_core_1_1_game_object__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for SDLCore\+::Game\+Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_d_l_core_1_1_game_object__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_game_object_ad1c82df4038da2ddfb67a78adb6425c2}{Game\+Object}} ()=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_game_object_a9ca5ced71d6b1c8bff7e2960fea48def}{Game\+Object}} (const \mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} \&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_game_object_af49e2e0edd21dbc7adb1cd072e43cec9}{Game\+Object}} (\mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_ada81b9ca236f441e6a1613e278680fe2}{operator=}} (const \mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} \&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_a4a51fd03bdafe92b5ac60774cf3f47f7}{operator=}} (\mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} \&\&)=default
+\item 
+virtual \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_a0e03411d0300c6bfe6f639f889018528}{\texorpdfstring{$\sim$}{\string~}\+Game\+Object}} ()=default
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_a399891f7194d86688da577099ea0c3f0}{render}} (\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer}{IRenderer}} \texorpdfstring{$\ast$}{*}renderer) override
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_a1e41083819a0ff807c6f94ef089d77b4}{update}} (double delta\+Time) override
+\item 
+virtual \mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_ac8cbd44e9a483d9a113308928cdf4f8c}{clone}} ()=0
+\item 
+void \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_af3fbe745e80455e6325f1b336516b3b4}{set\+Position}} (\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math\+::\+IVector2D}} \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_a381801f5604120536cf3de16a98e65d2}{position}})
+\item 
+\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math\+::\+IVector2D}} \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_af7757b500c257a721a22c1641be2b836}{get\+World\+Location}} () const override
+\item 
+\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math\+::\+IVector2D}} \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_a3cb51d33a7b11b63aad8a6b8db6b7a94}{get\+Relative\+Location}} () const override
+\item 
+\mbox{\hyperlink{struct_s_d_l_core_1_1_math_1_1_rectangle}{Math\+::\+Rectangle}} \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_a79488b0b135e2f481321a4115b6b72ad}{get\+Bounding\+Box}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{SDLCore\+::\+IEntity}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_entity_ad35fb81713e17331f2e6ba60d8e3daac}{IEntity}} ()=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_entity_aa50814a98eb1f26b49e61f0ba4023c7f}{IEntity}} (const \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{IEntity}} \&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_entity_a7ddd9e07ca117961bdc89637010707f7}{IEntity}} (\mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{IEntity}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{IEntity}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity_a72aa18ee137406d8f9f3f4cb9b38d388}{operator=}} (const \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{IEntity}} \&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{IEntity}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity_ab1cede987c1f56589a39fdb68d71104d}{operator=}} (\mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{IEntity}} \&\&)=default
+\item 
+virtual \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity_a63ba7de151343ab4bee246e1f393657d}{\texorpdfstring{$\sim$}{\string~}\+IEntity}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity_ad64d24462e6e4ac09a2ce06e444d0857}{set\+Parent}} (\mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{IEntity}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_s_d_l_core_1_1_i_entity_a6d7b5f756cbb6c89874464a470ff6d62}{parent}})
+\item 
+virtual \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{IEntity}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity_ac2a66f0e390159d1361d228e981b58cf}{get\+Parent}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable}{SDLCore\+::\+IRenderable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable_ae20c0f49778ef7a4a4d9452037c7e3e2}{IRenderable}} ()=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable_a3d0e3c77955650318814795e01907648}{IRenderable}} (const \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable}{IRenderable}} \&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable_a548929c5da91f9ce35eaf3a714d86d49}{IRenderable}} (\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable}{IRenderable}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable}{IRenderable}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable_a0c17f0fccdcd0890dac86a5506030339}{operator=}} (const \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable}{IRenderable}} \&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable}{IRenderable}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable_a34dbf44ccb033236a0dbdfaf324dd864}{operator=}} (\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable}{IRenderable}} \&\&)=default
+\item 
+virtual \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable_aba7bf3b0fa4f021eac8d669a521bf336}{\texorpdfstring{$\sim$}{\string~}\+IRenderable}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable}{SDLCore\+::\+IUpdatable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable_a157f9720c692597aa213dab72da0536d}{IUpdatable}} ()=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable_a00e0781253729aca5d1a3bf6e65d7133}{IUpdatable}} (const \mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable}{IUpdatable}} \&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable_a08d86205d5709a6a41ae9d82c98bc3ad}{IUpdatable}} (\mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable}{IUpdatable}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable}{IUpdatable}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable_a2158c764359fb5c3b465ef9dec167bfd}{operator=}} (const \mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable}{IUpdatable}} \&)=default
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable}{IUpdatable}} \& \mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable_ac82c207a749204d3c24d4529d7310be7}{operator=}} (\mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable}{IUpdatable}} \&\&)=default
+\item 
+virtual \mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable_ab6550701ce18ed54bfc9d7e7e469f899}{\texorpdfstring{$\sim$}{\string~}\+IUpdatable}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Component\+Type, typename... Args$>$ \newline
+requires Is\+Component\+Type$<$Component\+Type$>$}\\Component\+Type \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_a498a98ab7586710e58930ec70f89c61c}{create\+Component}} (Args \&\&... args)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math\+::\+IVector2D}} \mbox{\hyperlink{class_s_d_l_core_1_1_game_object_a381801f5604120536cf3de16a98e65d2}{position}} \{0, 0\}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{SDLCore\+::\+IEntity}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_d_l_core_1_1_i_entity}{IEntity}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_s_d_l_core_1_1_i_entity_a6d7b5f756cbb6c89874464a470ff6d62}{parent}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_s_d_l_core_1_1_game_object_ad1c82df4038da2ddfb67a78adb6425c2}\index{SDLCore::GameObject@{SDLCore::GameObject}!GameObject@{GameObject}}
+\index{GameObject@{GameObject}!SDLCore::GameObject@{SDLCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{GameObject()}{GameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_game_object_ad1c82df4038da2ddfb67a78adb6425c2} 
+SDLCore\+::\+Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_s_d_l_core_1_1_game_object_a9ca5ced71d6b1c8bff7e2960fea48def}\index{SDLCore::GameObject@{SDLCore::GameObject}!GameObject@{GameObject}}
+\index{GameObject@{GameObject}!SDLCore::GameObject@{SDLCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{GameObject()}{GameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_game_object_a9ca5ced71d6b1c8bff7e2960fea48def} 
+SDLCore\+::\+Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_s_d_l_core_1_1_game_object_af49e2e0edd21dbc7adb1cd072e43cec9}\index{SDLCore::GameObject@{SDLCore::GameObject}!GameObject@{GameObject}}
+\index{GameObject@{GameObject}!SDLCore::GameObject@{SDLCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{GameObject()}{GameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_game_object_af49e2e0edd21dbc7adb1cd072e43cec9} 
+SDLCore\+::\+Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_s_d_l_core_1_1_game_object_a0e03411d0300c6bfe6f639f889018528}\index{SDLCore::GameObject@{SDLCore::GameObject}!````~GameObject@{\texorpdfstring{$\sim$}{\string~}GameObject}}
+\index{````~GameObject@{\texorpdfstring{$\sim$}{\string~}GameObject}!SDLCore::GameObject@{SDLCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GameObject()}{\string~GameObject()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_game_object_a0e03411d0300c6bfe6f639f889018528} 
+virtual SDLCore\+::\+Game\+Object\+::\texorpdfstring{$\sim$}{\string~}\+Game\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_s_d_l_core_1_1_game_object_ac8cbd44e9a483d9a113308928cdf4f8c}\index{SDLCore::GameObject@{SDLCore::GameObject}!clone@{clone}}
+\index{clone@{clone}!SDLCore::GameObject@{SDLCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_game_object_ac8cbd44e9a483d9a113308928cdf4f8c} 
+virtual \mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*} SDLCore\+::\+Game\+Object\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_test_actor_ab85ec0db26bc91e98431cac6eb3b2849}{Test\+Actor}}.
+
+\Hypertarget{class_s_d_l_core_1_1_game_object_a498a98ab7586710e58930ec70f89c61c}\index{SDLCore::GameObject@{SDLCore::GameObject}!createComponent@{createComponent}}
+\index{createComponent@{createComponent}!SDLCore::GameObject@{SDLCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{createComponent()}{createComponent()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_game_object_a498a98ab7586710e58930ec70f89c61c} 
+template$<$typename Component\+Type, typename... Args$>$ \newline
+requires Is\+Component\+Type$<$Component\+Type$>$\\
+Component\+Type \texorpdfstring{$\ast$}{*} SDLCore\+::\+Game\+Object\+::create\+Component (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\Hypertarget{class_s_d_l_core_1_1_game_object_a79488b0b135e2f481321a4115b6b72ad}\index{SDLCore::GameObject@{SDLCore::GameObject}!getBoundingBox@{getBoundingBox}}
+\index{getBoundingBox@{getBoundingBox}!SDLCore::GameObject@{SDLCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{getBoundingBox()}{getBoundingBox()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_game_object_a79488b0b135e2f481321a4115b6b72ad} 
+\mbox{\hyperlink{struct_s_d_l_core_1_1_math_1_1_rectangle}{SDLCore\+::\+Math\+::\+Rectangle}} SDLCore\+::\+Game\+Object\+::get\+Bounding\+Box (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable_a7c1cba6d32a89a5a9b96322c5941c4dd}{SDLCore\+::\+IRenderable}}.
+
+\Hypertarget{class_s_d_l_core_1_1_game_object_a3cb51d33a7b11b63aad8a6b8db6b7a94}\index{SDLCore::GameObject@{SDLCore::GameObject}!getRelativeLocation@{getRelativeLocation}}
+\index{getRelativeLocation@{getRelativeLocation}!SDLCore::GameObject@{SDLCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{getRelativeLocation()}{getRelativeLocation()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_game_object_a3cb51d33a7b11b63aad8a6b8db6b7a94} 
+\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{SDLCore\+::\+Math\+::\+IVector2D}} SDLCore\+::\+Game\+Object\+::get\+Relative\+Location (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_s_d_l_core_1_1_i_scene_entity_a492923a9f18aaebacc58fbf582778571}{SDLCore\+::\+IScene\+Entity}}.
+
+\Hypertarget{class_s_d_l_core_1_1_game_object_af7757b500c257a721a22c1641be2b836}\index{SDLCore::GameObject@{SDLCore::GameObject}!getWorldLocation@{getWorldLocation}}
+\index{getWorldLocation@{getWorldLocation}!SDLCore::GameObject@{SDLCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{getWorldLocation()}{getWorldLocation()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_game_object_af7757b500c257a721a22c1641be2b836} 
+\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{SDLCore\+::\+Math\+::\+IVector2D}} SDLCore\+::\+Game\+Object\+::get\+World\+Location (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_s_d_l_core_1_1_i_scene_entity_ad5682a3069acd2b82a93818b02a57d57}{SDLCore\+::\+IScene\+Entity}}.
+
+\Hypertarget{class_s_d_l_core_1_1_game_object_ada81b9ca236f441e6a1613e278680fe2}\index{SDLCore::GameObject@{SDLCore::GameObject}!operator=@{operator=}}
+\index{operator=@{operator=}!SDLCore::GameObject@{SDLCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_game_object_ada81b9ca236f441e6a1613e278680fe2} 
+\mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} \& SDLCore\+::\+Game\+Object\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_s_d_l_core_1_1_game_object_a4a51fd03bdafe92b5ac60774cf3f47f7}\index{SDLCore::GameObject@{SDLCore::GameObject}!operator=@{operator=}}
+\index{operator=@{operator=}!SDLCore::GameObject@{SDLCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_game_object_a4a51fd03bdafe92b5ac60774cf3f47f7} 
+\mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} \& SDLCore\+::\+Game\+Object\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{Game\+Object}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_s_d_l_core_1_1_game_object_a399891f7194d86688da577099ea0c3f0}\index{SDLCore::GameObject@{SDLCore::GameObject}!render@{render}}
+\index{render@{render}!SDLCore::GameObject@{SDLCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_game_object_a399891f7194d86688da577099ea0c3f0} 
+void SDLCore\+::\+Game\+Object\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer}{IRenderer}} \texorpdfstring{$\ast$}{*}}]{renderer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderable_a84b3ad1feec09df6bd8cde2a50dc352a}{SDLCore\+::\+IRenderable}}.
+
+\Hypertarget{class_s_d_l_core_1_1_game_object_af3fbe745e80455e6325f1b336516b3b4}\index{SDLCore::GameObject@{SDLCore::GameObject}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!SDLCore::GameObject@{SDLCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_game_object_af3fbe745e80455e6325f1b336516b3b4} 
+void SDLCore\+::\+Game\+Object\+::set\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math\+::\+IVector2D}}}]{position}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_d_l_core_1_1_game_object_a1e41083819a0ff807c6f94ef089d77b4}\index{SDLCore::GameObject@{SDLCore::GameObject}!update@{update}}
+\index{update@{update}!SDLCore::GameObject@{SDLCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_game_object_a1e41083819a0ff807c6f94ef089d77b4} 
+void SDLCore\+::\+Game\+Object\+::update (\begin{DoxyParamCaption}\item[{double}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_s_d_l_core_1_1_i_updatable_acbec6e1bc835577188e253be4418cd22}{SDLCore\+::\+IUpdatable}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_s_d_l_core_1_1_game_object_a381801f5604120536cf3de16a98e65d2}\index{SDLCore::GameObject@{SDLCore::GameObject}!position@{position}}
+\index{position@{position}!SDLCore::GameObject@{SDLCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily \label{class_s_d_l_core_1_1_game_object_a381801f5604120536cf3de16a98e65d2} 
+\mbox{\hyperlink{namespace_s_d_l_core_1_1_math_ae5c2a4b79a4c2ab00e93d1c978182e13}{Math\+::\+IVector2D}} SDLCore\+::\+Game\+Object\+::position \{0, 0\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/sdlcore/\+Game\+Object/\mbox{\hyperlink{_game_object_8h}{Game\+Object.\+h}}\item 
+src/sdlcore/\+Game\+Object/\mbox{\hyperlink{_game_object_8cpp}{Game\+Object.\+cpp}}\end{DoxyCompactItemize}

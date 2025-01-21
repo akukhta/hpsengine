@@ -1,0 +1,40 @@
+\doxysection{Scene.\+h}
+\hypertarget{_scene_8h_source}{}\label{_scene_8h_source}\index{src/sdlcore/Scene/Scene.h@{src/sdlcore/Scene/Scene.h}}
+\mbox{\hyperlink{_scene_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_object_8h}{../GameObject/GameObject.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_s_d_l_core}{SDLCore}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_s_d_l_core_1_1_scene_a6a3cbe7e364d1349c963f88b6abd79ab}{Scene}}}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_scene_a6a3cbe7e364d1349c963f88b6abd79ab}{Scene}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ std::uint32\_t\ \mbox{\hyperlink{class_s_d_l_core_1_1_scene_a39d8aca541375342d536ac3989bf693a}{addObject}}(\mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{GameObject}}*\ \textcolor{keywordtype}{object});}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ std::uint32\_t\ \mbox{\hyperlink{class_s_d_l_core_1_1_scene_a39d8aca541375342d536ac3989bf693a}{addObject}}(\mbox{\hyperlink{class_s_d_l_core_1_1_game_object}{GameObject}}*\ \textcolor{keywordtype}{object},\ std::string\ \textcolor{keyword}{const}\&\ objectName);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ std::uint32\_t\ \mbox{\hyperlink{class_s_d_l_core_1_1_scene_a39d8aca541375342d536ac3989bf693a}{addObject}}(std::shared\_ptr<GameObject>\ \textcolor{keywordtype}{object});}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::uint32\_t\ \mbox{\hyperlink{class_s_d_l_core_1_1_scene_a39d8aca541375342d536ac3989bf693a}{addObject}}(std::shared\_ptr<GameObject>\ \textcolor{keywordtype}{object},\ std::string\ \textcolor{keyword}{const}\&\ objectName);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ std::shared\_ptr<GameObject>\ \mbox{\hyperlink{class_s_d_l_core_1_1_scene_a4ce947c27a2faa8a13d0ee6843577300}{getObject}}(std::uint32\_t\ objectId);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ std::shared\_ptr<GameObject>\ \mbox{\hyperlink{class_s_d_l_core_1_1_scene_a4ce947c27a2faa8a13d0ee6843577300}{getObject}}(std::string\ \textcolor{keyword}{const}\&\ objectName);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_s_d_l_core_1_1_scene_a5caad3273b0784140f467be9a56c65cd}{SDLGame}};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::uint32\_t\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{inline}\ INVALID\_OBJECT\ =\ 0;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ std::uint32\_t\ currentObjectId\ =\ INVALID\_OBJECT\ +\ 1;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ std::unordered\_map<std::uint32\_t,\ std::shared\_ptr<GameObject>>\ sceneObjects;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ std::uint32\_t>\ nameToId;}
+\DoxyCodeLine{00041\ \ \ \ \ \};}
+\DoxyCodeLine{00042\ \}}
+
+\end{DoxyCode}

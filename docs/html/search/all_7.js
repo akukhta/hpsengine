@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['icomponent_0',['IComponent',['../class_s_d_l_core_1_1_i_component.html',1,'SDLCore']]],
+  ['icomponent_2eh_1',['IComponent.h',['../_i_component_8h.html',1,'']]],
+  ['ientity_2',['IEntity',['../class_s_d_l_core_1_1_i_entity.html',1,'SDLCore::IEntity'],['../class_s_d_l_core_1_1_i_entity.html#ad35fb81713e17331f2e6ba60d8e3daac',1,'SDLCore::IEntity::IEntity()=default'],['../class_s_d_l_core_1_1_i_entity.html#aa50814a98eb1f26b49e61f0ba4023c7f',1,'SDLCore::IEntity::IEntity(const IEntity &amp;)=default'],['../class_s_d_l_core_1_1_i_entity.html#a7ddd9e07ca117961bdc89637010707f7',1,'SDLCore::IEntity::IEntity(IEntity &amp;&amp;)=default']]],
+  ['ientity_2eh_3',['IEntity.h',['../_i_entity_8h.html',1,'']]],
+  ['init_4',['init',['../class_s_d_l_core_1_1_s_d_l_game.html#acceaeed95f9ff78cb26045b469195ff4',1,'SDLCore::SDLGame']]],
+  ['initfont_5',['initFont',['../class_s_d_l_core_1_1_s_d_l_core.html#a29af1fc06b0fb9e5e1c33c01a8a7b0f4',1,'SDLCore::SDLCore']]],
+  ['initimage_6',['initImage',['../class_s_d_l_core_1_1_s_d_l_core.html#a71dcf82c6becea569fab8aaa139aa0bc',1,'SDLCore::SDLCore']]],
+  ['initsdl_7',['initSDL',['../class_s_d_l_core_1_1_s_d_l_core.html#ab075f6fd432df728fe269f55911d7589',1,'SDLCore::SDLCore']]],
+  ['irenderable_8',['IRenderable',['../class_s_d_l_core_1_1_i_renderable.html',1,'SDLCore::IRenderable'],['../class_s_d_l_core_1_1_i_renderable.html#ae20c0f49778ef7a4a4d9452037c7e3e2',1,'SDLCore::IRenderable::IRenderable()=default'],['../class_s_d_l_core_1_1_i_renderable.html#a3d0e3c77955650318814795e01907648',1,'SDLCore::IRenderable::IRenderable(const IRenderable &amp;)=default'],['../class_s_d_l_core_1_1_i_renderable.html#a548929c5da91f9ce35eaf3a714d86d49',1,'SDLCore::IRenderable::IRenderable(IRenderable &amp;&amp;)=default']]],
+  ['irenderable_2eh_9',['IRenderable.h',['../_i_renderable_8h.html',1,'']]],
+  ['irenderer_10',['IRenderer',['../class_s_d_l_core_1_1_i_renderer.html',1,'SDLCore::IRenderer'],['../class_s_d_l_core_1_1_i_renderer.html#a785f01f7a56f1036cde4122c7e8bdad4',1,'SDLCore::IRenderer::IRenderer()=default'],['../class_s_d_l_core_1_1_i_renderer.html#a85889e0e57756d5cb770fc94a271582a',1,'SDLCore::IRenderer::IRenderer(const IRenderer &amp;)=default'],['../class_s_d_l_core_1_1_i_renderer.html#a837d1913624af895de2b5a92f1e5c908',1,'SDLCore::IRenderer::IRenderer(IRenderer &amp;&amp;)=default']]],
+  ['irenderer_2eh_11',['IRenderer.h',['../_i_renderer_8h.html',1,'']]],
+  ['isceneentity_12',['ISceneEntity',['../class_s_d_l_core_1_1_i_scene_entity.html',1,'SDLCore']]],
+  ['isceneentity_2eh_13',['ISceneEntity.h',['../_i_scene_entity_8h.html',1,'']]],
+  ['iscomponenttype_14',['IsComponentType',['../concept_s_d_l_core_1_1_is_component_type.html',1,'SDLCore']]],
+  ['isinitialized_15',['isInitialized',['../class_s_d_l_core_1_1_s_d_l_core.html#a1c381385b6be8324ba1114c2e1dee22c',1,'SDLCore::SDLCore']]],
+  ['isloop_16',['isLoop',['../class_s_d_l_core_1_1_s_d_l_animated_sprite_sheet.html#a424db053b08e468057693167e83bd644',1,'SDLCore::SDLAnimatedSpriteSheet::isLoop(bool loop)'],['../class_s_d_l_core_1_1_s_d_l_animated_sprite_sheet.html#a01817781090f492e4ac466fa519eecc9',1,'SDLCore::SDLAnimatedSpriteSheet::isLoop() const']]],
+  ['isrunning_17',['isRunning',['../class_s_d_l_core_1_1_s_d_l_engine.html#a0cf0ad434f58cad662ee279ce71b9e1b',1,'SDLCore::SDLEngine::isRunning()'],['../class_s_d_l_core_1_1_s_d_l_game.html#a0695a1ad7d6ec003c9f636119120ff01',1,'SDLCore::SDLGame::isRunning()']]],
+  ['itextureloadstrategy_18',['ITextureLoadStrategy',['../class_s_d_l_core_1_1_i_texture_load_strategy.html',1,'SDLCore::ITextureLoadStrategy'],['../class_s_d_l_core_1_1_i_texture_load_strategy.html#aa1071042171fe4684d5d0a189540980b',1,'SDLCore::ITextureLoadStrategy::ITextureLoadStrategy()=default'],['../class_s_d_l_core_1_1_i_texture_load_strategy.html#a726cf769e1837de8a2dce3b6a0fdf497',1,'SDLCore::ITextureLoadStrategy::ITextureLoadStrategy(const ITextureLoadStrategy &amp;)=default'],['../class_s_d_l_core_1_1_i_texture_load_strategy.html#a7a84327a42a06af42f1ec99d1bcd6e73',1,'SDLCore::ITextureLoadStrategy::ITextureLoadStrategy(ITextureLoadStrategy &amp;&amp;)=default']]],
+  ['itextureloadstrategy_2eh_19',['ITextureLoadStrategy.h',['../_i_texture_load_strategy_8h.html',1,'']]],
+  ['itexturemanager_20',['ITextureManager',['../class_s_d_l_core_1_1_i_texture_manager.html',1,'SDLCore::ITextureManager'],['../class_s_d_l_core_1_1_i_texture_manager.html#ab0fc7db1c326634661401e8facdc42b2',1,'SDLCore::ITextureManager::ITextureManager()=default'],['../class_s_d_l_core_1_1_i_texture_manager.html#abd190541f087cc937f494d4b255ae97b',1,'SDLCore::ITextureManager::ITextureManager(const ITextureManager &amp;)=default'],['../class_s_d_l_core_1_1_i_texture_manager.html#a1f3bc74682ca5dfcfa246c6f71ef4df1',1,'SDLCore::ITextureManager::ITextureManager(ITextureManager &amp;&amp;)=default']]],
+  ['itexturemanager_2eh_21',['ITextureManager.h',['../_i_texture_manager_8h.html',1,'']]],
+  ['iupdatable_22',['IUpdatable',['../class_s_d_l_core_1_1_i_updatable.html',1,'SDLCore::IUpdatable'],['../class_s_d_l_core_1_1_i_updatable.html#a157f9720c692597aa213dab72da0536d',1,'SDLCore::IUpdatable::IUpdatable()=default'],['../class_s_d_l_core_1_1_i_updatable.html#a00e0781253729aca5d1a3bf6e65d7133',1,'SDLCore::IUpdatable::IUpdatable(const IUpdatable &amp;)=default'],['../class_s_d_l_core_1_1_i_updatable.html#a08d86205d5709a6a41ae9d82c98bc3ad',1,'SDLCore::IUpdatable::IUpdatable(IUpdatable &amp;&amp;)=default']]],
+  ['iupdatable_2eh_23',['IUpdatable.h',['../_i_updatable_8h.html',1,'']]],
+  ['ivector2d_24',['IVector2D',['../namespace_s_d_l_core_1_1_math.html#ae5c2a4b79a4c2ab00e93d1c978182e13',1,'SDLCore::Math']]]
+];

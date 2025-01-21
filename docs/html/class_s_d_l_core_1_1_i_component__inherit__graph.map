@@ -1,0 +1,17 @@
+<map id="SDLCore::IComponent" name="SDLCore::IComponent">
+<area shape="rect" id="Node000001" title=" " alt="" coords="175,109,329,136"/>
+<area shape="rect" id="Node000003" href="$class_s_d_l_core_1_1_renderable_component.html" title=" " alt="" coords="377,109,593,136"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="344,120,376,120,376,125,344,125"/>
+<area shape="rect" id="Node000002" href="$class_s_d_l_core_1_1_i_entity.html" title=" " alt="" coords="5,109,127,136"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,120,174,120,174,125,142,125"/>
+<area shape="rect" id="Node000004" href="$class_s_d_l_core_1_1_primitives_1_1_circle_component.html" title=" " alt="" coords="679,5,820,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="532,100,640,57,678,45,679,50,642,63,534,105"/>
+<area shape="rect" id="Node000005" href="$class_s_d_l_core_1_1_primitives_1_1_rectangle_component.html" title=" " alt="" coords="672,72,827,115"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="608,106,671,99,671,105,609,112"/>
+<area shape="rect" id="Node000007" href="$class_s_d_l_core_1_1_sprite_component.html" title=" " alt="" coords="657,139,842,165"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="609,134,657,139,657,144,608,139"/>
+<area shape="rect" id="Node000008" href="$class_s_d_l_core_1_1_spritesheet_component.html" title=" " alt="" coords="641,189,858,216"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="537,139,642,175,685,186,684,191,641,180,536,144"/>
+<area shape="rect" id="Node000006" href="$class_s_d_l_core_1_1_bounding_box.html" title=" " alt="" coords="906,80,1066,107"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="842,91,905,91,905,96,842,96"/>
+</map>

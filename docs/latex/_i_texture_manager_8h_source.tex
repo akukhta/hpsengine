@@ -1,0 +1,40 @@
+\doxysection{ITexture\+Manager.\+h}
+\hypertarget{_i_texture_manager_8h_source}{}\label{_i_texture_manager_8h_source}\index{src/sdlcore/Texture/ITextureManager.h@{src/sdlcore/Texture/ITextureManager.h}}
+\mbox{\hyperlink{_i_texture_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_d_l_texture_8h}{../SDLTexture.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_s_d_l_core}{SDLCore}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_ab0fc7db1c326634661401e8facdc42b2}{ITextureManager}}}
+\DoxyCodeLine{00008\ \ \ \ \ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_ab0fc7db1c326634661401e8facdc42b2}{ITextureManager}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_abd190541f087cc937f494d4b255ae97b}{ITextureManager}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_ab0fc7db1c326634661401e8facdc42b2}{ITextureManager}}\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_a1f3bc74682ca5dfcfa246c6f71ef4df1}{ITextureManager}}(\mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_ab0fc7db1c326634661401e8facdc42b2}{ITextureManager}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_ab0fc7db1c326634661401e8facdc42b2}{ITextureManager}}\&\ \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_a1a1926ffbaeaf0e5a3c6261956094a67}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_ab0fc7db1c326634661401e8facdc42b2}{ITextureManager}}\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_ab0fc7db1c326634661401e8facdc42b2}{ITextureManager}}\&\ \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_a9d7026874b1ed4c2972e1e6d3a0946f4}{operator=}}(\mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_ab0fc7db1c326634661401e8facdc42b2}{ITextureManager}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_a15e325e1f4cfab5791fec4b86a85f6db}{\string~ITextureManager}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_s_d_l_core_1_1_i_texture_manager_1_1_as_ref}{AsRef}}\{\};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{struct_s_d_l_core_1_1_i_texture_manager_1_1_as_ref}{AsRef}}\ \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_a066e5bf98b27c79082f566d719aeb6fe}{GetReference}}\{\};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}}*\ \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_acf7b7fc5d68ad92e4b0d2f08cd35b29d}{getTexture}}(std::uint32\_t\ textureDescriptor)\ \textcolor{keyword}{noexcept}\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}}\&\ \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_a3b2309d5dffc311af357f04da772a529}{getTexture}}(std::uint32\_t\ textureDescriptor,\ \mbox{\hyperlink{struct_s_d_l_core_1_1_i_texture_manager_1_1_as_ref}{AsRef}}\ \textcolor{keyword}{const}\&\ tag)\ =\ 0;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}}*\ \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_a07bcb2b78dad815b6456ff06858bdcd6}{getTexture}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{noexcept}\ =\ 0;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_s_d_l_core_1_1_s_d_l_texture}{SDLTexture}}\&\ \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_a861b68366dc149ee95ddaf9484cc29ea}{getTexture}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \mbox{\hyperlink{struct_s_d_l_core_1_1_i_texture_manager_1_1_as_ref}{AsRef}}\ \textcolor{keyword}{const}\&\ tag)\ =\ 0;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Responsibilities:}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1.\ Load\ texture\ by\ using\ some\ strategy\ (additionally\ assign\ a\ name\ to\ the\ texture)\ and\ get\ a\ texture's\ descriptor}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2.\ Get\ texture\ by\ handler}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 3.\ Get\ texture\ by\ name}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::uint32\_t\ \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_manager_a6e87f850c70583a423e8d503ad0f4726}{loadTexture}}(std::string\ \textcolor{keyword}{const}\&\ fileName,\ \mbox{\hyperlink{class_s_d_l_core_1_1_i_renderer}{IRenderer}}*\ renderer,\ \textcolor{keyword}{class}\ \mbox{\hyperlink{class_s_d_l_core_1_1_i_texture_load_strategy}{ITextureLoadStrategy}}*\ loadStrategy,\ std::string\ \textcolor{keyword}{const}\&\ textureName\ =\ std::string\{\})\ =\ 0;}
+\DoxyCodeLine{00033\ \ \ \ \ \};}
+\DoxyCodeLine{00034\ \}}
+
+\end{DoxyCode}

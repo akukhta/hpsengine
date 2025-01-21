@@ -1,0 +1,18 @@
+<map id="SDLCore::Primitives::RectangleComponent" name="SDLCore::Primitives::RectangleComponent">
+<area shape="rect" id="Node000001" title=" " alt="" coords="274,229,430,272"/>
+<area shape="rect" id="Node000008" href="$class_s_d_l_core_1_1_bounding_box.html" title=" " alt="" coords="272,320,432,347"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="354,288,354,319,349,319,349,288"/>
+<area shape="rect" id="Node000002" href="$class_s_d_l_core_1_1_renderable_component.html" title=" " alt="" coords="244,155,460,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="354,197,354,229,349,229,349,197"/>
+<area shape="rect" id="Node000003" href="$class_s_d_l_core_1_1_i_component.html" title=" " alt="" coords="5,80,160,107"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="145,109,305,151,304,157,143,114"/>
+<area shape="rect" id="Node000004" href="$class_s_d_l_core_1_1_i_entity.html" title=" " alt="" coords="111,5,232,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="146,44,100,82,96,78,143,40"/>
+<area shape="rect" id="Node000005" href="$class_s_d_l_core_1_1_i_scene_entity.html" title=" " alt="" coords="183,80,342,107"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="201,40,249,78,245,82,198,44"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="292,115,338,152,335,156,288,119"/>
+<area shape="rect" id="Node000006" href="$class_s_d_l_core_1_1_i_renderable.html" title=" " alt="" coords="366,80,519,107"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="417,119,369,156,366,152,413,114"/>
+<area shape="rect" id="Node000007" href="$class_s_d_l_core_1_1_i_updatable.html" title=" " alt="" coords="543,80,689,107"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="556,114,399,157,397,151,555,109"/>
+</map>
