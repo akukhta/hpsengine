@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <deque>
 #include "../IRenderable.h"
 #include "../IUpdatable.h"
 #include "../Components/IComponent.h"
@@ -15,7 +16,7 @@ namespace SDLCore
     {
     public:
         GameObject() = default;
-        GameObject(const GameObject&) = default;
+        GameObject(const GameObject& other) = default;
         GameObject(GameObject&&) = default;
         GameObject& operator=(const GameObject&) = default;
         GameObject& operator=(GameObject&&) = default;
@@ -39,7 +40,7 @@ namespace SDLCore
 
         template <typename ComponentType, typename... Args>
             requires IsComponentType<ComponentType>
-        ComponentType* createComponent(Args&& ... args)
+        ComponentType* createChildComponent(Args&& ... args)
         {
             ComponentType* component = new ComponentType{std::forward<Args>(args)...};
 
@@ -57,8 +58,29 @@ namespace SDLCore
             return component;
         }
 
+
+        template <typename ComponentType, typename... Args>
+            requires IsComponentType<ComponentType>
+        ComponentType* createDefaultComponent(Args&& ... args)
+        {
+            ComponentType* component = new ComponentType{std::forward<Args>(args)...};
+            //auto component = std::make_unique<ComponentType>(std::forward<Args>(args)...);
+
+            if constexpr (std::is_base_of_v<IRenderable, ComponentType>)
+            {
+                renderableComponents.push_back(component);
+            }
+
+            if constexpr (std::is_base_of_v<IUpdatable, ComponentType>)
+            {
+                updatableComponents.push_back(component);
+            }
+
+            return component;
+        }
     private:
         std::vector<IRenderable*> renderableComponents;
         std::vector<IUpdatable*> updatableComponents;
+        //std::deque<std::unique_ptr<IComponent>> componentsStorage;
     };
 }

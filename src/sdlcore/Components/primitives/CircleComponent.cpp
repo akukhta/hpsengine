@@ -29,7 +29,7 @@ void SDLCore::Primitives::CircleComponent::render(SDLCore::IRenderer *renderer)
 SDLCore::Math::Rectangle SDLCore::Primitives::CircleComponent::getBoundingBox() const
 {
     auto pos = getWorldLocation();
-    return Math::Rectangle{pos.x, pos.y, r, r};
+    return Math::Rectangle{pos.x - r, pos.y - r, 2 * r, 2 * r};
 }
 
 void SDLCore::Primitives::CircleComponent::calculatePoints(int centerX, int centerY, int radius)

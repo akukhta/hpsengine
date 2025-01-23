@@ -6,8 +6,7 @@ namespace SDLCore
     class BoundingBox : public Primitives::RectangleComponent
     {
     public:
-        BoundingBox(IEntity* parent, SDL_Color color);
-
+        BoundingBox(SDL_Color color, IEntity* parent = nullptr);
         void render(SDLCore::IRenderer *renderer) override;
 
         Math::Rectangle getBoundingBox() const override;

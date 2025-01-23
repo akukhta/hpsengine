@@ -1,6 +1,6 @@
 #include "BoundingBox.h"
 
-SDLCore::BoundingBox::BoundingBox(IEntity* parent, SDL_Color color)
+SDLCore::BoundingBox::BoundingBox(SDL_Color color, IEntity* parent)
     : RectangleComponent({0, 0}, 0, 0, color, false)
 {
     setParent(parent);
@@ -9,7 +9,8 @@ SDLCore::BoundingBox::BoundingBox(IEntity* parent, SDL_Color color)
 void SDLCore::BoundingBox::render(SDLCore::IRenderer *renderer)
 {
     calculateBoundingBox();
-    RectangleComponent::render(renderer);
+    renderer->renderRectangle(this, relativeLocation.x, relativeLocation.y, width, height);
+    //RectangleComponent::render(renderer);
 }
 
 SDLCore::Math::Rectangle SDLCore::BoundingBox::getBoundingBox() const
