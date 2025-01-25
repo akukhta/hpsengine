@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.30)
 project(sdlplgrd)
 
 set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g")
 
 find_package(SDL2 REQUIRED CONFIG)
 find_package(SDL2_image REQUIRED CONFIG)

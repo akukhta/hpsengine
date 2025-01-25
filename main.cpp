@@ -1,7 +1,7 @@
 #include <iostream>
-#include <sdl2/SDL.h>
-#include <sdl2/SDL_image.h>
-#include <sdl2/SDL_ttf.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+#include <SDL2/SDL_ttf.h>
 #include "src/sdlcore/SDLCore.h"
 #include "src/sdlcore/SDLWindow.h"
 #include "src/sdlcore/SDLRenderer.h"
