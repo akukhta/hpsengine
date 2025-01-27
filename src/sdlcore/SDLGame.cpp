@@ -21,9 +21,9 @@ void SDLCore::SDLGame::init()
     auto actorID = scene->addObject(new TestActor(renderer.get(), textureManager.get(), textureTM));
     auto actorCopy = scene->getObject(actorID)->clone();
 
-    scene->getObject(actorID)->setVisibility(false);
+    scene->getObject(actorID)->setVisibility(true);
 
-    //actorCopy->setPosition({0, 0});
+    actorCopy->setPosition({50,  100});
 
     scene->addObject(actorCopy);
 }
