@@ -46,6 +46,7 @@ std::uint32_t SDLCore::Scene::addObject(std::shared_ptr<GameObject> object, std:
     }
 
     nameToId.insert({objectName, it.first->first});
+    idToName.insert({it.first->first, objectName});
     return it.first->first;
 }
 
@@ -70,4 +71,28 @@ std::shared_ptr<SDLCore::GameObject> SDLCore::Scene::getObject(std::string const
     }
 
     return nullptr;
+}
+
+void SDLCore::Scene::removeObject(std::uint32_t objectId)
+{
+    sceneObjects.erase(objectId);
+
+    if (auto it = idToName.find(objectId); it != idToName.end())
+    {
+        nameToId.erase(it->second);
+        idToName.erase(it);
+    }
+}
+
+void SDLCore::Scene::removeObject(std::string const &objectName)
+{
+    if (auto it = nameToId.find(objectName); it != nameToId.end())
+    {
+        sceneObjects.erase(it->second);
+
+        if (auto nameIt = nameToId.erase(it); nameIt != nameToId.end())
+        {
+            idToName.erase(nameIt->second);
+        }
+    }
 }

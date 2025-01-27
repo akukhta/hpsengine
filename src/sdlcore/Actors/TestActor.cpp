@@ -30,7 +30,13 @@ TestActor::TestActor(SDLCore::IRenderer* renderer, SDLCore::TextureManager* text
 TestActor::TestActor(TestActor const &other)
     : GameObject(other)
 {
-    ;
+    auto componentMap = mapComponents(other);
+
+    spriteComponent = dynamic_cast<SDLCore::SpriteComponent *>(componentMap[other.spriteComponent]);
+    rectangleComponent = dynamic_cast<SDLCore::Primitives::RectangleComponent*>(componentMap[other.rectangleComponent]);
+    circle_component = dynamic_cast<SDLCore::Primitives::CircleComponent*>(componentMap[other.circle_component]);
+    spritesheet_component = dynamic_cast<SDLCore::SpritesheetComponent*>(componentMap[other.spritesheet_component]);
+    boundBox = dynamic_cast<SDLCore::BoundingBox*>(componentMap[other.boundBox]);
 }
 
 SDLCore::GameObject* TestActor::clone()

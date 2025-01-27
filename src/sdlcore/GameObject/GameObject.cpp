@@ -90,3 +90,24 @@ SDLCore::Math::Rectangle SDLCore::GameObject::getBoundingBox() const
 
     return boundingBox;
 }
+
+///
+/// @param gameObject
+/// @return other component ptr => current component ptr
+std::unordered_map<SDLCore::IComponent *, SDLCore::IComponent *> SDLCore::GameObject::mapComponents(
+    GameObject const &gameObject)
+{
+    std::unordered_map<SDLCore::IComponent*, SDLCore::IComponent*> componentsMap;
+
+    if (componentsStorage.size() != gameObject.componentsStorage.size())
+    {
+        throw std::runtime_error("Cannot map object with different set of components");
+    }
+
+    for (size_t i = 0; i < componentsStorage.size(); ++i)
+    {
+        componentsMap[gameObject.componentsStorage[i].get()] = componentsStorage[i].get();
+    }
+
+    return componentsMap;
+}

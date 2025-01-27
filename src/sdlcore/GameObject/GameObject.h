@@ -1,6 +1,8 @@
 #pragma once
 #include <vector>
 #include <deque>
+#include <unordered_map>
+
 #include "../IRenderable.h"
 #include "../IUpdatable.h"
 #include "../Components/IComponent.h"
@@ -86,6 +88,9 @@ namespace SDLCore
 
             return rv;
         }
+
+        std::unordered_map<IComponent*, IComponent*> mapComponents(GameObject const& gameObject);
+
     private:
         std::vector<IRenderable*> renderableComponents;
         std::vector<IUpdatable*> updatableComponents;

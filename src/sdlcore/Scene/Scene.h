@@ -29,6 +29,9 @@ namespace SDLCore
         std::shared_ptr<GameObject> getObject(std::uint32_t objectId);
         std::shared_ptr<GameObject> getObject(std::string const& objectName);
 
+        void removeObject(std::uint32_t objectId);
+        void removeObject(std::string const& objectName);
+
     private:
         friend class SDLGame;
 
@@ -36,7 +39,7 @@ namespace SDLCore
         std::uint32_t currentObjectId = INVALID_OBJECT + 1;
 
         std::unordered_map<std::uint32_t, std::shared_ptr<GameObject>> sceneObjects;
-
         std::unordered_map<std::string, std::uint32_t> nameToId;
+        std::unordered_map<std::uint32_t, std::string> idToName;
     };
 }
