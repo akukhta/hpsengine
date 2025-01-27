@@ -12,6 +12,11 @@ SDLCore::BoundingBox::BoundingBox(BoundingBox const &other)
 
 void SDLCore::BoundingBox::render(SDLCore::IRenderer *renderer)
 {
+    if (!isVisible)
+    {
+        return;
+    }
+
     calculateBoundingBox();
     renderer->renderRectangle(this, relativeLocation.x, relativeLocation.y, width, height);
     //RectangleComponent::render(renderer);

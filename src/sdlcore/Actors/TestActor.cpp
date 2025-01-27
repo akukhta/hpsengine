@@ -44,3 +44,21 @@ SDLCore::GameObject* TestActor::clone()
     return new TestActor(*this);
 }
 
+void TestActor::update(double deltaTime)
+{
+    GameObject::update(deltaTime);
+
+    timePassed += deltaTime;
+
+    if (timePassed > 1.0)
+    {
+        spriteComponent->setVisibility(rand() % 2);
+        rectangleComponent->setVisibility(rand() % 2);
+        circle_component->setVisibility(rand() % 2);
+        spritesheet_component->setVisibility(rand() % 2);
+        boundBox->setVisibility(rand() % 2);
+
+        timePassed = 0.0;
+    }
+}
+

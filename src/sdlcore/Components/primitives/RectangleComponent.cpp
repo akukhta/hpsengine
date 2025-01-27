@@ -16,6 +16,11 @@ SDLCore::Primitives::RectangleComponent::RectangleComponent(RectangleComponent c
 
 void SDLCore::Primitives::RectangleComponent::render(SDLCore::IRenderer *renderer)
 {
+    if (!isVisible)
+    {
+        return;
+    }
+
     auto pos = getParentWorldLocation();
     renderer->renderRectangle(this, pos.x + relativeLocation.x, pos.y + relativeLocation.y, width, height);
 }

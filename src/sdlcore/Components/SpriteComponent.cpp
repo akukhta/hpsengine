@@ -28,6 +28,11 @@ SDLCore::SpriteComponent::SpriteComponent(SpriteComponent const &other)
 
 void SDLCore::SpriteComponent::render(IRenderer* renderer)
 {
+    if (!isVisible)
+    {
+        return;
+    }
+
     Math::IVector2D pos = getParentWorldLocation();
 
     auto texture = textureManager->getTexture(textureID);

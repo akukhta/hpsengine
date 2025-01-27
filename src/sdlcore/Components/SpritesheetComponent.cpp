@@ -14,6 +14,11 @@ SDLCore::SpritesheetComponent::SpritesheetComponent(SpritesheetComponent const &
 
 void SDLCore::SpritesheetComponent::render(IRenderer *renderer)
 {
+    if (!isVisible)
+    {
+        return;
+    }
+
     Math::Rectangle srcRect{static_cast<int>(spritesheet->frameSize.first * spritesheet->currentFrameIndex),
         0,spritesheet->frameSize.first,
 spritesheet->frameSize.second};

@@ -13,7 +13,11 @@ public:
     TestActor(TestActor const& other);
 
     GameObject* clone() override;
+
+    void update(double deltaTime) override;
+
 private:
+    double timePassed{0};
     SDLCore::SpriteComponent* spriteComponent{nullptr};
     SDLCore::Primitives::RectangleComponent*  rectangleComponent{nullptr};
     SDLCore::Primitives::CircleComponent* circle_component{nullptr};

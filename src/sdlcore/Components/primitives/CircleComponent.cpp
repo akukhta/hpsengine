@@ -21,6 +21,11 @@ SDLCore::Primitives::CircleComponent::CircleComponent(CircleComponent const &oth
 
 void SDLCore::Primitives::CircleComponent::render(SDLCore::IRenderer *renderer)
 {
+    if (!isVisible)
+    {
+        return;
+    }
+
     Math::IVector2D parentLocation = getParentWorldLocation();
     auto currX = parentLocation.x + relativeLocation.x;
     auto currY = parentLocation.y + relativeLocation.y;
