@@ -1,10 +1,53 @@
 #include "GameObject.h"
+#include <unordered_map>
+
+SDLCore::GameObject::GameObject(const GameObject &other)
+{
+    /// Original Component Ptr => Component Copy Ptr
+    std::unordered_map<IComponent*, IComponent*> componentsMap;
+
+    for (auto &component : other.componentsStorage)
+    {
+        auto componentCopy = std::unique_ptr<IComponent>(component->clone());
+        componentsMap[component.get()] = componentCopy.get();
+        componentsStorage.push_back(std::move(componentCopy));
+    }
+
+    for (auto& origComponent : other.componentsStorage)
+    {
+        if (origComponent->getParent() == &other)
+        {
+            componentsMap[origComponent.get()]->setParent(this);
+        }
+        else
+        {
+            componentsMap[origComponent.get()]->setParent(
+                componentsMap[dynamic_cast<IComponent*>(origComponent->getParent())]);
+        }
+    }
+
+    for (auto& component : componentsStorage)
+    {
+        if (auto renderablePtr = dynamic_cast<IRenderable*>(component.get()); renderablePtr != nullptr)
+        {
+            renderableComponents.push_back(renderablePtr);
+        }
+
+        if (auto updatablePtr = dynamic_cast<IUpdatable*>(component.get()); updatablePtr != nullptr)
+        {
+            updatableComponents.push_back(updatablePtr);
+        }
+    }
+}
 
 void SDLCore::GameObject::render(IRenderer *renderer)
 {
-    for (auto& renderable : renderableComponents)
+    if (isVisible)
     {
-        renderable->render(renderer);
+        for (auto& renderable : renderableComponents)
+        {
+            renderable->render(renderer);
+        }
     }
 }
 

@@ -10,6 +10,7 @@ class TestActor : public SDLCore::GameObject
 {
 public:
     TestActor(class SDLCore::IRenderer* renderer, class SDLCore::TextureManager* textureManager, std::uint32_t textureID, SDLCore::Math::IVector2D componentOffset = {0, 0});
+    TestActor(TestActor const& other);
 
     GameObject* clone() override;
 private:

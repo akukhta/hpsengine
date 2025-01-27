@@ -11,7 +11,7 @@ SDLCore::Primitives::RectangleComponent::RectangleComponent(Math::Rectangle box,
 {}
 
 SDLCore::Primitives::RectangleComponent::RectangleComponent(RectangleComponent const &other)
-    : RenderableComponent(other), width(other.width), height(other.height), fill(other.fill)
+    : RenderableComponent(other), width(other.width), height(other.height), fill(other.fill), color(other.color)
 {}
 
 void SDLCore::Primitives::RectangleComponent::render(SDLCore::IRenderer *renderer)

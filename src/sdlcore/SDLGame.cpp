@@ -18,7 +18,14 @@ void SDLCore::SDLGame::init()
 {
     auto textureTM = textureManager->loadTexture<LoadPNG>("/Users/khk/Downloads/5b92b51b196573108b203ad1.png", renderer.get());
 
-    scene->addObject(new TestActor(renderer.get(), textureManager.get(), textureTM));
+    auto actorID = scene->addObject(new TestActor(renderer.get(), textureManager.get(), textureTM));
+    auto actorCopy = scene->getObject(actorID)->clone();
+
+    scene->getObject(actorID)->setVisibility(false);
+
+    //actorCopy->setPosition({0, 0});
+
+    scene->addObject(actorCopy);
 }
 
 void SDLCore::SDLGame::run()

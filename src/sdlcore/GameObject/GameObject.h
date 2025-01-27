@@ -16,7 +16,7 @@ namespace SDLCore
     {
     public:
         GameObject() = default;
-        GameObject(const GameObject& other) = default;
+        GameObject(const GameObject& other);
         GameObject(GameObject&&) = default;
         GameObject& operator=(const GameObject&) = default;
         GameObject& operator=(GameObject&&) = default;
@@ -42,20 +42,25 @@ namespace SDLCore
             requires IsComponentType<ComponentType>
         ComponentType* createChildComponent(Args&& ... args)
         {
-            ComponentType* component = new ComponentType{std::forward<Args>(args)...};
+            //ComponentType* component = new ComponentType{std::forward<Args>(args)...};
+            auto component = std::make_unique<ComponentType>(std::forward<Args>(args)...);
 
             if constexpr (std::is_base_of_v<IRenderable, ComponentType>)
             {
-                renderableComponents.push_back(component);
+                renderableComponents.push_back(component.get());
             }
 
             if constexpr (std::is_base_of_v<IUpdatable, ComponentType>)
             {
-                updatableComponents.push_back(component);
+                updatableComponents.push_back(component.get());
             }
 
             component->setParent(this);
-            return component;
+
+            auto rv = component.get();
+            componentsStorage.push_back(std::move(component));
+
+            return rv;
         }
 
 
@@ -63,24 +68,27 @@ namespace SDLCore
             requires IsComponentType<ComponentType>
         ComponentType* createDefaultComponent(Args&& ... args)
         {
-            ComponentType* component = new ComponentType{std::forward<Args>(args)...};
-            //auto component = std::make_unique<ComponentType>(std::forward<Args>(args)...);
+            //ComponentType* component = new ComponentType{std::forward<Args>(args)...};
+            auto component = std::make_unique<ComponentType>(std::forward<Args>(args)...);
 
             if constexpr (std::is_base_of_v<IRenderable, ComponentType>)
             {
-                renderableComponents.push_back(component);
+                renderableComponents.push_back(component.get());
             }
 
             if constexpr (std::is_base_of_v<IUpdatable, ComponentType>)
             {
-                updatableComponents.push_back(component);
+                updatableComponents.push_back(component.get());
             }
 
-            return component;
+            auto rv = component.get();
+            componentsStorage.push_back(std::move(component));
+
+            return rv;
         }
     private:
         std::vector<IRenderable*> renderableComponents;
         std::vector<IUpdatable*> updatableComponents;
-        //std::deque<std::unique_ptr<IComponent>> componentsStorage;
+        std::deque<std::unique_ptr<IComponent>> componentsStorage;
     };
 }

@@ -9,7 +9,7 @@ SDLCore::SpritesheetComponent::SpritesheetComponent(class TextureManager *textur
 
 SDLCore::SpritesheetComponent::SpritesheetComponent(SpritesheetComponent const &other)
     : RenderableComponent(other), spritesheet(std::make_unique<SDLAnimatedSpriteSheet>(*other.spritesheet)),
-    textureID(other.textureID)
+    textureID(other.textureID), textureManager(other.textureManager)
 {}
 
 void SDLCore::SpritesheetComponent::render(IRenderer *renderer)
