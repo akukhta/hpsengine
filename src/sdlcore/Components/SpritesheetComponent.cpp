@@ -7,6 +7,11 @@ SDLCore::SpritesheetComponent::SpritesheetComponent(class TextureManager *textur
         : RenderableComponent(relativePosition), textureManager(textureManager), spritesheet(std::move(spritesheet))
 {}
 
+SDLCore::SpritesheetComponent::SpritesheetComponent(SpritesheetComponent const &other)
+    : RenderableComponent(other), spritesheet(std::make_unique<SDLAnimatedSpriteSheet>(*other.spritesheet)),
+    textureID(other.textureID)
+{}
+
 void SDLCore::SpritesheetComponent::render(IRenderer *renderer)
 {
     Math::Rectangle srcRect{static_cast<int>(spritesheet->frameSize.first * spritesheet->currentFrameIndex),
@@ -63,4 +68,9 @@ SDLCore::Math::Rectangle SDLCore::SpritesheetComponent::getBoundingBox() const
 {
     auto pos = getWorldLocation();
     return Math::Rectangle{pos.x, pos.y, static_cast<int>(spritesheet->frameSize.first * scale.x),  static_cast<int>(spritesheet->frameSize.second * scale.y)};
+}
+
+SDLCore::IComponent * SDLCore::SpritesheetComponent::clone()
+{
+    return new SpritesheetComponent(*this);
 }

@@ -12,6 +12,13 @@ SDLCore::Primitives::CircleComponent::CircleComponent(Math::IVector2D relativePo
     }
 }
 
+SDLCore::Primitives::CircleComponent::CircleComponent(CircleComponent const &other)
+    : RenderableComponent(other), points(other.points), color(other.color), r(other.r), prevX(other.prevX),
+        prevY(other.prevY), prevRadius(other.prevRadius), filled(other.filled)
+{
+    ;
+}
+
 void SDLCore::Primitives::CircleComponent::render(SDLCore::IRenderer *renderer)
 {
     Math::IVector2D parentLocation = getParentWorldLocation();
@@ -30,6 +37,11 @@ SDLCore::Math::Rectangle SDLCore::Primitives::CircleComponent::getBoundingBox() 
 {
     auto pos = getWorldLocation();
     return Math::Rectangle{pos.x - r, pos.y - r, 2 * r, 2 * r};
+}
+
+SDLCore::IComponent* SDLCore::Primitives::CircleComponent::clone()
+{
+    return new CircleComponent(*this);
 }
 
 void SDLCore::Primitives::CircleComponent::calculatePoints(int centerX, int centerY, int radius)

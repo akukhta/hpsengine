@@ -6,6 +6,10 @@ SDLCore::BoundingBox::BoundingBox(SDL_Color color, IEntity* parent)
     setParent(parent);
 }
 
+SDLCore::BoundingBox::BoundingBox(BoundingBox const &other)
+    : RectangleComponent(other)
+{}
+
 void SDLCore::BoundingBox::render(SDLCore::IRenderer *renderer)
 {
     calculateBoundingBox();
@@ -16,6 +20,11 @@ void SDLCore::BoundingBox::render(SDLCore::IRenderer *renderer)
 SDLCore::Math::Rectangle SDLCore::BoundingBox::getBoundingBox() const
 {
     return Math::Rectangle::createDefaultBoundingBox();
+}
+
+SDLCore::IComponent * SDLCore::BoundingBox::clone()
+{
+    return new BoundingBox(*this);
 }
 
 void SDLCore::BoundingBox::calculateBoundingBox()

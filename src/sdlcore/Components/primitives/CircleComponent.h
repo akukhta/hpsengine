@@ -15,10 +15,13 @@ namespace SDLCore::Primitives
         /// If the position of a circle is static,
         /// the circle will be more efficient cause there is no need to recalculate the points
         CircleComponent(Math::IVector2D relativePosition, int radius, SDL_Color color, bool filled = false);
+        CircleComponent(CircleComponent const& other);
 
         void render(SDLCore::IRenderer *renderer) override;
 
         Math::Rectangle getBoundingBox() const override;
+
+        IComponent* clone() override;
 
     private:
         friend class SDLCore::SDLRenderer;

@@ -8,5 +8,6 @@ namespace SDLCore
     {
     public:
         virtual ~IComponent() = default;
+        virtual IComponent* clone() = 0;
     };
 }

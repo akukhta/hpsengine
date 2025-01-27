@@ -13,9 +13,13 @@ namespace SDLCore
         SpriteComponent(TextureManager* textureManager, std::uint32_t textureID,
                     Math::IVector2D const& relativePosition, std::pair<int, int> spriteSize);
 
+        SpriteComponent(SpriteComponent const &other);
+
         void render(IRenderer* renderer) override;
 
         Math::Rectangle getBoundingBox() const override;
+
+        IComponent* clone() override;
 
     protected:
         TextureManager* textureManager = nullptr;
