@@ -6,14 +6,14 @@ SDLCore::GameObject::GameObject(const GameObject &other)
     /// Original Component Ptr => Component Copy Ptr
     std::unordered_map<IComponent*, IComponent*> componentsMap;
 
-    for (auto &component : other.componentsStorage)
+    for (auto &component : other.staticComponents)
     {
         auto componentCopy = std::unique_ptr<IComponent>(component->clone());
         componentsMap[component.get()] = componentCopy.get();
-        componentsStorage.push_back(std::move(componentCopy));
+        staticComponents.push_back(std::move(componentCopy));
     }
 
-    for (auto& origComponent : other.componentsStorage)
+    for (auto& origComponent : other.staticComponents)
     {
         if (origComponent->getParent() == &other)
         {
@@ -26,7 +26,7 @@ SDLCore::GameObject::GameObject(const GameObject &other)
         }
     }
 
-    for (auto& component : componentsStorage)
+    for (auto& component : staticComponents)
     {
         component->setOwner(this);
 
@@ -113,14 +113,14 @@ std::unordered_map<SDLCore::IComponent *, SDLCore::IComponent *> SDLCore::GameOb
 {
     std::unordered_map<SDLCore::IComponent*, SDLCore::IComponent*> componentsMap;
 
-    if (componentsStorage.size() != gameObject.componentsStorage.size())
+    if (staticComponents.size() != gameObject.staticComponents.size())
     {
         throw std::runtime_error("Cannot map object with different set of components");
     }
 
-    for (size_t i = 0; i < componentsStorage.size(); ++i)
+    for (size_t i = 0; i < staticComponents.size(); ++i)
     {
-        componentsMap[gameObject.componentsStorage[i].get()] = componentsStorage[i].get();
+        componentsMap[gameObject.staticComponents[i].get()] = staticComponents[i].get();
     }
 
     return componentsMap;
@@ -138,5 +138,5 @@ void SDLCore::GameObject::addComponentToStorage(std::unique_ptr<IComponent> comp
         updatableComponents.push_back(updatablePtr);
     }
 
-    componentsStorage.push_back(std::move(component));
+    staticComponents.push_back(std::move(component));
 }

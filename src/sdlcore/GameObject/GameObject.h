@@ -93,13 +93,15 @@ namespace SDLCore
                 updatableComponents.push_back(component.get());
             }
 
-            componentsStorage.push_back(std::move(component));
+            staticComponents.push_back(std::move(component));
         };
 
         void addComponentToStorage(std::unique_ptr<IComponent> component);
 
         std::vector<IRenderable*> renderableComponents;
         std::vector<IUpdatable*> updatableComponents;
-        std::deque<std::unique_ptr<IComponent>> componentsStorage;
+        std::deque<std::unique_ptr<IComponent>> staticComponents;
+
+        friend class ComponentsMapper;
     };
 }

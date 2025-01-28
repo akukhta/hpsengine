@@ -48,7 +48,7 @@ SDLCore::GameObject* TestActor::clone()
 
 void TestActor::update(double deltaTime)
 {
-    // GameObject::update(deltaTime);
+    GameObject::update(deltaTime);
     //
     // timePassed += deltaTime;
     //
