@@ -23,6 +23,17 @@ SDLCore::Math::Rectangle SDLCore::RenderableComponent::getBoundingBox() const
         static_cast<int>(scale.x), static_cast<int>(scale.y)};
 }
 
+void SDLCore::RenderableComponent::attach(std::unique_ptr<IEntity> attachedComponent)
+{
+    if (owner == nullptr)
+    {
+        throw std::runtime_error("Memory Leak: Cannot attach component to a component without parent");
+    }
+
+    attachedComponent->setParent(this);
+    owner->attach(std::move(attachedComponent));
+}
+
 SDLCore::Math::IVector2D SDLCore::RenderableComponent::getParentWorldLocation() const
 {
     if (auto sceneEntityPtr = dynamic_cast<ISceneEntity*>(parent))

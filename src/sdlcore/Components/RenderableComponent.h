@@ -26,6 +26,8 @@ namespace SDLCore
 
         Math::Rectangle getBoundingBox() const override;
 
+        void attach(std::unique_ptr<IEntity> attachedComponent) override;
+
     protected:
 
         Math::IVector2D getParentWorldLocation() const;

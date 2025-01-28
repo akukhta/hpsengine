@@ -37,6 +37,8 @@ TestActor::TestActor(TestActor const &other)
     circle_component = dynamic_cast<SDLCore::Primitives::CircleComponent*>(componentMap[other.circle_component]);
     spritesheet_component = dynamic_cast<SDLCore::SpritesheetComponent*>(componentMap[other.spritesheet_component]);
     boundBox = dynamic_cast<SDLCore::BoundingBox*>(componentMap[other.boundBox]);
+
+    attach(std::make_unique<SDLCore::Primitives::RectangleComponent>(SDLCore::Math::IVector2D{10, 10}, 30, 30, Primitives::Colors::Green, true));
 }
 
 SDLCore::GameObject* TestActor::clone()
@@ -46,19 +48,19 @@ SDLCore::GameObject* TestActor::clone()
 
 void TestActor::update(double deltaTime)
 {
-    GameObject::update(deltaTime);
-
-    timePassed += deltaTime;
-
-    if (timePassed > 1.0)
-    {
-        spriteComponent->setVisibility(rand() % 2);
-        rectangleComponent->setVisibility(rand() % 2);
-        circle_component->setVisibility(rand() % 2);
-        spritesheet_component->setVisibility(rand() % 2);
-        boundBox->setVisibility(rand() % 2);
-
-        timePassed = 0.0;
-    }
+    // GameObject::update(deltaTime);
+    //
+    // timePassed += deltaTime;
+    //
+    // if (timePassed > 1.0)
+    // {
+    //     spriteComponent->setVisibility(rand() % 2);
+    //     rectangleComponent->setVisibility(rand() % 2);
+    //     circle_component->setVisibility(rand() % 2);
+    //     spritesheet_component->setVisibility(rand() % 2);
+    //     boundBox->setVisibility(rand() % 2);
+    //
+    //     timePassed = 0.0;
+    // }
 }
 

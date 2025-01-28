@@ -2,7 +2,6 @@
 #include <vector>
 #include <deque>
 #include <unordered_map>
-
 #include "../IRenderable.h"
 #include "../IUpdatable.h"
 #include "../Components/IComponent.h"
@@ -13,6 +12,9 @@ namespace SDLCore
 {
     template<typename ComponentType>
     concept IsComponentType = std::is_base_of_v<IComponent, ComponentType>;
+
+    struct NoDynamicCastTag{};
+    static constexpr NoDynamicCastTag NoDynamicCast;
 
     class GameObject : public ISceneEntity, public IRenderable, public IUpdatable
     {
@@ -37,6 +39,8 @@ namespace SDLCore
 
         Math::Rectangle getBoundingBox() const override;
 
+        void attach(std::unique_ptr<IEntity> child) override;
+
     protected:
         Math::IVector2D position{0, 0};
 
@@ -46,21 +50,12 @@ namespace SDLCore
         {
             //ComponentType* component = new ComponentType{std::forward<Args>(args)...};
             auto component = std::make_unique<ComponentType>(std::forward<Args>(args)...);
-
-            if constexpr (std::is_base_of_v<IRenderable, ComponentType>)
-            {
-                renderableComponents.push_back(component.get());
-            }
-
-            if constexpr (std::is_base_of_v<IUpdatable, ComponentType>)
-            {
-                updatableComponents.push_back(component.get());
-            }
-
             component->setParent(this);
+            component->setOwner(this);
 
             auto rv = component.get();
-            componentsStorage.push_back(std::move(component));
+
+            addComponentToStorage(std::move(component), NoDynamicCast);
 
             return rv;
         }
@@ -73,6 +68,21 @@ namespace SDLCore
             //ComponentType* component = new ComponentType{std::forward<Args>(args)...};
             auto component = std::make_unique<ComponentType>(std::forward<Args>(args)...);
 
+            component->setOwner(this);
+            auto rv = component.get();
+
+            addComponentToStorage(std::move(component), NoDynamicCast);
+
+            return rv;
+        }
+
+        std::unordered_map<IComponent*, IComponent*> mapComponents(GameObject const& gameObject);
+
+    private:
+
+        template<typename ComponentType>
+        void addComponentToStorage(std::unique_ptr<ComponentType> component, NoDynamicCastTag tag)
+        {
             if constexpr (std::is_base_of_v<IRenderable, ComponentType>)
             {
                 renderableComponents.push_back(component.get());
@@ -83,15 +93,11 @@ namespace SDLCore
                 updatableComponents.push_back(component.get());
             }
 
-            auto rv = component.get();
             componentsStorage.push_back(std::move(component));
+        };
 
-            return rv;
-        }
+        void addComponentToStorage(std::unique_ptr<IComponent> component);
 
-        std::unordered_map<IComponent*, IComponent*> mapComponents(GameObject const& gameObject);
-
-    private:
         std::vector<IRenderable*> renderableComponents;
         std::vector<IUpdatable*> updatableComponents;
         std::deque<std::unique_ptr<IComponent>> componentsStorage;

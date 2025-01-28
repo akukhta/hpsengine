@@ -28,6 +28,8 @@ SDLCore::GameObject::GameObject(const GameObject &other)
 
     for (auto& component : componentsStorage)
     {
+        component->setOwner(this);
+
         if (auto renderablePtr = dynamic_cast<IRenderable*>(component.get()); renderablePtr != nullptr)
         {
             renderableComponents.push_back(renderablePtr);
@@ -91,6 +93,18 @@ SDLCore::Math::Rectangle SDLCore::GameObject::getBoundingBox() const
     return boundingBox;
 }
 
+void SDLCore::GameObject::attach(std::unique_ptr<IEntity> child)
+{
+    IComponent* componentPtr = dynamic_cast<IComponent*>(child.get());
+
+    if (componentPtr == nullptr)
+    {
+        throw std::runtime_error("GameObject::attach: child is not a Component");
+    }
+
+    addComponentToStorage(std::unique_ptr<IComponent>(dynamic_cast<IComponent*>(child.release())));
+}
+
 ///
 /// @param gameObject
 /// @return other component ptr => current component ptr
@@ -110,4 +124,19 @@ std::unordered_map<SDLCore::IComponent *, SDLCore::IComponent *> SDLCore::GameOb
     }
 
     return componentsMap;
+}
+
+void SDLCore::GameObject::addComponentToStorage(std::unique_ptr<IComponent> component)
+{
+    if (auto renderablePtr = dynamic_cast<IRenderable*>(component.get()); renderablePtr != nullptr)
+    {
+        renderableComponents.push_back(renderablePtr);
+    }
+
+    if (auto updatablePtr = dynamic_cast<IUpdatable*>(component.get()); updatablePtr != nullptr)
+    {
+        updatableComponents.push_back(updatablePtr);
+    }
+
+    componentsStorage.push_back(std::move(component));
 }

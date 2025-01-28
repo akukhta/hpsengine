@@ -1,5 +1,6 @@
 #pragma once
 #include "../Math/Vector2D.h"
+#include <memory>
 
 namespace SDLCore
 {
@@ -23,7 +24,20 @@ namespace SDLCore
             return parent;
         }
 
+        virtual void setOwner(IEntity* owner)
+        {
+            this->owner = owner;
+        }
+
+        virtual IEntity* getOwner() const
+        {
+            return owner;
+        }
+
+        virtual void attach(std::unique_ptr<IEntity> child) = 0;
+
     protected:
         IEntity* parent = nullptr;
+        IEntity* owner = nullptr;
     };
 }
