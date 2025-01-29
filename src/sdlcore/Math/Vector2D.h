@@ -27,10 +27,10 @@ namespace SDLCore::Math
         Vector2D getDirectionVector() const noexcept
         {
             auto len = length();
-            return Vector2D{ x / len, y / len };
+            return len > 0 ? Vector2D{ x / len, y / len } : Vector2D{ 0, 0, 0 };
         }
 
-        Vector2D project(Vector2D const& B) const noexcept
+        Vector2D project(Vector2D const& B) const
         {
             auto lenB = B.length();
 
@@ -55,6 +55,14 @@ namespace SDLCore::Math
         friend Vector2D operator-(Vector2D const& a, Vector2D const& b) noexcept
         {
             return Vector2D{a.x - b.x, a.y - b.y};
+        }
+
+        Vector2D& operator+=(Vector2D const& b) noexcept
+        {
+            x += b.x;
+            y += b.y;
+
+            return *this;
         }
     };
 

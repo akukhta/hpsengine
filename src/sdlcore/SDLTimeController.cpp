@@ -1,6 +1,11 @@
 #include "SDLTimeController.h"
 #include <SDL2/SDL.h>
 
+std::uint32_t SDLCore::SDLTimeController::getTicks()
+{
+    return getInstance().getTicksImpl();
+}
+
 double SDLCore::SDLTimeController::getDeltaTime()
 {
     return getInstance().getDeltaTimeImpl();
@@ -57,4 +62,9 @@ void SDLCore::SDLTimeController::resetImpl()
 {
     deltaTime = 0;
     currentTicks = SDL_GetTicks();
+}
+
+std::uint32_t SDLCore::SDLTimeController::getTicksImpl() const
+{
+    return SDL_GetTicks();
 }

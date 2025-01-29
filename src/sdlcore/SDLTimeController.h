@@ -12,6 +12,7 @@ namespace SDLCore
         SDLTimeController& operator=(SDLTimeController&&) = delete;
 
         // Static proxy functions to avoid calls to "getInstance()" every time
+        static std::uint32_t getTicks();
         static double getDeltaTime();
         static void update();
         static void pause();
@@ -32,6 +33,7 @@ namespace SDLCore
         void pauseImpl();
         void resumeImpl();
         void resetImpl();
+        std::uint32_t getTicksImpl() const;
 
         bool isPaused = false;
         friend class SDLCore;

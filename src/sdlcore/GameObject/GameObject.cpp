@@ -55,6 +55,9 @@ void SDLCore::GameObject::render(IRenderer *renderer)
 
 void SDLCore::GameObject::update(double deltaTime)
 {
+    velocity += acceleration * deltaTime;
+    position += velocity * deltaTime;
+
     for (auto& updatable : updatableComponents)
     {
         updatable->update(deltaTime);

@@ -18,19 +18,24 @@ namespace SDLCore
         void run();
         bool isRunning() const;
 
+        void setFPSLock(int fps);
+        void unlockFPS();
+
         void onGameQuit();
     private:
 
         void update();
         void handleEvents();
         void render();
-
+        void delayGame(std::uint32_t ticks);
         RendererPtr renderer;
         EventHandlerPtr eventHandler;
         std::unique_ptr<TextureManager> textureManager;
-
-        bool isRunning_ = false;
-
         std::unique_ptr<Scene> scene;
+
+        int fps;
+        int delayTime;
+        bool isRunning_ = false;
+        bool fpsLockEnabled = false;
     };
 }

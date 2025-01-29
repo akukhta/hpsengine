@@ -43,6 +43,7 @@ int main(int argc, char **argv)
 
 	SDLCore::SDLGame game(std::move(renderer), std::move(eventHandler));
 
+	game.setFPSLock(60);
 	game.init();
 	game.run();
 

@@ -16,7 +16,7 @@ SDLCore::SDLGame::SDLGame(RendererPtr renderer, EventHandlerPtr eventHandler)
 
 void SDLCore::SDLGame::init()
 {
-    auto textureTM = textureManager->loadTexture<LoadPNG>("/Users/khk/Downloads/5b92b51b196573108b203ad1.png", renderer.get());
+    auto textureTM = textureManager->loadTexture<LoadPNG>("D:\\UEGames\\Resources\\lightning.png", renderer.get());
 
     auto actorID = scene->addObject(new TestActor(renderer.get(), textureManager.get(), textureTM));
     auto actorCopy = scene->getObject(actorID)->clone();
@@ -33,13 +33,13 @@ void SDLCore::SDLGame::run()
 {
     isRunning_ = true;
 
-    auto texture = SDLTexture::loadPNG("/Users/khk/Downloads/5b92b51b196573108b203ad1.png", renderer.get());
+    auto texture = SDLTexture::loadPNG("D:\\UEGames\\Resources\\lightning.png", renderer.get());
 
     TextureManager tManager(std::make_unique<TextureLoadStrategyFactory>());
-    auto textureTM = tManager.loadTexture<LoadPNG>("/Users/khk/Downloads/5b92b51b196573108b203ad1.png", renderer.get());
+    //auto textureTM = tManager.loadTexture<LoadPNG>("/Users/khk/Downloads/5b92b51b196573108b203ad1.png", renderer.get());
 
-    auto animatedTextureID = tManager.loadTexture<LoadPNG>("/Users/khk/Downloads/FREE_Samurai 2D Pixel Art v1.2/Sprites/attack.png", renderer.get());
-    SDLAnimatedSpriteSheet animation{&tManager, animatedTextureID, {96, 96}, 1, 7};
+    //auto animatedTextureID = tManager.loadTexture<LoadPNG>("/Users/khk/Downloads/FREE_Samurai 2D Pixel Art v1.2/Sprites/attack.png", renderer.get());
+    //SDLAnimatedSpriteSheet animation{&tManager, animatedTextureID, {96, 96}, 1, 7};
     //animation.setDuration(1);
     // auto animation = SDLAnimatedSpriteSheet::loadPNG(renderer.get(), "/Users/khk/Downloads/FREE_Samurai 2D Pixel Art v1.2/Sprites/attack.png",
     //     std::make_pair(96, 96), 0.2, 7);
@@ -52,22 +52,43 @@ void SDLCore::SDLGame::run()
     //
     // std::cout << "Animation duration: " << animation.getDuration() << std::endl;
 
+    std::uint32_t frameStart;
+    std::uint32_t frameTime;
+
     while (isRunning_)
     {
         // update
-
+        frameStart = SDLTimeController::getTicks();
         eventHandler->handleEvents();
         update();
 
         renderer->startRendering();
         render();
         renderer->finishRendering();
+        frameTime = SDLTimeController::getTicks() - frameStart;
+
+        if (fpsLockEnabled && frameTime < delayTime)
+        {
+            delayGame(delayTime - frameTime);
+        }
     }
 }
 
 bool SDLCore::SDLGame::isRunning() const
 {
     return isRunning_;
+}
+
+void SDLCore::SDLGame::setFPSLock(int fps)
+{
+    fpsLockEnabled = true;
+    this->fps = fps;
+    delayTime = 1000.0 / fps;
+}
+
+void SDLCore::SDLGame::unlockFPS()
+{
+    fpsLockEnabled = false;
 }
 
 void SDLCore::SDLGame::onGameQuit()
@@ -97,4 +118,9 @@ void SDLCore::SDLGame::render()
     {
         renderableObject.second->render(renderer.get());
     }
+}
+
+void SDLCore::SDLGame::delayGame(std::uint32_t ticks)
+{
+    SDL_Delay(ticks);
 }

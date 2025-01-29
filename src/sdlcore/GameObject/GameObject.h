@@ -43,6 +43,8 @@ namespace SDLCore
 
     protected:
         Math::IVector2D position{0, 0};
+        Math::IVector2D velocity{0, 0};
+        Math::IVector2D acceleration{0, 0};
 
         template <typename ComponentType, typename... Args>
             requires IsComponentType<ComponentType>
