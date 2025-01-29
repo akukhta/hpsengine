@@ -67,6 +67,10 @@ add_executable(sdlplgrd main.cpp
         src/sdlcore/Components/debug/BoundingBox.h
         src/sdlcore/Components/ComponentsMapper.h
         src/sdlcore/Components/ComponentsMapper.cpp
+        src/sdlcore/Input/IInputManager.h
+        src/sdlcore/Input/SDLInputManager.cpp
+        src/sdlcore/Input/SDLInputManager.h
+        src/sdlcore/Input/IInputDevice.h
 )
 
 add_compile_options(-Wall)
