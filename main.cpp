@@ -6,6 +6,7 @@
 #include "src/sdlcore/SDLWindow.h"
 #include "src/sdlcore/SDLRenderer.h"
 #include "src/sdlcore/SDLGame.h"
+#include "src/sdlcore/Input/SDLInputManager.h"
 
 void renderTexture(SDL_Texture *tex, SDL_Renderer *ren, SDL_Rect dst,
 	SDL_Rect *clip)
@@ -39,7 +40,8 @@ int main(int argc, char **argv)
 
 	auto window = core.createWindow("test", std::make_pair(640, 480), std::make_pair(SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED), true, false);
 	auto renderer = core.createRenderer(window);
-	auto eventHandler = core.createEventHandler();
+	auto inputManager = std::make_unique<SDLCore::SDLInputManager>();
+	auto eventHandler = core.createEventHandler(std::move(inputManager));
 
 	SDLCore::SDLGame game(std::move(renderer), std::move(eventHandler));
 

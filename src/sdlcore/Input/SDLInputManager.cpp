@@ -18,21 +18,17 @@ void SDLCore::SDLInputManager::update(double deltaTime)
     {
         switch(event.type)
         {
-            case SDL_QUIT:
-            {
-                std::cout << "Quitting..." << std::endl;
-                break;
-            }
-
             case SDL_CONTROLLERDEVICEADDED:
             {
                 std::cout << "Controller added" << std::endl;
+                gamepadAdded(event.cdevice.which);
                 break;
             }
 
             case SDL_CONTROLLERDEVICEREMOVED:
             {
                 std::cout << "Controller removed" << std::endl;
+                gamepadRemoved(event.cdevice.which);
                 break;
             }
         }
@@ -50,10 +46,10 @@ void SDLCore::SDLInputManager::initGamepads()
     SDL_JoystickEventState(SDL_ENABLE);
 }
 
-std::deque<SDL_GameController *> SDLCore::SDLInputManager::findGamepads()
+std::unordered_map<int, SDL_GameController*> SDLCore::SDLInputManager::findGamepads()
 {
     size_t gamepadCount = SDL_NumJoysticks();
-    std::deque<SDL_GameController *> gamepadsFound;
+    std::unordered_map<int, SDL_GameController*> gamepadsFound;
 
     for (size_t i = 0; i < gamepadCount; i++)
     {
@@ -63,7 +59,7 @@ std::deque<SDL_GameController *> SDLCore::SDLInputManager::findGamepads()
 
             if (gamePad)
             {
-                gamepadsFound.push_back(SDL_GameControllerOpen(i));
+                gamepadsFound.insert(std::make_pair(i, gamePad));
             }
         }
     }
@@ -75,8 +71,20 @@ void SDLCore::SDLInputManager::removeGamepads()
 {
     for (auto &gamepad : gamepads)
     {
-        SDL_GameControllerClose(gamepad);
+        SDL_GameControllerClose(gamepad.second);
     }
 
     gamepads.clear();
 }
+
+void SDLCore::SDLInputManager::gamepadAdded(int gamepadId)
+{
+    gamepads.insert(std::make_pair(gamepadId, SDL_GameControllerOpen(gamepadId)));
+}
+
+void SDLCore::SDLInputManager::gamepadRemoved(int gamepadId)
+{
+    SDL_GameControllerClose(gamepads[gamepadId]);
+    gamepads.erase(gamepadId);
+}
+

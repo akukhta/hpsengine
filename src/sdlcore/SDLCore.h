@@ -3,6 +3,7 @@
 #include "SDLRenderer.h"
 #include "SDLTimeController.h"
 #include "SDLEventHandler.h"
+#include "Input/IInputManager.h"
 
 namespace SDLCore
 {
@@ -28,7 +29,7 @@ namespace SDLCore
         std::unique_ptr<SDLRenderer> createRenderer(std::unique_ptr<SDLWindow> &window);
         std::unique_ptr<SDLRenderer> createRenderer(SDLWindow* window);
 
-        std::unique_ptr<SDLEventHandler> createEventHandler();
+        std::unique_ptr<SDLEventHandler> createEventHandler(std::unique_ptr<IInputManager> inputManager = nullptr);
 
         SDLTimeController& getTimeController();
 

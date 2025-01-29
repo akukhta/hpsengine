@@ -2,25 +2,28 @@
 #include "IInputManager.h"
 #include "IInputDevice.h"
 #include "../IUpdatable.h"
-#include <deque>
+#include <unordered_map>
 #include <memory>
 #include <SDL2/SDL_gamecontroller.h>
 
 namespace SDLCore
 {
-    class SDLInputManager : public IInputManager, public IUpdatable
+    class SDLInputManager : public IInputManager
     {
     public:
-        void init() override;
+        SDLInputManager() = default;
 
+        void init() override;
         void update(double deltaTime) override;
 
     private:
         void initGamepads();
 
-        std::deque<SDL_GameController*> findGamepads();
+        std::unordered_map<int, SDL_GameController*> findGamepads();
         void removeGamepads();
+        void gamepadAdded(int gamepadId);
+        void gamepadRemoved(int gamepadId);
 
-        std::deque<SDL_GameController*> gamepads;
+        std::unordered_map<int, SDL_GameController*> gamepads;
     };
 }
