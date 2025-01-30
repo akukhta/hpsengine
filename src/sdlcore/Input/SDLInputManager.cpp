@@ -10,39 +10,47 @@ void SDLCore::SDLInputManager::init()
     initGamepads();
 }
 
-void SDLCore::SDLInputManager::update(double deltaTime)
+void SDLCore::SDLInputManager::handleEvent(SDL_Event event)
 {
-    SDL_Event event;
-
-    while (SDL_PollEvent(&event))
+    switch(event.type)
     {
-        switch(event.type)
+        case SDL_CONTROLLERDEVICEADDED:
         {
-            case SDL_CONTROLLERDEVICEADDED:
+            std::cout << "Controller added" << std::endl;
+            gamepadAdded(event.cdevice.which);
+            break;
+        }
+
+        case SDL_CONTROLLERDEVICEREMOVED:
+        {
+            std::cout << "Controller removed" << std::endl;
+            gamepadRemoved(event.cdevice.which);
+            break;
+        }
+
+        case SDL_JOYAXISMOTION:
+        {
+            auto gamepad = gamepads.find(event.jaxis.which);
+
+            if(gamepad != gamepads.end())
             {
-                std::cout << "Controller added" << std::endl;
-                gamepadAdded(event.cdevice.which);
-                break;
+                gamepad->second->handleEvent(event);
             }
 
-            case SDL_CONTROLLERDEVICEREMOVED:
-            {
-                std::cout << "Controller removed" << std::endl;
-                gamepadRemoved(event.cdevice.which);
-                break;
-            }
+            break;
+        }
 
-            case SDL_JOYAXISMOTION:
-            {
-                auto gamepad = gamepads.find(event.jaxis.which);
+        case SDL_MOUSEMOTION:
+        case SDL_MOUSEBUTTONDOWN:
+        case SDL_MOUSEBUTTONUP:
+        {
+            mouse.handleEvent(event);
+            break;
+        }
 
-                if(gamepad != gamepads.end())
-                {
-                    gamepad->second->handleEvent(event);
-                }
-
-                break;
-            }
+        default:
+        {
+            break;
         }
     }
 }

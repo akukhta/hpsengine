@@ -4,6 +4,7 @@
 #include <memory>
 #include <SDL2/SDL_gamecontroller.h>
 #include "SDLGamepad.h"
+#include "SDLMouse.h"
 
 namespace SDLCore
 {
@@ -13,7 +14,7 @@ namespace SDLCore
         SDLInputManager() = default;
 
         void init() override;
-        void update(double deltaTime) override;
+        void handleEvent(SDL_Event event) override;
 
     private:
         void initGamepads();
@@ -30,5 +31,6 @@ namespace SDLCore
         // Up & down movements on stick two is axis 4
         // Axis 2 and 5 are for the analog triggers
         std::unordered_map<int, std::unique_ptr<SDLGamepad>> gamepads;
+        SDLMouse mouse;
     };
 }

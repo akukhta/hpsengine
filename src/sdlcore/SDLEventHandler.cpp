@@ -29,13 +29,15 @@ void SDLCore::SDLEventHandler::handleEvents()
                 break;
             }
             default:
-                break;
-        }
-    }
+            {
+                if (inputManager) [[likely]]
+                {
+                    inputManager->handleEvent(event);
+                }
 
-    if (inputManager) [[likely]]
-    {
-        inputManager->update(0);
+                break;
+            }
+        }
     }
 }
 
