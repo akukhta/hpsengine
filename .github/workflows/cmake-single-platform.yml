@@ -34,12 +34,13 @@ jobs:
       - name: Detect profile
         run: conan profile detect
 
-      - name: Cache vcpkg dependencies
-        uses: actions/cache@v4
+      - name: Cache vcpkg
+        uses: actions/cache@v2
         with:
-            path: vcpkg_installed
-            key: vcpkg-${{ runner.os }}-${{ hashFiles('vcpkg.json') }}
-            restore-keys: vcpkg-${{ runner.os }}
+          path: vcpkg_installed
+          key: ${{ runner.os }}-vcpkg-${{ hashFiles('vcpkg.json') }}
+          restore-keys: |
+            ${{ runner.os }}-vcpkg-
 
       - name: Install vcpkg
         run: |
