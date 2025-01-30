@@ -34,8 +34,22 @@ jobs:
       - name: Detect profile
         run: conan profile detect
 
-      - name: Setup vcpkg
-        uses: lukka/run-vcpkg@v11
+      - name: Cache vcpkg dependencies
+        uses: actions/cache@v4
+        with:
+            path: vcpkg_installed
+            key: vcpkg-${{ runner.os }}-${{ hashFiles('vcpkg.json') }}
+            restore-keys: vcpkg-${{ runner.os }}
+
+      - name: Install vcpkg
+        run: |
+          git clone https://github.com/microsoft/vcpkg.git
+          cd vcpkg
+          ./bootstrap-vcpkg.sh
+
+      - name: Install Dependencies from vcpkg.json
+        run: |
+          ./vcpkg/vcpkg install --triplet=x64-linux --manifest
 
       - name: Install system libraries
         run: |
