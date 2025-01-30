@@ -71,6 +71,8 @@ add_executable(sdlplgrd main.cpp
         src/sdlcore/Input/SDLInputManager.cpp
         src/sdlcore/Input/SDLInputManager.h
         src/sdlcore/Input/IInputDevice.h
+        src/sdlcore/Input/SDLGamepad.cpp
+        src/sdlcore/Input/SDLGamepad.h
 )
 
 add_compile_options(-Wall)

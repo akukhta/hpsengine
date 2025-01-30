@@ -31,6 +31,18 @@ void SDLCore::SDLInputManager::update(double deltaTime)
                 gamepadRemoved(event.cdevice.which);
                 break;
             }
+
+            case SDL_JOYAXISMOTION:
+            {
+                auto gamepad = gamepads.find(event.jaxis.which);
+
+                if(gamepad != gamepads.end())
+                {
+                    gamepad->second->handleEvent(event);
+                }
+
+                break;
+            }
         }
     }
 }
@@ -46,10 +58,10 @@ void SDLCore::SDLInputManager::initGamepads()
     SDL_JoystickEventState(SDL_ENABLE);
 }
 
-std::unordered_map<int, SDL_GameController*> SDLCore::SDLInputManager::findGamepads()
+std::unordered_map<int, std::unique_ptr<SDLCore::SDLGamepad>> SDLCore::SDLInputManager::findGamepads()
 {
     size_t gamepadCount = SDL_NumJoysticks();
-    std::unordered_map<int, SDL_GameController*> gamepadsFound;
+    std::unordered_map<int, std::unique_ptr<SDLCore::SDLGamepad>> gamepadsFound;
 
     for (size_t i = 0; i < gamepadCount; i++)
     {
@@ -59,7 +71,7 @@ std::unordered_map<int, SDL_GameController*> SDLCore::SDLInputManager::findGamep
 
             if (gamePad)
             {
-                gamepadsFound.insert(std::make_pair(i, gamePad));
+                gamepadsFound.insert(std::make_pair(i, std::make_unique<SDLGamepad>(gamePad)));
             }
         }
     }
@@ -69,22 +81,17 @@ std::unordered_map<int, SDL_GameController*> SDLCore::SDLInputManager::findGamep
 
 void SDLCore::SDLInputManager::removeGamepads()
 {
-    for (auto &gamepad : gamepads)
-    {
-        SDL_GameControllerClose(gamepad.second);
-    }
-
     gamepads.clear();
 }
 
 void SDLCore::SDLInputManager::gamepadAdded(int gamepadId)
 {
-    gamepads.insert(std::make_pair(gamepadId, SDL_GameControllerOpen(gamepadId)));
+    gamepads.insert(std::make_pair(gamepadId,
+        std::make_unique<SDLGamepad>(SDL_GameControllerOpen(gamepadId))));
 }
 
 void SDLCore::SDLInputManager::gamepadRemoved(int gamepadId)
 {
-    SDL_GameControllerClose(gamepads[gamepadId]);
     gamepads.erase(gamepadId);
 }
 
