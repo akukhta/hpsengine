@@ -1,4 +1,12 @@
 cmake_minimum_required(VERSION 3.30)
+
+if(USE_VCPKG)
+    set(CMAKE_TOOLCHAIN_FILE "${CMAKE_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
+    message(STATUS "Using vcpkg, path to vcpkg.cmake: ${CMAKE_TOOLCHAIN_FILE}")
+else()
+    message(STATUS "Using conan")
+endif()
+
 project(sdlplgrd)
 
 option(USE_VCPKG "Use vcpkg toolchain" OFF)
@@ -7,15 +15,8 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g")
 
-if(USE_VCPKG)
-    set(CMAKE_TOOLCHAIN_FILE "${CMAKE_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
-    message(STATUS "Using vcpkg")
-else()
-    message(STATUS "Using conan")
-endif()
-
 find_package(SDL2 REQUIRED CONFIG)
-find_package(SDL2_image REQUIRED CONFIG)
+find_package(SDL2_image CONFIG REQUIRED)
 find_package(SDL2_ttf REQUIRED CONFIG)
 
 add_executable(sdlplgrd main.cpp
@@ -86,7 +87,12 @@ add_compile_options(-Wall)
 add_compile_options(-Wextra)
 add_compile_options(-Werror)
 
-target_link_libraries(${PROJECT_NAME} SDL2::SDL2main)
-target_link_libraries(${PROJECT_NAME} SDL2::SDL2)
-target_link_libraries(${PROJECT_NAME} SDL2_ttf::SDL2_ttf-static)
-target_link_libraries(${PROJECT_NAME} SDL2_image::SDL2_image)
+target_link_libraries(${PROJECT_NAME} PRIVATE
+        $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
+        $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
+)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE
+        $<IF:$<TARGET_EXISTS:SDL2_ttf::SDL2_ttf>,SDL2_ttf::SDL2_ttf,SDL2_ttf::SDL2_ttf-static>)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE $<IF:$<TARGET_EXISTS:SDL2_image::SDL2_image>,SDL2_image::SDL2_image,SDL2_image::SDL2_image-static>)
