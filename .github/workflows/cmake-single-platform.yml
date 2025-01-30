@@ -49,7 +49,7 @@ jobs:
 
       - name: Install Dependencies from vcpkg.json
         run: |
-          ./vcpkg/vcpkg install --triplet=x64-linux --manifest
+          ./vcpkg/vcpkg install --triplet=x64-linux
 
       - name: Install system libraries
         run: |
