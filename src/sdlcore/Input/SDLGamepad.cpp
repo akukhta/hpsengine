@@ -39,6 +39,11 @@ int SDLCore::SDLGamepad::stickY(int stickId)
     }
 }
 
+bool SDLCore::SDLGamepad::getButtonState(Button button)
+{
+    return controller ? SDL_GameControllerGetButton(controller, static_cast<SDL_GameControllerButton>(button)) : false;
+}
+
 void SDLCore::SDLGamepad::handleEvent(const SDL_Event &event)
 {
     switch (event.type)
