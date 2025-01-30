@@ -27,26 +27,14 @@ jobs:
           sudo apt update
           sudo apt-get install gcc-13 g++-13
 
-      - name: Install Conan
-        id: conan
-        uses: turtlebrowser/get-conan@main
-
-      - name: Detect profile
-        run: conan profile detect
-      
-      - name: Install dependencies
+      - name: apt-update
         run: sudo apt-get update && sudo apt-get install -y autoconf
-      
-      - name: Install autoconf
-        run: |
-          sudo apt-get install autoconf
       
       - name: Install system libraries
         run: |
           sudo apt install libltdl-dev
           sudo apt-get install -y curl zip unzip tar autoconf automake libtool pkg-config
           sudo apt-get install curl zip unzip tar
-          sudo apt-get install autoconf
           sudo apt-get install libtool
           sudo apt-get install libxcb-util0-dev
           sudo apt-get install libxcb-util-dev
@@ -104,7 +92,7 @@ jobs:
 
       - name: Install Dependencies from vcpkg.json
         run: |
-          ./vcpkg/vcpkg install sdl2 sdl2-image sdl2-ttf --triplet=x64-linux --classic
+          ./vcpkg/vcpkg install --triplet=x64-linux
 
       - name: build
         # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
