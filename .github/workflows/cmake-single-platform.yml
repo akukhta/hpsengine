@@ -38,6 +38,13 @@ jobs:
         run: |
           sudo apt-get install libegl-dev
           sudo apt-get install libegl1-mesa-dev
+          sudo apt-get install libx11-dev
+          sudo apt-get install libx11-xcb-dev
+          sudo apt-get install libfontenc-dev
+          sudo apt-get install libice-dev
+          sudo apt-get install libsm-dev
+          sudo apt-get install libxau-dev
+          sudo apt-get install libxaw7-dev
 
       - name: build
         # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
