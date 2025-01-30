@@ -36,13 +36,11 @@ jobs:
       
       - name: Install dependencies
         run: sudo apt-get update && sudo apt-get install -y autoconf
-
-      - name: Install vcpkg
+      
+      - name: Install autoconf
         run: |
-          git clone https://github.com/microsoft/vcpkg.git
-          cd vcpkg
-          ./bootstrap-vcpkg.sh
-
+          sudo apt-get install autoconf
+      
       - name: Install system libraries
         run: |
           sudo apt-get install -y curl zip unzip tar autoconf automake libtool pkg-config
@@ -96,6 +94,12 @@ jobs:
           sudo apt-get install libxcb-composite0-dev
           sudo apt-get install libxcb-ewmh-dev
           sudo apt-get install libxcb-res0-dev
+          
+      - name: Install vcpkg
+        run: |
+          git clone https://github.com/microsoft/vcpkg.git
+          cd vcpkg
+          ./bootstrap-vcpkg.sh
 
       - name: Install Dependencies from vcpkg.json
         run: |
