@@ -45,6 +45,41 @@ jobs:
           sudo apt-get install libsm-dev
           sudo apt-get install libxau-dev
           sudo apt-get install libxaw7-dev
+          sudo apt-get install libxcomposite-dev
+          sudo apt-get install libxcursor-dev
+          sudo apt-get install libxfixes-dev
+          sudo apt-get install libxi-dev
+          sudo apt-get install libxinerama-dev
+          sudo apt-get install libxkbfile-dev
+          sudo apt-get install libxmuu-dev
+          sudo apt-get install libxrandr-dev
+          sudo apt-get install libxrender-dev
+          sudo apt-get install libxres-dev
+          sudo apt-get install libxss-dev
+          sudo apt-get install libxtst-dev
+          sudo apt-get install libxv-dev
+          sudo apt-get install libxxf86vm-dev
+          sudo apt-get install libxcb-glx0-dev
+          sudo apt-get install libxcb-render0-dev
+          sudo apt-get install libxcb-render-util0-dev
+          sudo apt-get install libxcb-xkb-dev
+          sudo apt-get install libxcb-icccm4-dev
+          sudo apt-get install libxcb-image0-dev
+          sudo apt-get install libxcb-keysyms1-dev
+          sudo apt-get install libxcb-randr0-dev
+          sudo apt-get install libxcb-shape0-dev
+          sudo apt-get install libxcb-sync-dev
+          sudo apt-get install libxcb-xfixes0-dev
+          sudo apt-get install libxcb-xinerama0-dev
+          sudo apt-get install libxcb-dri3-dev
+          sudo apt-get install uuid-dev
+          sudo apt-get install libxcb-cursor-dev
+          sudo apt-get install libxcb-dri2-0-dev
+          sudo apt-get install libxcb-dri3-dev
+          sudo apt-get install libxcb-present-dev
+          sudo apt-get install libxcb-composite0-dev
+          sudo apt-get install libxcb-ewmh-dev
+          sudo apt-get install libxcb-res0-dev
 
       - name: build
         # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
