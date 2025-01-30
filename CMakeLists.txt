@@ -1,9 +1,18 @@
 cmake_minimum_required(VERSION 3.30)
 project(sdlplgrd)
 
+option(USE_VCPKG "Use vcpkg toolchain" OFF)
+
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g")
+
+if(USE_VCPKG)
+    set(CMAKE_TOOLCHAIN_FILE "${CMAKE_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
+    message(STATUS "Using vcpkg")
+else()
+    message(STATUS "Using conan")
+endif()
 
 find_package(SDL2 REQUIRED CONFIG)
 find_package(SDL2_image REQUIRED CONFIG)
