@@ -17,6 +17,10 @@ namespace SDLCore
         void init() override;
         void handleEvent(SDL_Event event) override;
 
+        SDLMouse& getMouse() override;
+        SDLKeyboard& getKeyboard() override;
+        SDLGamepad& getGamepad(size_t gamepadIndex) override;
+
     private:
         void initGamepads();
 

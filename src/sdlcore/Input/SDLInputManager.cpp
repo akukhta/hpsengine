@@ -62,6 +62,26 @@ void SDLCore::SDLInputManager::handleEvent(SDL_Event event)
     }
 }
 
+SDLCore::SDLMouse & SDLCore::SDLInputManager::getMouse()
+{
+    return mouse;
+}
+
+SDLCore::SDLKeyboard & SDLCore::SDLInputManager::getKeyboard()
+{
+    return keyboard;
+}
+
+SDLCore::SDLGamepad & SDLCore::SDLInputManager::getGamepad(size_t gamepadIndex)
+{
+    if (gamepads.find(gamepadIndex) != gamepads.end())
+    {
+        return *gamepads[gamepadIndex].get();
+    }
+
+    throw std::out_of_range("Gamepad not found");
+}
+
 void SDLCore::SDLInputManager::initGamepads()
 {
     if (SDL_WasInit(SDL_INIT_GAMECONTROLLER) == 0)
