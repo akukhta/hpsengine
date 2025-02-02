@@ -48,6 +48,13 @@ void SDLCore::SDLInputManager::handleEvent(SDL_Event event)
             break;
         }
 
+        case SDL_KEYDOWN:
+        case SDL_KEYUP:
+        {
+            keyboard.handleEvent(event);
+            break;
+        }
+
         default:
         {
             break;

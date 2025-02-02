@@ -5,6 +5,7 @@
 #include <SDL2/SDL_gamecontroller.h>
 #include "SDLGamepad.h"
 #include "SDLMouse.h"
+#include "SDLKeyboard.h"
 
 namespace SDLCore
 {
@@ -32,5 +33,6 @@ namespace SDLCore
         // Axis 2 and 5 are for the analog triggers
         std::unordered_map<int, std::unique_ptr<SDLGamepad>> gamepads;
         SDLMouse mouse;
+        SDLKeyboard keyboard;
     };
 }

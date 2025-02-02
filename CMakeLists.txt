@@ -75,6 +75,8 @@ add_executable(sdlplgrd main.cpp
         src/sdlcore/Input/SDLGamepad.h
         src/sdlcore/Input/SDLMouse.cpp
         src/sdlcore/Input/SDLMouse.h
+        src/sdlcore/Input/SDLKeyboard.cpp
+        src/sdlcore/Input/SDLKeyboard.h
 )
 
 add_compile_options(-Wall)
