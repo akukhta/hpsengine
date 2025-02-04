@@ -23,6 +23,14 @@ void SDLCore::SDLKeyboard::handleEvent(const SDL_Event &event)
     }
 }
 
+std::uint64_t SDLCore::SDLKeyboard::makeHotKey(std::int32_t key, uint16_t mods)
+{
+    std::uint64_t result = static_cast<std::uint64_t>(key);
+    result |= static_cast<std::uint64_t>(mods) << 32;
+
+    return result;
+}
+
 void SDLCore::SDLKeyboard::onKeyDown(const SDL_KeyboardEvent &event)
 {
     std::cout << "Pressed: " << SDL_GetKeyName(event.keysym.sym) << "\n";
