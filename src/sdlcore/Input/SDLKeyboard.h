@@ -1,6 +1,9 @@
 #pragma once
 #include "IInputDevice.h"
 #include <cstdint>
+#include <utility>
+#include <functional>
+#include <unordered_map>
 
 namespace SDLCore
 {
@@ -22,10 +25,11 @@ namespace SDLCore
             return result;
         }
 
-        //void addAxis();
-        //void addKeyDownCallback();
-        //void addKeyUpCallback();
-        //bool getKey();
+        void addAxis(std::pair<SDL_Keycode, SDL_Keycode> axis, std::function<void(int)> callback);
+        void addAxis(SDL_Keycode key1, SDL_Keycode key2, std::function<void(int)> callback);
+        void addKeyDownCallback(SDL_Keycode key, std::function<void()> callback);
+        void addKeyUpCallback(SDL_Keycode key, std::function<void()> callback);
+        bool getKey(SDL_Scancode key);
 
     private:
         void onKeyDown(const SDL_KeyboardEvent &event);
@@ -41,5 +45,9 @@ namespace SDLCore
                 makeHotKeyHelper<rest...>(res);
             }
         }
+
+        std::unordered_map<SDL_Keycode, std::function<void(int)>> axisCallbacks;
+        std::unordered_map<SDL_Keycode, std::function<void()>> keydownCallbacks;
+        std::unordered_map<SDL_Keycode, std::function<void()>> keyupCallbacks;
     };
 }

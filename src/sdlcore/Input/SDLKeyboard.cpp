@@ -36,6 +36,40 @@ std::uint64_t SDLCore::SDLKeyboard::makeHotKey(SDL_KeyboardEvent const &keyboard
     return makeHotKey(keyboardEvent.keysym.sym, keyboardEvent.keysym.mod);
 }
 
+void SDLCore::SDLKeyboard::addAxis(std::pair<SDL_Keycode, SDL_Keycode> axis, std::function<void(int)> callback)
+{
+
+}
+
+void SDLCore::SDLKeyboard::addAxis(SDL_Keycode key1, SDL_Keycode key2, std::function<void(int)> callback)
+{
+    axisCallbacks.insert(std::make_pair(key1, std::bind(callback, -1)));
+    axisCallbacks.insert(std::make_pair(key2, std::bind(callback, 2)));
+}
+
+void SDLCore::SDLKeyboard::addKeyDownCallback(SDL_Keycode key, std::function<void()> callback)
+{
+    keydownCallbacks.insert(std::make_pair(key, std::move(callback)));
+}
+
+void SDLCore::SDLKeyboard::addKeyUpCallback(SDL_Keycode key, std::function<void()> callback)
+{
+    keyupCallbacks.insert(std::make_pair(key, std::move(callback)));
+}
+
+bool SDLCore::SDLKeyboard::getKey(SDL_Scancode key)
+{
+    int numKeys = 0;
+    std::uint8_t const* const keyboard = SDL_GetKeyboardState(&numKeys);
+
+    if (key < numKeys) [[likely]]
+    {
+        return keyboard[key];
+    }
+
+    return false;
+}
+
 std::uint64_t constexpr makeHotKey(std::uint16_t const mod, std::uint32_t const key)
 {
     std::uint64_t result = 0x0000000000000000;
