@@ -29,14 +29,21 @@ void SDLCore::SDLEventHandler::handleEvents()
                 break;
             }
             default:
+            {
+                if (inputManager) [[likely]]
+                {
+                    inputManager->handleEvent(event);
+                }
+
                 break;
+            }
         }
     }
+}
 
-    if (inputManager) [[likely]]
-    {
-        inputManager->update(0);
-    }
+SDLCore::IInputManager * SDLCore::SDLEventHandler::getInputManager() const
+{
+    return inputManager.get();
 }
 
 void SDLCore::SDLEventHandler::callHandler(EventType type)

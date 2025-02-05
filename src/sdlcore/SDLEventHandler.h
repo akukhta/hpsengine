@@ -16,7 +16,7 @@ namespace SDLCore
 
         void addEventHandler(EventType type, std::function<void()> handler);
         void handleEvents();
-
+        IInputManager* getInputManager() const;
     private:
         void callHandler(EventType type);
         std::unordered_multimap<EventType, std::function<void()>> eventHandlers;

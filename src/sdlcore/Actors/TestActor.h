@@ -15,6 +15,9 @@ public:
     GameObject* clone() override;
 
     void update(double deltaTime) override;
+    void someAction();
+    void finishSomeAction();
+    void move(int direction);
 
 private:
     double timePassed{0};

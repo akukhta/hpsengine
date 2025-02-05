@@ -1,9 +1,10 @@
 #pragma once
-#include "../IUpdatable.h"
+#include <SDL2/SDL_events.h>
+#include "IInputDevice.h"
 
 namespace SDLCore
 {
-    class IInputManager : public IUpdatable
+    class IInputManager
     {
     public:
         IInputManager() = default;
@@ -13,6 +14,11 @@ namespace SDLCore
         IInputManager& operator=(IInputManager&&) = default;
         virtual ~IInputManager() = default;
 
+        virtual void handleEvent(SDL_Event event) = 0;
         virtual void init() = 0;
+
+        virtual IInputDevice& getMouse() = 0;
+        virtual IInputDevice& getKeyboard() = 0;
+        virtual IInputDevice& getGamepad(size_t gamepadIndex) = 0;
     };
 }

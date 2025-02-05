@@ -7,6 +7,8 @@
 #include "Texture/LoadPNG.h"
 #include "Texture/TextureManager.h"
 #include "Actors/TestActor.h"
+#include "Input/SDLKeyboard.h"
+#include "Input/SDLMouse.h"
 
 SDLCore::SDLGame::SDLGame(RendererPtr renderer, EventHandlerPtr eventHandler)
     : renderer(std::move(renderer)), eventHandler(std::move(eventHandler)), scene(std::make_unique<Scene>()), textureManager(std::make_unique<TextureManager>(std::make_unique<TextureLoadStrategyFactory>()))
@@ -16,24 +18,43 @@ SDLCore::SDLGame::SDLGame(RendererPtr renderer, EventHandlerPtr eventHandler)
 
 void SDLCore::SDLGame::init()
 {
-    auto textureTM = textureManager->loadTexture<LoadPNG>("D:\\UEGames\\Resources\\lightning.png", renderer.get());
+    auto textureTM = textureManager->loadTexture<LoadPNG>("/Users/khk/Downloads/5b92b51b196573108b203ad1.png", renderer.get());
 
     auto actorID = scene->addObject(new TestActor(renderer.get(), textureManager.get(), textureTM));
-    auto actorCopy = scene->getObject(actorID)->clone();
+    auto actorCopy = dynamic_cast<TestActor*>(scene->getObject(actorID)->clone());
 
     scene->removeObject(actorID);
+
     //scene->getObject(actorID)->setVisibility(true);
 
     actorCopy->setPosition({50,  100});
 
     scene->addObject(actorCopy);
+
+    try
+    {
+        auto& keyboard = dynamic_cast<SDLKeyboard&>(eventHandler->getInputManager()->getKeyboard());
+
+        keyboard.addKeyDownCallback(SDLK_f, [&actorCopy](){actorCopy->someAction();});
+        keyboard.addKeyUpCallback(SDLK_f, [&actorCopy](){actorCopy->finishSomeAction();});
+        keyboard.addAxis(SDLK_a, SDLK_d, [&actorCopy](int dir){actorCopy->move(dir);});
+
+        auto& mouse = dynamic_cast<SDLMouse&>(eventHandler->getInputManager()->getMouse());
+        mouse.addButtonPressCallback(SDL_BUTTON_LEFT, [](){std::cout << "LMBTN" << std::endl;});
+        mouse.addButtonPressCallback(SDL_BUTTON_RIGHT, [](){std::cout << "RMBTN" << std::endl;});
+        mouse.addMouseMoveCallback([](int x, int y) {std::cout << x << "," << y << std::endl;});
+    }
+    catch (std::bad_cast &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
 }
 
 void SDLCore::SDLGame::run()
 {
     isRunning_ = true;
 
-    auto texture = SDLTexture::loadPNG("D:\\UEGames\\Resources\\lightning.png", renderer.get());
+    auto texture = SDLTexture::loadPNG("/Users/khk/Downloads/5b92b51b196573108b203ad1.png", renderer.get());
 
     TextureManager tManager(std::make_unique<TextureLoadStrategyFactory>());
     //auto textureTM = tManager.loadTexture<LoadPNG>("/Users/khk/Downloads/5b92b51b196573108b203ad1.png", renderer.get());

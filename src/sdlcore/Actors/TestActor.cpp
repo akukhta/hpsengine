@@ -4,6 +4,7 @@
 #include "../../sdlcore/Texture/LoadPNG.h"
 #include "../../sdlcore/SDLRenderer.h"
 #include "../../sdlcore/IRenderer.h"
+#include <iostream>
 
 TestActor::TestActor(SDLCore::IRenderer* renderer, SDLCore::TextureManager* textureManager, std::uint32_t textureID, SDLCore::Math::IVector2D componentOffset)
 {
@@ -62,5 +63,20 @@ void TestActor::update(double deltaTime)
     //
     //     timePassed = 0.0;
     // }
+}
+
+void TestActor::someAction()
+{
+    std::cout << "Test Actor is doing something..." << std::endl;
+}
+
+void TestActor::finishSomeAction()
+{
+    std::cout << "Test Actor has finished doing its stuff" << std::endl;
+}
+
+void TestActor::move(int direction)
+{
+    std::cout << "Test Actor moving with direction: " << direction << std::endl;
 }
 
