@@ -38,23 +38,34 @@ std::uint64_t SDLCore::SDLKeyboard::makeHotKey(SDL_KeyboardEvent const &keyboard
 
 void SDLCore::SDLKeyboard::addAxis(std::pair<SDL_Keycode, SDL_Keycode> axis, std::function<void(int)> callback)
 {
-
+    axisCallbacks.insert(std::make_pair(axis.first, std::bind(callback, -1)));
+    axisCallbacks.insert(std::make_pair(axis.second, std::bind(callback, 1)));
 }
 
 void SDLCore::SDLKeyboard::addAxis(SDL_Keycode key1, SDL_Keycode key2, std::function<void(int)> callback)
 {
     axisCallbacks.insert(std::make_pair(key1, std::bind(callback, -1)));
-    axisCallbacks.insert(std::make_pair(key2, std::bind(callback, 2)));
+    axisCallbacks.insert(std::make_pair(key2, std::bind(callback, 1)));
 }
 
 void SDLCore::SDLKeyboard::addKeyDownCallback(SDL_Keycode key, std::function<void()> callback)
 {
-    keydownCallbacks.insert(std::make_pair(key, std::move(callback)));
+    keydownCallbacks.insert(std::make_pair(makeHotKey(key, KMOD_NONE), std::move(callback)));
 }
 
 void SDLCore::SDLKeyboard::addKeyUpCallback(SDL_Keycode key, std::function<void()> callback)
 {
-    keyupCallbacks.insert(std::make_pair(key, std::move(callback)));
+    keyupCallbacks.insert(std::make_pair(makeHotKey(key, KMOD_NONE), std::move(callback)));
+}
+
+void SDLCore::SDLKeyboard::addKeyDownCallback(std::uint64_t hotkey, std::function<void()> callback)
+{
+    keydownCallbacks.insert(std::make_pair(hotkey, std::move(callback)));
+}
+
+void SDLCore::SDLKeyboard::addKeyUpCallback(std::uint64_t hotkey, std::function<void()> callback)
+{
+    keyupCallbacks.insert(std::make_pair(hotkey, std::move(callback)));
 }
 
 bool SDLCore::SDLKeyboard::getKey(SDL_Scancode key)
@@ -80,15 +91,20 @@ std::uint64_t constexpr makeHotKey(std::uint16_t const mod, std::uint32_t const 
 
 void SDLCore::SDLKeyboard::onKeyDown(const SDL_KeyboardEvent &event)
 {
-    std::cout << "Pressed: " << SDL_GetKeyName(event.keysym.sym) << " " << event.keysym.mod << "\n";
-
-    if (makeHotKey(event) == makeHotKey<SDLK_a, KMOD_LSHIFT>())
+    if (auto axisIt = axisCallbacks.find(event.keysym.sym); axisIt != axisCallbacks.end())
     {
-        std::cout << "bingo!\n";
+        axisIt->second();
+    }
+    if (auto it = keydownCallbacks.find(makeHotKey(event)); it != keydownCallbacks.end())
+    {
+        it->second();
     }
 }
 
 void SDLCore::SDLKeyboard::onKeyUp(const SDL_KeyboardEvent &event)
 {
-    //std::cout << "Released: " << SDL_GetKeyName(event.keysym.sym) << "\n";
+    if (auto it = keyupCallbacks.find(makeHotKey(event)); it != keyupCallbacks.end())
+    {
+        it->second();
+    }
 }

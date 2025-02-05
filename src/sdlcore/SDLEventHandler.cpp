@@ -41,6 +41,11 @@ void SDLCore::SDLEventHandler::handleEvents()
     }
 }
 
+SDLCore::IInputManager * SDLCore::SDLEventHandler::getInputManager() const
+{
+    return inputManager.get();
+}
+
 void SDLCore::SDLEventHandler::callHandler(EventType type)
 {
     auto const &[begin, end] = eventHandlers.equal_range(type);

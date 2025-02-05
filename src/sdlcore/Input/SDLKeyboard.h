@@ -27,8 +27,11 @@ namespace SDLCore
 
         void addAxis(std::pair<SDL_Keycode, SDL_Keycode> axis, std::function<void(int)> callback);
         void addAxis(SDL_Keycode key1, SDL_Keycode key2, std::function<void(int)> callback);
+
         void addKeyDownCallback(SDL_Keycode key, std::function<void()> callback);
         void addKeyUpCallback(SDL_Keycode key, std::function<void()> callback);
+        void addKeyDownCallback(std::uint64_t hotkey, std::function<void()> callback);
+        void addKeyUpCallback(std::uint64_t hotkey, std::function<void()> callback);
         bool getKey(SDL_Scancode key);
 
     private:
@@ -46,8 +49,8 @@ namespace SDLCore
             }
         }
 
-        std::unordered_map<SDL_Keycode, std::function<void(int)>> axisCallbacks;
-        std::unordered_map<SDL_Keycode, std::function<void()>> keydownCallbacks;
-        std::unordered_map<SDL_Keycode, std::function<void()>> keyupCallbacks;
+        std::unordered_map<SDL_Keycode, std::function<void()>> axisCallbacks;
+        std::unordered_map<std::uint64_t, std::function<void()>> keydownCallbacks;
+        std::unordered_map<std::uint64_t, std::function<void()>> keyupCallbacks;
     };
 }
