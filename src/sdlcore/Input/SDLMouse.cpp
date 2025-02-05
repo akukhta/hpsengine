@@ -43,6 +43,8 @@ void SDLCore::SDLMouse::addButtonReleaseCallback(int button, std::function<void(
 size_t SDLCore::SDLMouse::addMouseMoveCallback(std::function<void(int, int)> mouseMoveCallback)
 {
     mouseMoveCallbacks.insert(std::make_pair(mouseMoveCallbacks.size(), std::move(mouseMoveCallback)));
+
+    return mouseMoveCallbacks.size() - 1;
 }
 
 void SDLCore::SDLMouse::onMouseMove(const SDL_Event &event)
