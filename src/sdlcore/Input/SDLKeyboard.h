@@ -9,6 +9,7 @@ namespace SDLCore
     public:
         void handleEvent(const SDL_Event &event) override;
         std::uint64_t makeHotKey(std::int32_t key, uint16_t mods);
+        std::uint64_t makeHotKey(SDL_KeyboardEvent const& keyboardEvent);
 
         template <std::int32_t key, std::uint16_t... Mods>
         static constexpr std::uint64_t makeHotKey()
@@ -20,6 +21,11 @@ namespace SDLCore
 
             return result;
         }
+
+        //void addAxis();
+        //void addKeyDownCallback();
+        //void addKeyUpCallback();
+        //bool getKey();
 
     private:
         void onKeyDown(const SDL_KeyboardEvent &event);
